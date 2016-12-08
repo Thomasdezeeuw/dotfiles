@@ -1,0 +1,25 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Thomas de Zeeuw
+	email = thomasdezeeuw@gmail.com
+[core]
+	autocrlf = false
+	eol = lf
+	editor = vim
+	quotepath = false
+[rebase]
+	autostash = true
+[push]
+	default = simple
+[http]
+	cookiefile = /Users/thomas/.gitcookies
+[alias]
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
