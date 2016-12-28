@@ -63,6 +63,10 @@ export CLICOLOR=1
 # Pretty command prompt, yey!
 export PROMPT_COMMAND=prompt_command
 
+function git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
 function prompt_command() {
 		# Get exit code from previous command, get this here
 		# otherwise the command below will overwrite it.
@@ -73,6 +77,7 @@ function prompt_command() {
 		PS1+="\[\033[38;5;33m\]\h"   # Blue hostname.
 		PS1+="\[\033[38;5;15m\]:"    # White ":".
 		PS1+="\[\033[38;5;208m\]\W " # Orange current directory.
+		PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow git branch.
 
 		if [ $EXIT != 0 ]; then
 				PS1+="\[\033[38;5;160m\]✘ " # Red cross on failure.
