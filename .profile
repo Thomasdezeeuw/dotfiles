@@ -29,9 +29,9 @@ export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
 CDPATH=./:$HOME/src:$GOPATH/src/github.com/Thomasdezeeuw
 
 # Neovim as the editor.
-export EDITOR='nvim'
-alias vim='nvim'
-alias vi='nvim'
+export EDITOR="nvim"
+alias vim="nvim"
+alias vi="nvim"
 
 # Use clang as C compiler, rather then a fake gcc (which is clang as well).
 CC=clang
@@ -40,8 +40,8 @@ CC=clang
 export HOMEBREW_NO_ANALYTICS=1
 
 # Boring language stuff.
-export LANG='en_US.UTF-8';
-export LC_ALL='en_US.UTF-8';
+export LANG="en_US.UTF-8";
+export LC_ALL="en_US.UTF-8";
 
 # Case-insensitive globbing (used in pathname expansion).
 shopt -s nocaseglob;
