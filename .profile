@@ -49,6 +49,14 @@ shopt -s nocaseglob;
 # Append to the Bash history file, rather than overwriting it.
 shopt -s histappend;
 
+# Autocompletion.
+autocomplete_dir=`brew --prefix`/etc/bash_completion.d
+if [ -d "$autocomplete_dir" ]; then
+	for file in $autocomplete_dir/*; do
+		. $file
+	done
+fi
+
 # Pretty colors, yey!
 export CLICOLOR=1
 
