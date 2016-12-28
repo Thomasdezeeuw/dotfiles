@@ -64,6 +64,7 @@ set shiftwidth=2
 set softtabstop=0
 set noexpandtab  " Use actual tabs.
 filetype plugin indent on " Smart identation based on the file type.
+set timeoutlen=150 " Change timeout for commands.
 
 " Search options.
 set smartcase " Ignore case if lowercase when searching.
