@@ -30,6 +30,8 @@ CDPATH=./:$HOME/src:$GOPATH/src/github.com/Thomasdezeeuw
 
 # Neovim as the editor.
 export EDITOR="nvim"
+export VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
 alias vim="nvim"
 alias vi="nvim"
 
