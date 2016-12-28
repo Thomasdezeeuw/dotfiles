@@ -103,8 +103,8 @@ nnoremap ; :
 let mapleader = "\<Space>"
 
 " Open a file using space-o.
-nnoremap <Leader>o :CtrlP<CR>
-nnoremap <Leader>p :CtrlPCurWD<CR>
+nmap <Leader>o :CtrlP<CR>
+nmap <Leader>p :CtrlPCurWD<CR>
 " Run emmit on space-e.
 map <Leader>e <c-y>,
 " Undo and redo, on space-z and space-y.
