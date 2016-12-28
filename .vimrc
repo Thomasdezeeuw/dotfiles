@@ -18,6 +18,7 @@ NeoBundle 'kristijanhusak/vim-hybrid-material' " Color scheme.
 NeoBundle 'vim-syntastic/syntastic'            " Synthax hightlighting improved.
 NeoBundle 'tpope/vim-fugitive'                 " Git support.
 NeoBundle 'airblade/vim-gitgutter'             " Add git status in the gutter.
+NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
 
 " Language specific.
 NeoBundle 'fatih/vim-go'            " Go greatness.
@@ -110,6 +111,8 @@ map <Leader>e <c-y>,
 " Undo and redo, on space-z and space-y.
 map <Leader>z u
 map <Leader>y <c-r>
+" Comment, or uncomment, a line on space-c.
+nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
