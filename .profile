@@ -35,6 +35,9 @@ export GIT_EDITOR=$EDITOR
 alias vim="nvim"
 alias vi="nvim"
 
+# Aliases
+alias tmpdir="cd `mktemp -d`"
+
 # Use clang as C compiler, rather then a fake gcc (which is clang as well).
 CC=clang
 
