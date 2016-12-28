@@ -53,6 +53,7 @@ set mouse=a         " Mouse is usefull.
 set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
 set cb=unnamed      " Enable copy to clipboard.
+set backspace=2     " Backspace like most apps.
 
 " Identation.
 set nojoinspaces " Single space between text lines. Like this one.
