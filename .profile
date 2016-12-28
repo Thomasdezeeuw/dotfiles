@@ -70,7 +70,7 @@ function prompt_command() {
 
 		PS1="\[\033[38;5;46m\]\u"    # Light Green username.
 		PS1+="\[\033[38;5;15m\]@"    # White "@".
-		PS1+="\[\033[38;5;33m\]\H"   # Blue hostname.
+		PS1+="\[\033[38;5;33m\]\h"   # Blue hostname.
 		PS1+="\[\033[38;5;15m\]:"    # White ":".
 		PS1+="\[\033[38;5;208m\]\W " # Orange current directory.
 
