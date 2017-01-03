@@ -139,6 +139,10 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" Show invisible characters
+set listchars=tab:»·,space:·,precedes:·
+set list
+
 "
 " Plugin specific settings.
 "
