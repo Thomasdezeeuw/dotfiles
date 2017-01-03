@@ -133,6 +133,12 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
 
+" Disable the arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
 "
 " Plugin specific settings.
 "
