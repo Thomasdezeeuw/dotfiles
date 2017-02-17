@@ -4,7 +4,7 @@
 PATH=$PATH:$HOME/bin
 
 # Go variables.
-export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.7
+export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.8
 export GOPATH=$HOME/go
 export CGO_ENABLED=1
 export GO15VENDOREXPERIMENT=1
