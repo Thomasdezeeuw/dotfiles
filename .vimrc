@@ -126,6 +126,15 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 " Space/Ctrl/Command-0 -> show all
 " Space/Ctrl/Command-{1,9} -> fold level {1,9}.
 
+" Don't automatically fold, but allow for it.
+"set nofoldenable
+"set foldmethod=indent
+
+set foldenable
+set foldmethod=indent
+set foldminlines=5
+set foldlevel=100
+
 " Sudo save, after you opened the file without sudo.
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
