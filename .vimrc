@@ -108,9 +108,6 @@ nmap <Leader>o :CtrlP<CR>
 nmap <Leader>p :CtrlPCurWD<CR>
 " Run emmit on space-e.
 map <Leader>e <c-y>,
-" Undo and redo, on space-z and space-y.
-map <Leader>z u
-map <Leader>y <c-r>
 " Comment, or uncomment, a line on space-c.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
