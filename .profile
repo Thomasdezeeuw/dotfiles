@@ -37,6 +37,12 @@ alias vi="nvim"
 
 # Aliases
 alias tmpdir="cd `mktemp -d`"
+alias trash="rmtrash"
+
+# Overwrites the `rm` command.
+rm() {
+	echo "Did you mean 'trash $@'?"
+}
 
 # Use clang as C compiler, rather then a fake gcc (which is clang as well).
 CC=clang
