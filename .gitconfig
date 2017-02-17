@@ -23,3 +23,5 @@
 	pending = codereview pending
 	submit = codereview submit
 	sync = codereview sync
+[log]
+	decorate = auto
