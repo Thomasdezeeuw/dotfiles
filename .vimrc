@@ -118,6 +118,10 @@ map <Leader>3 3gt
 map <Leader>4 4gt
 map <Leader>5 5gt
 
+" Code folding
+map <Leader>k1 :%foldc<CR>
+map <Leader>k0 zR
+
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
@@ -128,10 +132,6 @@ nnoremap <Leader>r :echoerr "No run command found"<CR>
 nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
-
-" TODO(Thomas): add code folding.
-" Space/Ctrl/Command-0 -> show all
-" Space/Ctrl/Command-{1,9} -> fold level {1,9}.
 
 " Don't automatically fold, but allow for it.
 set nofoldenable
