@@ -111,6 +111,13 @@ map <Leader>e <c-y>,
 " Comment, or uncomment, a line on space-c.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
+" Open tab $n.
+map <Leader>1 1gt
+map <Leader>2 2gt
+map <Leader>3 3gt
+map <Leader>4 4gt
+map <Leader>5 5gt
+
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
