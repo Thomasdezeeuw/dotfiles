@@ -134,8 +134,8 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 " Space/Ctrl/Command-{1,9} -> fold level {1,9}.
 
 " Don't automatically fold, but allow for it.
-"set nofoldenable
-"set foldmethod=indent
+set nofoldenable
+set foldmethod=indent
 
 set foldenable
 set foldmethod=indent
