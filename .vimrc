@@ -128,7 +128,7 @@ map <Leader>3 3gt
 map <Leader>4 4gt
 map <Leader>5 5gt
 
-" Code folding
+" Code folding.
 map <Leader>k1 :%foldc<CR>
 map <Leader>k0 zR
 
@@ -157,7 +157,7 @@ map <right> <nop>
 " Plugin specific settings.
 "
 
-" Checker for each language
+" Checker for each language.
 let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_javascript_checkers = ['jshint', 'eslint']
 
