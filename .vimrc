@@ -182,9 +182,8 @@ let g:go_metalinter_autosave = 1
 " Rust
 " Run rustfmt on save, see https://github.com/rust-lang/rust.vim/issues/109 for
 " the second line.
-let g:rustfmt_autosave = 1
+"let g:rustfmt_autosave = 1 " Creates too much weird code...
 let g:rustfmt_fail_silently = 1
-"let g:ycm_rust_src_path = systemlist('rustc --print sysroot')[0] . '/lib/...'
 
 " Javascript related file detection.
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
