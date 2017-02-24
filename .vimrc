@@ -90,6 +90,12 @@ let g:enable_bold_font = 1  " We're using a modern terminal.
 set listchars=tab:»·,space:·,precedes:·
 set list
 
+" Code folding.
+set foldenable
+set foldmethod=indent
+set foldlevel=100
+set foldminlines=1
+
 "
 " Shortcuts.
 "
@@ -136,15 +142,6 @@ nnoremap <Leader>r :echoerr "No run command found"<CR>
 nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
-
-" Don't automatically fold, but allow for it.
-set nofoldenable
-set foldmethod=indent
-
-set foldenable
-set foldmethod=indent
-set foldminlines=5
-set foldlevel=100
 
 " Sudo save, after you opened the file without sudo.
 " Credit to Steve Losh (the URL is no more).
