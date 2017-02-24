@@ -24,6 +24,7 @@ NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
 NeoBundle 'fatih/vim-go'            " Go greatness.
 NeoBundle 'rust-lang/rust.vim'      " Rust support.
 NeoBundle 'timonv/vim-cargo'        " Cargo support for Rust.
+NeoBundle 'racer-rust/vim-racer'    " Autocomplete for Rust.
 NeoBundle 'elzr/vim-json'           " Better support for JSON.
 NeoBundle 'othree/html5.vim'        " HTML.
 NeoBundle 'mattn/emmet-vim'         " Emmet.
@@ -184,6 +185,11 @@ let g:go_metalinter_autosave = 1
 " the second line.
 "let g:rustfmt_autosave = 1 " Creates too much weird code...
 let g:rustfmt_fail_silently = 1
+
+" The location of the racer binary.
+let g:racer_cmd = "~/bin/racer"
+" Enable experimental showing of  complete function definition.
+let g:racer_experimental_completer = 1
 
 " Javascript related file detection.
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
