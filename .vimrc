@@ -167,6 +167,9 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " YouCompleteMe close the preview window after completion has completed.
 let g:ycm_autoclose_preview_window_after_completion = 1
 
+" Enable Emmet in all modes.
+let g:user_emmet_mode='inv'
+
 "
 " Language specific settings.
 "
@@ -188,6 +191,3 @@ autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 
 " Markdown.
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-
-" Enable Emmet in all modes.
-let g:user_emmet_mode='inv'
