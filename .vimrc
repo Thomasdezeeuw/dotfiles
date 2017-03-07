@@ -144,6 +144,10 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
 
+" Mapping space-d to running the document command, depening on the language.
+nnoremap <Leader>d :echoerr "No document command found"<CR>
+:autocmd FileType rust map <Leader>d :CargoDoc<CR>
+
 " Sudo save, after you opened the file without sudo.
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
