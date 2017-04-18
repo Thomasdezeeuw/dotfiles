@@ -137,10 +137,6 @@ map <Leader>9 9gt
 map <Leader>k1 :%foldc<CR>
 map <Leader>k0 zR
 
-" Pasting, without overwriting the clipboard.
-map <Leader>p "0p
-map <Leader>P "0P
-
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
