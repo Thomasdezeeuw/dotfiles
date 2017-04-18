@@ -56,6 +56,8 @@ set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
 set cb=unnamed      " Enable copy to clipboard.
 set backspace=2     " Backspace like most apps.
+set lazyredraw      " Only redraw when needed.
+set showmatch       " Highlight matching bracket.
 
 " Identation.
 set nojoinspaces " Single space between text lines. Like this one.
