@@ -128,6 +128,10 @@ map <Leader>2 2gt
 map <Leader>3 3gt
 map <Leader>4 4gt
 map <Leader>5 5gt
+map <Leader>6 6gt
+map <Leader>7 7gt
+map <Leader>8 8gt
+map <Leader>9 9gt
 
 " Code folding.
 map <Leader>k1 :%foldc<CR>
