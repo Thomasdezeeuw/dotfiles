@@ -26,7 +26,7 @@ export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
 
 ## CD Path.
 # Allow for easier cd'ing around.
-CDPATH=./:$HOME/src:$GOPATH/src/github.com/Thomasdezeeuw
+CDPATH=./:$HOME/src/go:$HOME/src/rust
 
 # Neovim as the editor.
 export EDITOR="nvim"
