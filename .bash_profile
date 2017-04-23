@@ -1,9 +1,9 @@
 ## Enviroment variables.
 
-## Add user bin to path.
+# Add user bin to path.
 PATH=$PATH:$HOME/bin
 
-# Go variables.
+# Go
 export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.8
 export GOPATH=$HOME/go
 export CGO_ENABLED=1
@@ -11,11 +11,10 @@ export GO15VENDOREXPERIMENT=1
 export GOTRACEBACK=all
 PATH=$PATH:$HOME/src/third_party/go/bin
 
-# Node.
+# Node
 NODE_ENV=development
 
 # Rust
-#export RUST_BACKTRACE=1
 PATH=$PATH:$HOME/.cargo/bin
 RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
@@ -24,7 +23,6 @@ RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
 export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
 
-## CD Path.
 # Allow for easier cd'ing around.
 CDPATH=./:$HOME/src/go:$HOME/src/rust
 
@@ -32,10 +30,10 @@ CDPATH=./:$HOME/src/go:$HOME/src/rust
 export EDITOR="nvim"
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
-alias vim="nvim"
-alias vi="nvim"
 
 # Aliases
+alias vim="nvim"
+alias vi="nvim"
 alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
 
