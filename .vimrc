@@ -22,17 +22,18 @@ NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
 NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 
 " Language specific.
-NeoBundle 'fatih/vim-go'            " Go greatness.
-NeoBundle 'rust-lang/rust.vim'      " Rust support.
-NeoBundle 'timonv/vim-cargo'        " Cargo support for Rust.
-NeoBundle 'racer-rust/vim-racer'    " Autocomplete for Rust.
-NeoBundle 'elzr/vim-json'           " Better support for JSON.
-NeoBundle 'othree/html5.vim'        " HTML.
-NeoBundle 'mattn/emmet-vim'         " Emmet.
-NeoBundle 'posva/vim-vue'           " Vue components.
-NeoBundle 'pangloss/vim-javascript' " Javascript.
-NeoBundle 'uarun/vim-protobuf'      " Protocol buffers.
-NeoBundle 'ekalinin/Dockerfile.vim' " Dockerfile.
+NeoBundle 'fatih/vim-go'               " Go greatness.
+NeoBundle 'rust-lang/rust.vim'         " Rust support.
+NeoBundle 'timonv/vim-cargo'           " Cargo support for Rust.
+NeoBundle 'racer-rust/vim-racer'       " Autocomplete for Rust.
+NeoBundle 'elzr/vim-json'              " Better support for JSON.
+NeoBundle 'othree/html5.vim'           " HTML.
+NeoBundle 'mattn/emmet-vim'            " Emmet.
+NeoBundle 'posva/vim-vue'              " Vue components.
+NeoBundle 'pangloss/vim-javascript'    " Javascript.
+NeoBundle 'leafgarland/typescript-vim' " Typecript.
+NeoBundle 'uarun/vim-protobuf'         " Protocol buffers.
+NeoBundle 'ekalinin/Dockerfile.vim'    " Dockerfile.
 
 " Check if all plugins are available.
 NeoBundleCheck
