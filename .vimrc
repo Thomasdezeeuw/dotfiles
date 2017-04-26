@@ -19,6 +19,7 @@ NeoBundle 'vim-syntastic/syntastic'            " Synthax hightlighting improved.
 NeoBundle 'tpope/vim-fugitive'                 " Git support.
 NeoBundle 'airblade/vim-gitgutter'             " Add git status in the gutter.
 NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
+NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 
 " Language specific.
 NeoBundle 'fatih/vim-go'            " Go greatness.
