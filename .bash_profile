@@ -37,6 +37,7 @@ alias vim="nvim"
 alias vi="nvim"
 alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
+alias q="exit"
 
 # Overwrites the `rm` command.
 rm() {
