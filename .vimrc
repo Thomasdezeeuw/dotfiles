@@ -10,15 +10,15 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 " General plugins.
-NeoBundle 'vim-airline/vim-airline'            " Status bar.
-NeoBundle 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
 NeoBundle 'Valloric/YouCompleteMe'             " Autocomplete.
-NeoBundle 'tpope/vim-surround'                 " Easy surrounding text.
-NeoBundle 'kristijanhusak/vim-hybrid-material' " Color scheme.
-NeoBundle 'vim-syntastic/syntastic'            " Synthax hightlighting improved.
-NeoBundle 'tpope/vim-fugitive'                 " Git support.
 NeoBundle 'airblade/vim-gitgutter'             " Add git status in the gutter.
+NeoBundle 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
+NeoBundle 'kristijanhusak/vim-hybrid-material' " Color scheme.
 NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
+NeoBundle 'tpope/vim-fugitive'                 " Git support.
+NeoBundle 'tpope/vim-surround'                 " Easy surrounding text.
+NeoBundle 'vim-airline/vim-airline'            " Status bar.
+NeoBundle 'vim-syntastic/syntastic'            " Synthax hightlighting improved.
 NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 
 " Language specific.
@@ -26,14 +26,14 @@ NeoBundle 'fatih/vim-go'               " Go greatness.
 NeoBundle 'rust-lang/rust.vim'         " Rust support.
 NeoBundle 'timonv/vim-cargo'           " Cargo support for Rust.
 NeoBundle 'racer-rust/vim-racer'       " Autocomplete for Rust.
-NeoBundle 'elzr/vim-json'              " Better support for JSON.
-NeoBundle 'othree/html5.vim'           " HTML.
-NeoBundle 'mattn/emmet-vim'            " Emmet.
-NeoBundle 'posva/vim-vue'              " Vue components.
 NeoBundle 'pangloss/vim-javascript'    " Javascript.
 NeoBundle 'leafgarland/typescript-vim' " Typecript.
-NeoBundle 'uarun/vim-protobuf'         " Protocol buffers.
+NeoBundle 'posva/vim-vue'              " Vue components.
+NeoBundle 'othree/html5.vim'           " HTML.
+NeoBundle 'mattn/emmet-vim'            " Emmet.
+NeoBundle 'elzr/vim-json'              " Better support for JSON.
 NeoBundle 'ekalinin/Dockerfile.vim'    " Dockerfile.
+NeoBundle 'uarun/vim-protobuf'         " Protocol buffers.
 
 " Check if all plugins are available.
 NeoBundleCheck
