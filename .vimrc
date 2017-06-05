@@ -195,8 +195,9 @@ let g:go_metalinter_autosave = 1
 " Rust
 " Run rustfmt on save, see https://github.com/rust-lang/rust.vim/issues/109 for
 " the second line.
-"let g:rustfmt_autosave = 1 " Creates too much weird code...
 let g:rustfmt_fail_silently = 1
+let g:rust_recommended_style = 0
+let g:rustfmt_autosave = 0 " Creates too much weird code...
 
 " The location of the racer binary.
 let g:racer_cmd = "~/bin/racer"
