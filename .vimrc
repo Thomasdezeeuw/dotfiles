@@ -198,6 +198,7 @@ let g:go_metalinter_autosave = 1
 let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0 " Creates too much weird code...
+let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 " The location of the racer binary.
 let g:racer_cmd = "~/bin/racer"
