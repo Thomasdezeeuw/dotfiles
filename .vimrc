@@ -67,9 +67,7 @@ set autoindent   " Use identation from previous line.
 set smartindent  " Smart indentation.
 set smarttab     " Smart tabs.
 set tabstop=2    " Tab width of 2.
-set shiftwidth=2
-set softtabstop=0
-set noexpandtab  " Use actual tabs.
+set expandtab
 filetype plugin indent on " Smart identation based on the file type.
 set timeoutlen=250 " Change timeout for commands.
 
