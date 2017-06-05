@@ -172,7 +172,7 @@ map <right> <nop>
 
 " Checker for each language.
 let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_javascript_checkers = ['jshint', 'eslint']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
