@@ -24,9 +24,6 @@ CARGO_INCREMENTAL=1
 export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
 export OPENSSL_LIB_DIR=`brew --prefix openssl`/lib
 
-# Allow for easier cd'ing around.
-CDPATH=./:$HOME/src/go:$HOME/src/rust
-
 # Neovim as the editor.
 export EDITOR="nvim"
 export VISUAL=$EDITOR
