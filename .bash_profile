@@ -68,12 +68,7 @@ shopt -s nocaseglob;
 shopt -s histappend;
 
 # Autocompletion.
-autocomplete_dir=`brew --prefix`/etc/bash_completion.d
-if [ -d "$autocomplete_dir" ]; then
-	for file in $autocomplete_dir/*; do
-		. $file
-	done
-fi
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
 # Pretty colors, yey!
 export CLICOLOR=1
