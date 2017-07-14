@@ -187,6 +187,10 @@ let g:syntastic_loc_list_height = 5
 " Checker for each language.
 let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_rust_rustc_exe = 'cargo check'
+let g:syntastic_rust_rustc_fname = ''
+let g:syntastic_rust_rustc_args = ''
 
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
