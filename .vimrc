@@ -136,8 +136,12 @@ map <Leader>8 8gt
 map <Leader>9 9gt
 
 " Code folding.
-map <Leader>k1 :%foldc<CR>
-map <Leader>k0 zR
+map <Leader>k0 :set foldlevel=100<CR>
+map <Leader>k1 :set foldlevel=0<CR>
+map <Leader>k2 :set foldlevel=1<CR>
+map <Leader>k3 :set foldlevel=2<CR>
+map <Leader>k4 :set foldlevel=3<CR>
+map <Leader>k5 :set foldlevel=4<CR>
 
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
