@@ -172,6 +172,18 @@ map <right> <nop>
 " Plugin specific settings.
 "
 
+" Run the Syntastic checkers when opening and closing files.
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 1
+" Collect all errors from all checkers
+let g:syntastic_aggregate_errors = 1
+" Mark errors next the line numbers.
+let g:syntastic_enable_signs = 1
+" Automatically close the error window when no errors are found.
+let g:syntastic_auto_loc_list = 1
+" Show 5 messages in the erorr window.
+let g:syntastic_loc_list_height = 5
+
 " Checker for each language.
 let g:syntastic_css_checkers = ['csslint']
 let g:syntastic_javascript_checkers = ['eslint']
