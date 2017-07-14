@@ -143,6 +143,12 @@ map <Leader>k3 :set foldlevel=2<CR>
 map <Leader>k4 :set foldlevel=3<CR>
 map <Leader>k5 :set foldlevel=4<CR>
 
+" Goto Syntastic errors.
+map <Leader>fn ;lnext<CR>
+map <Leader>fp ;lprevious<CR>
+map <Leader>ff ;lfirst<CR>
+map <Leader>fl ;llast<CR>
+
 " Mapping space-r to running command, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
