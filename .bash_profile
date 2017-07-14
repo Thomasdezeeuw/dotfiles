@@ -3,6 +3,9 @@
 # Add user bin to path.
 PATH=$PATH:$HOME/bin
 
+# Shell variable for Neovim.
+SHELL="/bin/bash -il"
+
 # Go
 export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.8
 export GOPATH=$HOME/go
