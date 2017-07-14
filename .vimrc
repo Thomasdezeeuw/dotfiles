@@ -116,12 +116,12 @@ nnoremap ; :
 " Set the leader to space, next use it to do everything.
 let mapleader = "\<Space>"
 
-" Open a file using space-o.
+" Open a file in the current project, or directory.
 nmap <Leader>o :CtrlP<CR>
 nmap <Leader>p :CtrlPCurWD<CR>
-" Run emmit on space-e.
+" Run emmit.
 map <Leader>e <c-y>,
-" Comment, or uncomment, a line on space-c.
+" Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
 " Open tab $n.
