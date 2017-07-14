@@ -17,6 +17,7 @@ NODE_ENV=development
 # Rust
 PATH=$PATH:$HOME/.cargo/bin
 CARGO_INCREMENTAL=1
+export RUST_BACKTRACE=full
 
 # To allow Rust openssl to be build.
 # See https://github.com/sfackler/rust-openssl.
