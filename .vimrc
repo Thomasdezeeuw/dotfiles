@@ -67,7 +67,8 @@ set nojoinspaces " Single space between text lines. Like this one.
 set autoindent   " Use identation from previous line.
 set smartindent  " Smart indentation.
 set smarttab     " Smart tabs.
-set tabstop=2    " Tab width of 2.
+set tabstop=4    " Tab width of 4.
+set shiftwidth=4 " Insert 4 spaces.
 set expandtab
 filetype plugin indent on " Smart identation based on the file type.
 set timeoutlen=250 " Change timeout for commands.
