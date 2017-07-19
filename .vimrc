@@ -195,7 +195,7 @@ map <right> <nop>
 "
 
 " Run the Syntastic checkers when opening and closing files.
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 1
 " Collect all errors from all checkers
 let g:syntastic_aggregate_errors = 1
