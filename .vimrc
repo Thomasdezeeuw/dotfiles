@@ -32,6 +32,7 @@ NeoBundle 'posva/vim-vue'              " Vue components.
 NeoBundle 'othree/html5.vim'           " HTML.
 NeoBundle 'mattn/emmet-vim'            " Emmet.
 NeoBundle 'elzr/vim-json'              " Better support for JSON.
+NeoBundle 'cespare/vim-toml'           " TOML.
 NeoBundle 'ekalinin/Dockerfile.vim'    " Dockerfile.
 NeoBundle 'uarun/vim-protobuf'         " Protocol buffers.
 
