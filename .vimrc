@@ -151,18 +151,18 @@ map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
 map <Leader>fl ;llast<CR>
 
-" Mapping space-r to running command, depending on the language.
+" Runcommand, depending on the language.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
 :autocmd FileType rust map <Leader>r :CargoRun<CR>
 :autocmd FileType java map <Leader>r :! java_run<CR>
 
-" Mapping space-t to running the test command, depening on the language.
+" Test command, depening on the language.
 nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
 
-" Mapping space-d to running the document command, depening on the language.
+" Document command, depening on the language.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
 :autocmd FileType rust map <Leader>d :CargoDoc<CR>
 
