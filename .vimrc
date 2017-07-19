@@ -165,6 +165,21 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 nnoremap <Leader>d :echoerr "No document command found"<CR>
 :autocmd FileType rust map <Leader>d :CargoDoc<CR>
 
+" Build command, depening on the language.
+nnoremap <Leader>b :echoerr "No build command found"<CR>
+:autocmd FileType go map <Leader>b :GoBuild<CR>
+:autocmd FileType rust map <Leader>b :CargoBuild<CR>
+:autocmd FileType asciidoc map <Leader>b :call RunBuildScript()<CR>
+
+" This function run "build.sh" if it exists.
+function! RunBuildScript()
+  if filereadable("build.sh")
+    ! ./build.sh
+  else
+    echoerr "No build command found"
+  endif
+endfunction
+
 " Sudo save, after you opened the file without sudo.
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
