@@ -155,7 +155,6 @@ map <Leader>fl ;llast<CR>
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
 :autocmd FileType rust map <Leader>r :CargoRun<CR>
-:autocmd FileType java map <Leader>r :! java_run<CR>
 
 " Test command, depening on the language.
 nnoremap <Leader>t :echoerr "No test command found"<CR>
