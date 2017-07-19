@@ -138,12 +138,12 @@ map <Leader>8 8gt
 map <Leader>9 9gt
 
 " Code folding.
-map <Leader>k0 :set foldlevel=100<CR>
-map <Leader>k1 :set foldlevel=0<CR>
-map <Leader>k2 :set foldlevel=1<CR>
-map <Leader>k3 :set foldlevel=2<CR>
-map <Leader>k4 :set foldlevel=3<CR>
-map <Leader>k5 :set foldlevel=4<CR>
+map <Leader>k0 :setlocal foldlevel=100<CR>
+map <Leader>k1 :setlocal foldlevel=0<CR>
+map <Leader>k2 :setlocal foldlevel=1<CR>
+map <Leader>k3 :setlocal foldlevel=2<CR>
+map <Leader>k4 :setlocal foldlevel=3<CR>
+map <Leader>k5 :setlocal foldlevel=4<CR>
 
 " Goto Syntastic errors.
 map <Leader>fn ;lnext<CR>
