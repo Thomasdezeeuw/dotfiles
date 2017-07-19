@@ -98,7 +98,7 @@ set list
 " Code folding.
 set foldenable
 set foldmethod=indent
-set foldlevel=100
+set foldlevel=0 " Start with every fold closed.
 set foldminlines=1
 
 "
