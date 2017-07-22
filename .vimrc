@@ -115,18 +115,34 @@ nmap Q gqap
 " No more `:w`, but `;w`, so no more `:W` on accident.
 nnoremap ; :
 
+" Sudo save, after you opened the file without sudo.
+" Credit to Steve Losh (the URL is no more).
+cmap w!! w !sudo tee % > /dev/null
+
+" Disable the arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+"
+" Commands involving the leader key.
+"
+
 " Set the leader to space, next use it to do everything.
-let mapleader = "\<Space>"
+let mapleader = '\<Space>'
 
 " Open a file in the current project, or directory.
 nmap <Leader>o :CtrlP<CR>
 nmap <Leader>p :CtrlPCurWD<CR>
+
 " Run emmit.
 map <Leader>e <c-y>,
+
 " Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
-" Open tab $n.
+" Tab openining.
 map <Leader>1 1gt
 map <Leader>2 2gt
 map <Leader>3 3gt
@@ -150,16 +166,6 @@ map <Leader>fn ;lnext<CR>
 map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
 map <Leader>fl ;llast<CR>
-
-" Sudo save, after you opened the file without sudo.
-" Credit to Steve Losh (the URL is no more).
-cmap w!! w !sudo tee % > /dev/null
-
-" Disable the arrow keys.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 "
 " Language depening commands.
@@ -187,10 +193,10 @@ nnoremap <Leader>b :echoerr "No build command found"<CR>
 
 " This function run "build.sh" if it exists.
 function! RunBuildScript()
-  if filereadable("build.sh")
+  if filereadable('build.sh')
     ! ./build.sh
   else
-    echoerr "No build command found"
+    echoerr 'No build command found'
   endif
 endfunction
 
@@ -210,7 +216,7 @@ let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standar
 " YouCompleteMe close the preview window after completion has completed.
 let g:ycm_autoclose_preview_window_after_completion = 1
 
-" Enable Emmet in all modes.
+" Enable Emmet in insert, normal and view modes.
 let g:user_emmet_mode='inv'
 
 "
@@ -219,7 +225,7 @@ let g:user_emmet_mode='inv'
 
 " Go
 " Run goimports on save.
-let g:go_fmt_command = "goimports"
+let g:go_fmt_command = 'goimports'
 let g:go_metalinter_autosave = 1
 
 " Rust
@@ -231,7 +237,7 @@ let g:rustfmt_autosave = 0 " Creates too much weird code...
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 
 " The location of the racer binary.
-let g:racer_cmd = "~/bin/racer"
+let g:racer_cmd = '~/bin/racer'
 " Enable experimental showing of  complete function definition.
 let g:racer_experimental_completer = 1
 
