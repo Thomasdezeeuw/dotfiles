@@ -181,6 +181,11 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
 
+" Make/check/lint.
+nnoremap <Leader>m :echoerr "No make command found"<CR>
+:autocmd FileType go map <Leader>m :Neomake<CR>
+:autocmd FileType rust map <Leader>m :Neomake! clippy<CR>
+
 " Document.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
 :autocmd FileType rust map <Leader>d :CargoDoc<CR>
@@ -207,7 +212,6 @@ endfunction
 " Noemake makers for each language.
 let g:neomake_css_enabled_makers = ['csslint']
 let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_rust_enabled_makers = ['cargo']
 let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'gometalinter']
 
 " Ctrl p ignore files according to .gitignore.
