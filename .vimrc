@@ -151,21 +151,35 @@ map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
 map <Leader>fl ;llast<CR>
 
-" Runcommand, depending on the language.
+" Sudo save, after you opened the file without sudo.
+" Credit to Steve Losh (the URL is no more).
+cmap w!! w !sudo tee % > /dev/null
+
+" Disable the arrow keys.
+map <up> <nop>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+
+"
+" Language depening commands.
+"
+
+" Run.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
 :autocmd FileType rust map <Leader>r :CargoRun<CR>
 
-" Test command, depening on the language.
+" Test.
 nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 :autocmd FileType rust map <Leader>t :CargoTest<CR>
 
-" Document command, depening on the language.
+" Document.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
 :autocmd FileType rust map <Leader>d :CargoDoc<CR>
 
-" Build command, depening on the language.
+" Build.
 nnoremap <Leader>b :echoerr "No build command found"<CR>
 :autocmd FileType go map <Leader>b :GoBuild<CR>
 :autocmd FileType rust map <Leader>b :CargoBuild<CR>
@@ -179,16 +193,6 @@ function! RunBuildScript()
     echoerr "No build command found"
   endif
 endfunction
-
-" Sudo save, after you opened the file without sudo.
-" Credit to Steve Losh (the URL is no more).
-cmap w!! w !sudo tee % > /dev/null
-
-" Disable the arrow keys.
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
 
 "
 " Plugin specific settings.
