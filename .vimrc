@@ -18,7 +18,7 @@ NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
 NeoBundle 'tpope/vim-fugitive'                 " Git support.
 NeoBundle 'tpope/vim-surround'                 " Easy surrounding text.
 NeoBundle 'vim-airline/vim-airline'            " Status bar.
-NeoBundle 'vim-syntastic/syntastic'            " Synthax hightlighting improved.
+NeoBundle 'neomake/neomake'                    " Linting and code checking.
 NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 
 " Language specific.
@@ -145,7 +145,7 @@ map <Leader>k3 :setlocal foldlevel=2<CR>
 map <Leader>k4 :setlocal foldlevel=3<CR>
 map <Leader>k5 :setlocal foldlevel=4<CR>
 
-" Goto Syntastic errors.
+" Goto Noemake errors.
 map <Leader>fn ;lnext<CR>
 map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
@@ -194,25 +194,11 @@ map <right> <nop>
 " Plugin specific settings.
 "
 
-" Run the Syntastic checkers when opening and closing files.
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 1
-" Collect all errors from all checkers
-let g:syntastic_aggregate_errors = 1
-" Mark errors next the line numbers.
-let g:syntastic_enable_signs = 1
-" Automatically close the error window when no errors are found.
-let g:syntastic_auto_loc_list = 1
-" Show 5 messages in the erorr window.
-let g:syntastic_loc_list_height = 5
-
-" Checker for each language.
-let g:syntastic_css_checkers = ['csslint']
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_rust_checkers = ['rustc']
-let g:syntastic_rust_rustc_exe = 'cargo check'
-let g:syntastic_rust_rustc_fname = ''
-let g:syntastic_rust_rustc_args = ''
+" Noemake makers for each language.
+let g:neomake_css_enabled_makers = ['csslint']
+let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_rust_enabled_makers = ['cargo']
+let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'gometalinter']
 
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
