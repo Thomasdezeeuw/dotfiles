@@ -130,7 +130,7 @@ map <right> <nop>
 "
 
 " Set the leader to space, next use it to do everything.
-let mapleader = '\<Space>'
+let mapleader = "\<Space>"
 
 " Open a file in the current project, or directory.
 nmap <Leader>o :CtrlP<CR>
