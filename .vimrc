@@ -47,6 +47,7 @@ call neobundle#end()
 "
 
 " General.
+set relativenumber  " Relative line numbers.
 set number          " Line numbers.
 set nowrap          " No wrapping lines.
 set textwidth=80    " Limit the width to 80.
