@@ -21,6 +21,7 @@ NODE_ENV=development
 PATH=$PATH:$HOME/.cargo/bin
 export RUST_BACKTRACE=full
 export CARGO_INCREMENTAL=1
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # To allow Rust openssl to be build.
 # See https://github.com/sfackler/rust-openssl.
