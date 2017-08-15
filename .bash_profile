@@ -82,22 +82,40 @@ function git_branch() {
 }
 
 function prompt_command() {
-		# Get exit code from previous command, get this here
-		# otherwise the command below will overwrite it.
-		local EXIT="$?"
+	# Get exit code from previous command, get this here
+	# otherwise the command below will overwrite it.
+	local EXIT="$?"
 
-		PS1="\[\033[38;5;46m\]\u"    # Light Green username.
-		PS1+="\[\033[38;5;15m\]@"    # White "@".
-		PS1+="\[\033[38;5;33m\]\h"   # Blue hostname.
-		PS1+="\[\033[38;5;15m\]:"    # White ":".
-		PS1+="\[\033[38;5;208m\]\W " # Orange current directory.
-		PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow git branch.
+	# Get the git root, default to nothing.
+	GIT_DIR="$(git rev-parse --show-toplevel 2>&1)"
+	if [ $? != 0 ]; then
+		GIT_DIR=""
+	fi
 
-		if [ $EXIT != 0 ]; then
-				PS1+="\[\033[38;5;160m\]✘ " # Red cross on failure.
-		else
-				PS1+="\[\033[38;5;46m\]✔ "  # Otherwise a green check mark.
-		fi
+	# Remove the last directory from the path.
+	TRIM_DIR="$(echo $GIT_DIR | rev | cut -d'/' -f2- | rev)"
+	# Set the directory to the current directory, removing everything before the
+	# root of the git project.
+	PWD=$(pwd -P)
+	DIR=${PWD#${TRIM_DIR}}
+	DIR=${DIR:1}
 
-		PS1+="\[\e[0m\]" # Reset colors.
+	# Wether or not the git directory is dirty.
+	GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
+
+	PS1="\[\033[38;5;46m\]➜  "                 # Light Green arrow.
+	PS1+="\[\033[38;5;39m\]$DIR "              # Orange current directory.
+	if [ -z "$GIT_DIRTY" ]; then
+		PS1+="\[\033[38;5;87m\]$(git_branch)"  # Blue, clean git branch.
+	else
+		PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow, dirty git branch.
+	fi
+
+	if [ $EXIT != "0" ]; then
+		PS1+="\[\033[38;5;160m\]✘ "            # Red cross on failure.
+	else
+		PS1+="\[\033[38;5;46m\]✔ "             # Otherwise a green check mark.
+	fi
+
+	PS1+="\[\e[0m\]" # Reset colors.
 }
