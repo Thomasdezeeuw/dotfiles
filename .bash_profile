@@ -41,10 +41,10 @@ alias trash="rmtrash"
 alias q="exit"
 
 rustr() {
-  local SRC_FILE=$1
-  local BIN=${1%???}
-  rustc $SRC_FILE && ./$BIN
-  /bin/rm $BIN
+	local SRC_FILE=$1
+	local BIN=${1%???}
+	rustc $SRC_FILE && ./$BIN
+	/bin/rm $BIN
 }
 
 # Overwrites the `rm` command.
