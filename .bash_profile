@@ -103,7 +103,7 @@ function prompt_command() {
 	# Wether or not the git directory is dirty.
 	GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
 
-	PS1="\[\033[38;5;46m\]➜  "                 # Light Green arrow.
+	PS1="\[\033[38;5;46m\]➜ "                  # Light Green arrow.
 	PS1+="\[\033[38;5;39m\]$DIR "              # Orange current directory.
 	if [ -z "$GIT_DIRTY" ]; then
 		PS1+="\[\033[38;5;87m\]$(git_branch)"  # Blue, clean git branch.
