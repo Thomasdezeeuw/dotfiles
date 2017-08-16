@@ -98,6 +98,7 @@ function prompt_command() {
 	# root of the git project.
 	PWD=$(pwd -P)
 	DIR=${PWD#${TRIM_DIR}}
+    DIR="${DIR/$HOME/\~}"
 	DIR=${DIR:1}
 
 	# Wether or not the git directory is dirty.
