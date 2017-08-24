@@ -39,6 +39,7 @@ alias vi="nvim"
 alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
 alias q="exit"
+alias ls="exa"
 
 rustr() {
 	local SRC_FILE=$1
