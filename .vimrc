@@ -17,7 +17,6 @@ NeoBundle 'airblade/vim-gitgutter'             " Add git status in the gutter.
 NeoBundle 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
 NeoBundle 'kristijanhusak/vim-hybrid-material' " Color scheme.
 NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
-"NeoBundle 'tpope/vim-fugitive'                " Git support.
 NeoBundle 'tpope/vim-surround'                 " Easy surrounding text.
 NeoBundle 'vim-airline/vim-airline'            " Status bar.
 NeoBundle 'neomake/neomake'                    " Linting and code checking.
