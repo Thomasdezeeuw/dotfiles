@@ -24,19 +24,20 @@ NeoBundle 'neomake/neomake'                    " Linting and code checking.
 NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 
 " Language specific.
-NeoBundle 'fatih/vim-go'               " Go greatness.
-NeoBundle 'rust-lang/rust.vim'         " Rust support.
-NeoBundle 'timonv/vim-cargo'           " Cargo support for Rust.
-NeoBundle 'racer-rust/vim-racer'       " Autocomplete for Rust.
-NeoBundle 'pangloss/vim-javascript'    " Javascript.
-NeoBundle 'leafgarland/typescript-vim' " Typecript.
-NeoBundle 'posva/vim-vue'              " Vue components.
-NeoBundle 'othree/html5.vim'           " HTML.
-NeoBundle 'mattn/emmet-vim'            " Emmet.
-NeoBundle 'elzr/vim-json'              " Better support for JSON.
-NeoBundle 'cespare/vim-toml'           " TOML.
-NeoBundle 'ekalinin/Dockerfile.vim'    " Dockerfile.
-NeoBundle 'uarun/vim-protobuf'         " Protocol buffers.
+NeoBundleLazy "fatih/vim-go", {'filetypes': ['go']}
+NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
+NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
+NeoBundleLazy 'timonv/vim-cargo', {'filetypes': ['rust']}
+NeoBundleLazy 'racer-rust/vim-racer', {'filetypes': ['rust']}
+NeoBundleLazy 'pangloss/vim-javascript', {'filetypes': ['javascript']}
+NeoBundleLazy 'leafgarland/typescript-vim', {'filetypes': ['typescript']}
+NeoBundleLazy 'posva/vim-vue', {'filetypes': ['vue']}
+NeoBundleLazy 'othree/html5.vim', {'filetypes': ['html']}
+NeoBundleLazy 'mattn/emmet-vim', {'filetypes': ['html', 'vue']}
+NeoBundleLazy 'elzr/vim-json', {'filetypes': ['json']}
+NeoBundleLazy 'cespare/vim-toml', {'filetypes': ['toml']}
+NeoBundleLazy 'ekalinin/Dockerfile.vim', {'filetypes': ['Dockerfile']}
+NeoBundleLazy 'uarun/vim-protobuf', {'filetypes': ['proto']}
 
 " Check if all plugins are available.
 NeoBundleCheck
