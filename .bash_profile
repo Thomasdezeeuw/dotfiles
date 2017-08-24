@@ -87,10 +87,10 @@ function git_branch() {
 
 function prompt_command() {
 	# Get exit code from previous command, get this here
-	# otherwise the command below will overwrite it.
+	# otherwise the commands below will overwrite it.
 	local EXIT="$?"
 
-	# Get the git root, default to nothing.
+	# Get the git root, defaulting to nothing.
 	GIT_DIR="$(git rev-parse --show-toplevel 2>&1)"
 	if [ $? != 0 ]; then
 		GIT_DIR=""
@@ -102,25 +102,27 @@ function prompt_command() {
 	# root of the git project.
 	PWD=$(pwd -P)
 	DIR=${PWD#${TRIM_DIR}}
-    DIR="${DIR/$HOME/\~}"
+	DIR="${DIR/$HOME/\~}"
 	DIR=${DIR:1}
 
 	# Wether or not the git directory is dirty.
 	GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
 
-	PS1="\[\033[38;5;46m\]➜ "                  # Light Green arrow.
-	PS1+="\[\033[38;5;39m\]$DIR "              # Orange current directory.
-	if [ -z "$GIT_DIRTY" ]; then
-		PS1+="\[\033[38;5;87m\]$(git_branch)"  # Blue, clean git branch.
-	else
-		PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow, dirty git branch.
-	fi
-
+	# Red arrow failure, other a green arrow.
 	if [ $EXIT != "0" ]; then
-		PS1+="\[\033[38;5;160m\]✘ "            # Red cross on failure.
+		PS1="\[\033[38;5;160m\]➜ "
 	else
-		PS1+="\[\033[38;5;46m\]✔ "             # Otherwise a green check mark.
+		PS1="\[\033[38;5;46m\]➜ "
 	fi
-
+	# Blue directory; either based on the git root directory or
+	# based on the home directory, trimming anything before either of them.
+	PS1+="\[\033[38;5;39m\]$DIR "
+	# Light blue color to indicate a clean branch, or yellow for dirty one.
+	if [ -z "$GIT_DIRTY" ]; then
+		PS1+="\[\033[38;5;87m\]$(git_branch)"
+	else
+		PS1+="\[\033[38;5;226m\]$(git_branch)"
+	fi
 	PS1+="\[\e[0m\]" # Reset colors.
+	PS1+="λ "
 }
