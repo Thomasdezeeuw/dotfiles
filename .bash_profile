@@ -23,6 +23,9 @@ export RUST_BACKTRACE=full
 export CARGO_INCREMENTAL=1
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
+# Haskell
+PATH=$PATH:$HOME/Library/Haskell/bin
+
 # To allow Rust openssl to be build.
 # See https://github.com/sfackler/rust-openssl.
 export OPENSSL_INCLUDE_DIR=`brew --prefix openssl`/include
