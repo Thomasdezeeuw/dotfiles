@@ -94,7 +94,7 @@ colorscheme hybrid_material " Color scheme.
 let g:enable_bold_font = 1  " We're using a modern terminal.
 
 " Show invisible characters
-set listchars=tab:»·,space:·,precedes:·
+set listchars=tab:»·,precedes:·,trail:·
 set list
 
 " Code folding.
