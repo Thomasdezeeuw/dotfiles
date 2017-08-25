@@ -5,6 +5,12 @@ set nocompatible
 " TODO
 "
 " - wrapping code comments, without touching the code.
+" - A build/test/lint command that show errors inside Vim.
+"   - Rust.
+"   - Go.
+"   - Haskell.
+"   - Javascript.
+"   - HTML.
 
 "
 " Plugins.
