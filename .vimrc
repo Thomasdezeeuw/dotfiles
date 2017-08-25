@@ -2,6 +2,10 @@ scriptencoding utf-8
 set encoding=utf-8
 set nocompatible
 
+" TODO
+"
+" - wrapping code comments, without touching the code.
+
 "
 " Plugins.
 "
@@ -106,13 +110,6 @@ set foldminlines=1
 "
 " Shortcuts.
 "
-
-" Press Q to wrap the current paragraph.
-" TODO(Thomas): this messes up the code following the command sometimes. Current
-" work around is to insert a temporary empty line, format and remove the empty
-" line.
-vmap Q gq
-nmap Q gqap
 
 " No more `:w`, but `;w`, so no more `:W` on accident.
 nnoremap ; :
