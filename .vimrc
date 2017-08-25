@@ -170,7 +170,7 @@ map <Leader>ff ;lfirst<CR>
 map <Leader>fl ;llast<CR>
 
 "
-" Language depening commands.
+" Language specific commands.
 "
 
 " Run.
@@ -194,7 +194,7 @@ nnoremap <Leader>b :echoerr "No build command found"<CR>
 :autocmd FileType go map <Leader>b :GoBuild<CR>
 :autocmd FileType asciidoc map <Leader>b :call RunBuildScript()<CR>
 
-" This function run "build.sh" if it exists.
+" This function runs "build.sh" if it exists.
 function! RunBuildScript()
   if filereadable('build.sh')
     ! ./build.sh
@@ -231,11 +231,10 @@ let g:go_fmt_command = 'goimports'
 let g:go_metalinter_autosave = 1
 
 " Rust
-" Run rustfmt on save, see https://github.com/rust-lang/rust.vim/issues/109 for
-" the second line.
+" Disable rustfmt, the formatted code is ugly.
 let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
-let g:rustfmt_autosave = 0 " Creates too much weird code...
+let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 autocmd BufRead,BufNewFile *.rs set expandtab
 
