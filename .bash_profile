@@ -1,7 +1,7 @@
 ## Enviroment variables.
 
 # Add user bin to path.
-PATH=$PATH:$HOME/bin
+PATH=$HOME/bin:$PATH
 
 # Shell variable for Neovim.
 export SHELL="/usr/local/bin/bash -il"
