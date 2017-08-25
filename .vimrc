@@ -24,7 +24,6 @@ NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 " Language specific.
 NeoBundleLazy "fatih/vim-go", {'filetypes': ['go']}
 NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
-NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
 NeoBundleLazy 'racer-rust/vim-racer', {'filetypes': ['rust']}
 NeoBundleLazy 'pangloss/vim-javascript', {'filetypes': ['javascript']}
 NeoBundleLazy 'leafgarland/typescript-vim', {'filetypes': ['typescript']}
