@@ -185,6 +185,7 @@ nnoremap <Leader>m :echoerr "No make command found"<CR>
 
 " Document.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
+:autocmd FileType asciidoc map <Leader>d :call RunBuildScript()<CR>
 
 " Build.
 nnoremap <Leader>b :echoerr "No build command found"<CR>
