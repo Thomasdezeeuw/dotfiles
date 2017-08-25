@@ -7,7 +7,7 @@ PATH=$PATH:$HOME/bin
 export SHELL="/usr/local/bin/bash -il"
 
 # Go
-export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.8
+export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.9
 export GOPATH=$HOME/go
 export CGO_ENABLED=1
 export GO15VENDOREXPERIMENT=1
