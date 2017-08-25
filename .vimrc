@@ -26,7 +26,6 @@ NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
 NeoBundleLazy "fatih/vim-go", {'filetypes': ['go']}
 NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
 NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
-NeoBundleLazy 'timonv/vim-cargo', {'filetypes': ['rust']}
 NeoBundleLazy 'racer-rust/vim-racer', {'filetypes': ['rust']}
 NeoBundleLazy 'pangloss/vim-javascript', {'filetypes': ['javascript']}
 NeoBundleLazy 'leafgarland/typescript-vim', {'filetypes': ['typescript']}
@@ -180,12 +179,10 @@ map <Leader>fl ;llast<CR>
 " Run.
 nnoremap <Leader>r :echoerr "No run command found"<CR>
 :autocmd FileType go map <Leader>r :GoRun<CR>
-:autocmd FileType rust map <Leader>r :CargoRun<CR>
 
 " Test.
 nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
-:autocmd FileType rust map <Leader>t :CargoTest<CR>
 
 " Make/check/lint.
 nnoremap <Leader>m :echoerr "No make command found"<CR>
@@ -194,12 +191,10 @@ nnoremap <Leader>m :echoerr "No make command found"<CR>
 
 " Document.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
-:autocmd FileType rust map <Leader>d :CargoDoc<CR>
 
 " Build.
 nnoremap <Leader>b :echoerr "No build command found"<CR>
 :autocmd FileType go map <Leader>b :GoBuild<CR>
-:autocmd FileType rust map <Leader>b :CargoBuild<CR>
 :autocmd FileType asciidoc map <Leader>b :call RunBuildScript()<CR>
 
 " This function run "build.sh" if it exists.
