@@ -72,9 +72,8 @@ set smarttab       " Smart tabs.
 set tabstop=4      " Tab width of 4.
 set softtabstop=4  " Insert 4 spaces on tab.
 set shiftwidth=4   " Insert 4 spaces.
-set expandtab      " Insert actual spaces.
+set noexpandtab    " Insert actual tabs.
 set timeoutlen=250 " Change timeout for commands.
-filetype plugin indent on " Smart identation based on the file type.
 
 " Search options.
 set smartcase " Ignore case if lowercase when searching.
@@ -238,6 +237,7 @@ let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0 " Creates too much weird code...
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+autocmd BufRead,BufNewFile *.rs set expandtab
 
 " The location of the racer binary.
 let g:racer_cmd = '~/bin/racer'
