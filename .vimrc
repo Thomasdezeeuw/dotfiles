@@ -16,40 +16,31 @@ set nocompatible
 " Plugins.
 "
 
-" NeoBundle.vim required stuff.
-set runtimepath^=~/.vim/bundle/neobundle.vim/
-call neobundle#begin(expand('~/.vim/bundle'))
-NeoBundleFetch 'Shougo/neobundle.vim'
+call plug#begin('~/.vim/plugged')
+    " General plugins.
+    Plug 'terryma/vim-multiple-cursors'       " Mutliple cursors.
+    Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
+    Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
+    Plug 'vim-airline/vim-airline'            " Status bar.
+    Plug 'Valloric/YouCompleteMe'             " Autocomplete.
+    Plug 'airblade/vim-gitgutter'             " Add git status in the gutter.
+    Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
+    Plug 'neomake/neomake'                    " Linting and building.
 
-" General plugins.
-NeoBundle 'Valloric/YouCompleteMe'             " Autocomplete.
-NeoBundle 'airblade/vim-gitgutter'             " Add git status in the gutter.
-NeoBundle 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
-NeoBundle 'kristijanhusak/vim-hybrid-material' " Color scheme.
-NeoBundle 'scrooloose/nerdcommenter'           " Easy comment out code.
-NeoBundle 'vim-airline/vim-airline'            " Status bar.
-NeoBundle 'neomake/neomake'                    " Linting and code checking.
-NeoBundle 'terryma/vim-multiple-cursors'       " Mutliple cursors.
-
-" Language specific.
-NeoBundleLazy 'fatih/vim-go', {'filetypes': ['go']}
-NeoBundleLazy 'rust-lang/rust.vim', {'filetypes': ['rust']}
-NeoBundleLazy 'racer-rust/vim-racer', {'filetypes': ['rust']}
-NeoBundleLazy 'pangloss/vim-javascript', {'filetypes': ['javascript']}
-NeoBundleLazy 'leafgarland/typescript-vim', {'filetypes': ['typescript']}
-NeoBundleLazy 'posva/vim-vue', {'filetypes': ['vue']}
-NeoBundleLazy 'othree/html5.vim', {'filetypes': ['html']}
-NeoBundleLazy 'mattn/emmet-vim', {'filetypes': ['html', 'vue']}
-NeoBundleLazy 'elzr/vim-json', {'filetypes': ['json']}
-NeoBundleLazy 'cespare/vim-toml', {'filetypes': ['toml']}
-NeoBundleLazy 'ekalinin/Dockerfile.vim', {'filetypes': ['Dockerfile']}
-NeoBundleLazy 'uarun/vim-protobuf', {'filetypes': ['proto']}
-
-" Check if all plugins are available.
-NeoBundleCheck
-
-" Setup the plugins.
-call neobundle#end()
+    " Language specific plugins.
+    Plug 'fatih/vim-go', {'for': 'go'}
+    Plug 'rust-lang/rust.vim', {'for': 'rust'}
+    Plug 'racer-rust/vim-racer', {'for': 'rust'}
+    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'vue']}
+    Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'vue']}
+    Plug 'posva/vim-vue', {'for': 'vue'}
+    Plug 'othree/html5.vim', {'for': ['html', 'vue']}
+    Plug 'mattn/emmet-vim', {'for': ['html', 'vue']}
+    Plug 'elzr/vim-json', {'for': 'json'}
+    Plug 'cespare/vim-toml', {'for': 'toml'}
+    Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
+    Plug 'uarun/vim-protobuf', {'for': 'proto'}
+call plug#end()
 
 "
 " Settings.
