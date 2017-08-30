@@ -27,13 +27,11 @@ export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 PATH=$PATH:$HOME/Library/Haskell/bin
 
 # Neovim as the editor.
-export EDITOR="nvim"
+export EDITOR="vim"
 export VISUAL=$EDITOR
 export GIT_EDITOR=$EDITOR
 
 # Aliases
-alias vim="nvim"
-alias vi="nvim"
 alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
 alias q="exit"
