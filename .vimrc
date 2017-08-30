@@ -232,6 +232,19 @@ let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
 autocmd BufRead,BufNewFile *.rs set expandtab
 
+" Clippy maker for Neomake.
+let g:neomake_rust_clippy_maker = {
+    \ 'cwd': '%:p:h',
+    \ 'exe': 'cargo',
+    \ 'args': ['clippy', '--message-format=json', '--quiet'],
+    \ 'append_file': 0,
+    \ 'errorformat':
+        \ '[%t%n] "%f" %l:%v %m,'.
+        \ '[%t] "%f" %l:%v %m',
+    \ 'process_output': function('neomake#makers#ft#rust#CargoProcessOutput'),
+    \ }
+let g:neomake_rust_enabled_makers = ['cargo', 'clippy']
+
 " The location of the racer binary.
 let g:racer_cmd = '~/bin/racer'
 " Enable experimental showing of  complete function definition.
