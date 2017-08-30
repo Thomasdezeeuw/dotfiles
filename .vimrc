@@ -115,7 +115,8 @@ nnoremap ; :
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
 
-" Disable the arrow keys.
+" Disable space and the arrow keys.
+map <Space> <nop>
 map <up> <nop>
 map <down> <nop>
 map <left> <nop>
