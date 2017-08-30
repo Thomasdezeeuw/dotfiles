@@ -191,7 +191,7 @@ nnoremap <Leader>b :echoerr "No build command found"<CR>
 " This function runs "build.sh" if it exists.
 function! RunBuildScript()
   if filereadable('build.sh')
-    ! ./build.sh
+    terminal ./build.sh
   else
     echoerr 'No build command found'
   endif
