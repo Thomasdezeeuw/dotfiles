@@ -177,9 +177,7 @@ nnoremap <Leader>t :echoerr "No test command found"<CR>
 :autocmd FileType go map <Leader>t :GoTest<CR>
 
 " Make/check/lint.
-nnoremap <Leader>m :echoerr "No make command found"<CR>
-:autocmd FileType go map <Leader>m :Neomake<CR>
-:autocmd FileType rust map <Leader>m :Neomake! clippy<CR>
+nnoremap <Leader>m :Neomake \| :Neomake!<CR>
 
 " Document.
 nnoremap <Leader>d :echoerr "No document command found"<CR>
