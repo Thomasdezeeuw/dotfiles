@@ -18,27 +18,27 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
     " General plugins.
-    Plug 'terryma/vim-multiple-cursors'       " Mutliple cursors.
-    Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
-    Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
-    Plug 'vim-airline/vim-airline'            " Status bar.
     Plug 'Valloric/YouCompleteMe'             " Autocomplete.
     Plug 'airblade/vim-gitgutter'             " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
+    Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
     Plug 'neomake/neomake'                    " Linting and building.
+    Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
+    Plug 'terryma/vim-multiple-cursors'       " Mutliple cursors.
+    Plug 'vim-airline/vim-airline'            " Status bar.
 
     " Language specific plugins.
-    Plug 'fatih/vim-go', {'for': 'go'}
-    Plug 'rust-lang/rust.vim', {'for': 'rust'}
-    Plug 'racer-rust/vim-racer', {'for': 'rust'}
-    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'vue']}
-    Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'vue']}
-    Plug 'posva/vim-vue', {'for': 'vue'}
-    Plug 'othree/html5.vim', {'for': ['html', 'vue']}
-    Plug 'mattn/emmet-vim', {'for': ['html', 'vue']}
-    Plug 'elzr/vim-json', {'for': 'json'}
     Plug 'cespare/vim-toml', {'for': 'toml'}
     Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
+    Plug 'elzr/vim-json', {'for': 'json'}
+    Plug 'fatih/vim-go', {'for': 'go'}
+    Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'vue']}
+    Plug 'mattn/emmet-vim', {'for': ['html', 'vue']}
+    Plug 'othree/html5.vim', {'for': ['html', 'vue']}
+    Plug 'pangloss/vim-javascript', {'for': ['javascript', 'vue']}
+    Plug 'posva/vim-vue', {'for': 'vue'}
+    Plug 'racer-rust/vim-racer', {'for': 'rust'}
+    Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
 call plug#end()
 
