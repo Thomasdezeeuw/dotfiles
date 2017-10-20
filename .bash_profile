@@ -111,7 +111,9 @@ function prompt_command() {
 	fi
 	# Blue directory; either based on the git root directory or
 	# based on the home directory, trimming anything before either of them.
-	PS1+="\[\033[38;5;39m\]$DIR "
+	PS1+="\[\033[38;5;39m\]$DIR"
+	PS1+="\[\033[38;0;37m\]@" # White @
+	PS1+="\[\033[38;0;34m\]\h "
 	# Light blue color to indicate a clean branch, or yellow for dirty one.
 	if [ -z "$GIT_DIRTY" ]; then
 		PS1+="\[\033[38;5;87m\]$(git_branch)"
