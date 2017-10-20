@@ -36,6 +36,7 @@ alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
 alias q="exit"
 alias ls="exa"
+alias gcc="gcc-7"
 
 rustr() {
 	local SRC_FILE=$1
