@@ -136,6 +136,9 @@ nmap <Leader>p :CtrlPCurWD<CR>
 " Run emmit.
 map <Leader>e <c-y>,
 
+" Auto wrap text.
+map Q gq}
+
 " Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
