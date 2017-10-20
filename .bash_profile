@@ -98,7 +98,7 @@ function prompt_command() {
 	PWD=$(pwd -P)
 	DIR=${PWD#${TRIM_DIR}}
 	DIR="${DIR/$HOME/\~}"
-	DIR=${DIR:1}
+	DIR="${DIR/\//}"
 
 	# Wether or not the git directory is dirty.
 	GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
