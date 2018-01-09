@@ -56,6 +56,7 @@ CC=clang
 
 # Bad Homebrew.
 export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Boring language stuff.
 export LANG="en_US.UTF-8";
