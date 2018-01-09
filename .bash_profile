@@ -20,7 +20,6 @@ NODE_ENV=development
 # Rust
 PATH=$PATH:$HOME/.cargo/bin
 export RUST_BACKTRACE=full
-export CARGO_INCREMENTAL=1
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 # Haskell
