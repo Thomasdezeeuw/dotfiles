@@ -81,6 +81,8 @@ function git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
 }
 
+export CHECK_GIT_DIRTY=1
+
 function prompt_command() {
 	# Get exit code from previous command, get this here
 	# otherwise the commands below will overwrite it.
@@ -102,7 +104,11 @@ function prompt_command() {
 	DIR="${DIR/\//}"
 
 	# Wether or not the git directory is dirty.
-	GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
+	if [ $CHECK_GIT_DIRTY -eq 1 ]; then
+		GIT_DIRTY="$(git status --porcelain 2>/dev/null)"
+	else
+		GIT_DIRTY=1
+	fi
 
 	# Red arrow failure, other a green arrow.
 	if [ $EXIT != "0" ]; then
