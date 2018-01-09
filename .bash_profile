@@ -34,6 +34,8 @@ alias tmpdir="cd `mktemp -d`"
 alias trash="rmtrash"
 alias q="exit"
 alias ls="exa"
+alias la="ls -a"
+alias l="ls -l"
 alias gcc="gcc-7"
 alias vim="vim -p" # Open each file in a seprate tab.
 
