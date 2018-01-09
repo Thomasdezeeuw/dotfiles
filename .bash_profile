@@ -48,7 +48,7 @@ rustr() {
 
 # Overwrites the `rm` command.
 rm() {
-	echo "Did you mean 'trash $@'?"
+	trash $@
 }
 
 # Use clang as C compiler, rather then a fake gcc (which is clang as well).
