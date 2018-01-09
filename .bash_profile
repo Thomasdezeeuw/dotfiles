@@ -10,7 +10,6 @@ export SHELL="/usr/local/bin/bash -il"
 export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.9
 export GOPATH=$HOME/go
 export CGO_ENABLED=1
-export GO15VENDOREXPERIMENT=1
 export GOTRACEBACK=all
 PATH=$PATH:$HOME/src/third_party/go/bin
 
