@@ -5,12 +5,26 @@ set nocompatible
 " TODO
 "
 " - wrapping code comments, without touching the code.
-" - A build/test/lint command that show errors inside Vim.
-"   - Rust.
+" - A build/test/lint command that show errors inside Vim, see https://github.com/neomake/neomake
 "   - Go.
-"   - Haskell.
+"     - Build
+"     - Test
+"     - lint
+"   - Rust.
+"     - Build
+"     - Test
 "   - Javascript.
+"     - Build
+"     - Test
+"     - lint
 "   - HTML.
+"     - Build
+"     - Test
+"     - lint
+"   - Haskell.
+"     - Build
+"     - Test
+"     - lint
 
 "
 " Plugins.
@@ -62,7 +76,7 @@ set cb=unnamed      " Enable copy to clipboard.
 set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
-set formatoptions="tcroqwanlj"
+set formatoptions="tcroqwanj"
 set nopaste
 
 " Identation.
@@ -122,6 +136,9 @@ map <down> <nop>
 map <left> <nop>
 map <right> <nop>
 
+" Wrap the selected text.
+vmap Q gq
+
 "
 " Commands involving the leader key.
 "
@@ -135,9 +152,6 @@ nmap <Leader>p :CtrlPCurWD<CR>
 
 " Run emmit.
 map <Leader>e <c-y>,
-
-" Auto wrap text.
-map Q gq}
 
 " Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
@@ -205,9 +219,9 @@ endfunction
 "
 
 " Noemake makers for each language.
-let g:neomake_css_enabled_makers = ['csslint']
-let g:neomake_javascript_enabled_makers = ['eslint']
-let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'gometalinter']
+"let g:neomake_css_enabled_makers = ['csslint']
+"let g:neomake_javascript_enabled_makers = ['eslint']
+"let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'gometalinter']
 
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -217,6 +231,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Enable Emmet in insert, normal and view modes.
 let g:user_emmet_mode='inv'
+
+let g:lsc_auto_map = v:true
 
 "
 " Language specific settings.
@@ -233,9 +249,12 @@ let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:lsc_server_commands = {'rust': 'rls'}
 autocmd BufRead,BufNewFile *.rs set expandtab
 
 " Clippy maker for Neomake.
+" Eventough Neomake has a maker foor clippy using this custom one allows
+" explicity setting the makers for rust files.
 let g:neomake_rust_clippy_maker = {
     \ 'cwd': '%:p:h',
     \ 'exe': 'cargo',
