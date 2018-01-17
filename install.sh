@@ -1,14 +1,11 @@
-#!/bin/sh
+#!/bin/bash
 
 #
 # # Make all required directories.
 #
 
-mkdir -v -p \
-	~/bin \  # Location for binaries.
-	~/go \   # Required by the go tool.
-	~/.ssh
-	~/.Trash # For the `trash` command.
+# Required directories.
+mkdir -v -p ~/bin ~/src ~/go/src/github.com ~/.Trash
 
 # Directories for sources of different languages.
 declare -a src_dirs=(
@@ -21,8 +18,8 @@ declare -a src_dirs=(
 	"websites"
 )
 
-for dir in "${src_dirs[@]}"; do
-	mdir -v -p "~/src/$dir"
+for file in "${src_dirs[@]}"; do
+	mkdir -v -p "$HOME/src/$file"
 done
 
 #
@@ -30,8 +27,8 @@ done
 #
 
 # Link the directories required by go.
-ln -v ~/go/bin ~/bin
-ln -v ~/go/src/github.com/Thomasdezeeuw ~/src/go
+ln -v -s ~/bin ~/go/bin
+ln -v -s ~/src/go ~/go/src/github.com/Thomasdezeeuw
 
 # Link all local files to the home directory.
 declare -a files_to_link=(
