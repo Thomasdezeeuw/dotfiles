@@ -42,7 +42,6 @@ source "$PROFILE_ROOT/os/${OS,,}"
 # # Commands and aliases
 #
 
-alias trash="mv $@ ~/.Trash/"
 alias tmpdir="cd `mktemp -d`"
 alias q="exit"
 alias ls="exa"
@@ -54,6 +53,22 @@ alias vim="vim -p" # Open each file in a separate tab.
 # Overwrites the `rm` command, but only in the shell.
 rm() {
 	trash $@
+}
+
+trash() {
+	TRASH_DIR="$HOME/.Trash"
+	for file in $@; do
+		file_trash="$TRASH_DIR/$file"
+		# Don't overwrite an already trashed file so and ` ($i)` to it.
+		for ((i=1; i<=100; i++)); do
+			if (test -f "$file_trash" || test -d "$file_trash"); then
+				file_trash="$TRASH_DIR/$file ($i)"
+			else
+				break
+			fi
+		done
+		mv -n "$file" "$file_trash"
+	done
 }
 
 #
