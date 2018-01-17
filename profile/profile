@@ -1,0 +1,118 @@
+#
+# # Enviroment variables
+#
+
+# Add user bin to path.
+PATH=~/bin:$PATH
+
+# Shell to use in other programs, e.g. Vim.
+export SHELL="/usr/local/bin/bash -il"
+
+# Vim as the editor.
+export EDITOR="vim"
+export VISUAL=$EDITOR
+export GIT_EDITOR=$EDITOR
+
+# Boring language stuff.
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+
+# Pretty colors, yey!
+export CLICOLOR=1
+
+# Pretty command prompt, see below.
+export PROMPT_COMMAND=prompt_command
+
+#
+# # Profile extensions
+#
+
+PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
+
+# Load programming language specific profile extensions.
+for file in $PROFILE_ROOT/lang/*; do
+	source $file
+done
+
+# Load OS specific profile extensions.
+OS=$(uname)
+source "$PROFILE_ROOT/os/${OS,,}"
+
+#
+# # Commands and aliases
+#
+
+alias trash="mv $@ ~/.Trash/"
+alias tmpdir="cd `mktemp -d`"
+alias q="exit"
+alias ls="exa"
+alias la="ls -a"
+alias l="ls -l"
+alias gcc="gcc-7"
+alias vim="vim -p" # Open each file in a separate tab.
+
+# Overwrites the `rm` command, but only in the shell.
+rm() {
+	trash $@
+}
+
+#
+# # Bash settings
+#
+
+# Case-insensitive globbing (used in pathname expansion).
+shopt -s nocaseglob;
+
+# Append to the Bash history file, rather than overwriting it.
+shopt -s histappend;
+
+# Autocompletion.
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+#
+# # Bash prompt
+#
+
+# Get the current git branch.
+function git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
+}
+
+# The actual prompt.
+function prompt_command() {
+	# Get exit code from previous command, get this here otherwise the commands
+	# below will overwrite it.
+	local EXIT="$?"
+
+	# Get the git root, defaulting to nothing.
+	GIT_DIR="$(git rev-parse --show-toplevel 2>&1)"
+	if [ $? != 0 ]; then
+		GIT_DIR=""
+	fi
+
+	# Remove the last directory from the path.
+	TRIM_DIR="$(echo $GIT_DIR | rev | cut -d'/' -f2- | rev)"
+	# Set the directory to the current directory, removing everything before the
+	# root of the git project.
+	PWD=$(pwd -P)
+	# A clean directory path, starting at;
+	# the root of a git repo,
+	# the home directory, or
+	# the root of the file system.
+	DIR=${PWD#${TRIM_DIR}}
+	DIR="${DIR/$HOME/\~}"
+	DIR="${DIR/\//}"
+
+	# Red arrow failure, otherwise a green arrow.
+	if [ $EXIT != "0" ]; then
+		PS1="\[\033[38;5;160m\]➜ "
+	else
+		PS1="\[\033[38;5;46m\]➜ "
+	fi
+
+	PS1+="\[\033[38;5;39m\]$DIR"           # Blue directory.
+	PS1+="\[\033[38;0;37m\]@"              # White "@".
+	PS1+="\[\033[38;0;34m\]\h "            # Light blue-ish hostname.
+	PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow git branch.
+	PS1+="\[\e[0m\]λ "                     # Reset the colors and a lamda.
+}

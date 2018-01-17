@@ -1,0 +1,7 @@
+#
+# # Haskell specifc profile extentions.
+#
+
+# Include Haskell build binaries in the path.
+# TODO: Below is MacOS specific, fix that.
+# PATH=$PATH:~/Library/Haskell/bin
