@@ -7,6 +7,7 @@
 mkdir -v -p \
 	~/bin \  # Location for binaries.
 	~/go \   # Required by the go tool.
+	~/.ssh
 	~/.Trash # For the `trash` command.
 
 # Directories for sources of different languages.
@@ -45,17 +46,27 @@ for file in "${files_to_link[@]}"; do
 	ln -v $file ~/.$file
 done
 
-echo "Requires by install: \
-	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html, \
-	- Go: https://golang.org/dl, \
-	- Exa `cargo install exa`, \
-	- Ripgrep: `cargo install ripgrep`, \
-	- Clippy: `cargo install clippy`, \
-	- Vim, \
-	- Vim plugins: https://github.com/junegunn/vim-plug, \
-	- Make, \
-	- Gcc, \
-	- Clang (llvm), \
-	- Node.js, \
-	- Sqlite, \
-	- Valgrind."
+echo "Required by install:
+	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html,
+	- Go: https://golang.org/dl,
+	- Gcc,
+	- Clang (llvm),
+	- Node.js.
+
+Tools:
+	- Git,
+	- Exa 'cargo install exa',
+	- Ripgrep: 'cargo install ripgrep',
+	- Clippy: 'cargo install clippy',
+	- Vim,
+	- Vim plugins: https://github.com/junegunn/vim-plug,
+	- Make,
+	- CMake,
+	- Sqlite,
+	- Valgrind.
+
+SSH:
+	- Setup SSH server, including for public key only auth,
+	- Generate new keys, add to GitHub for easy pushing,
+	- Add local public to authorized keys,
+	- Check ~/.ssh/config."
