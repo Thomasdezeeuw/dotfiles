@@ -73,46 +73,56 @@ shopt -s histappend;
 # # Bash prompt
 #
 
-# Get the current git branch.
-function git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1) /'
-}
-
-# The actual prompt.
-function prompt_command() {
-	# Get exit code from previous command, get this here otherwise the commands
-	# below will overwrite it.
-	local EXIT="$?"
-
+# Get a clean directory for the prompt.
+# When in a git directory remove everything before the start of the git project.
+# Replaces the home directory with "~".
+prompt_dir() {
 	# Get the git root, defaulting to nothing.
-	GIT_DIR="$(git rev-parse --show-toplevel 2>&1)"
+	local GIT_DIR=$(git rev-parse --show-toplevel 2>&1)
 	if [ $? != 0 ]; then
 		GIT_DIR=""
 	fi
 
-	# Remove the last directory from the path.
-	TRIM_DIR="$(echo $GIT_DIR | rev | cut -d'/' -f2- | rev)"
-	# Set the directory to the current directory, removing everything before the
-	# root of the git project.
-	PWD=$(pwd -P)
-	# A clean directory path, starting at;
-	# the root of a git repo,
-	# the home directory, or
-	# the root of the file system.
-	DIR=${PWD#${TRIM_DIR}}
-	DIR="${DIR/$HOME/\~}"
-	DIR="${DIR/\//}"
+	# The entire git path, but the last directory.
+	local TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
 
-	# Red arrow failure, otherwise a green arrow.
-	if [ $EXIT != "0" ]; then
-		PS1="\[\033[38;5;160m\]➜ "
+	local PWD=$(pwd -P)
+	# When in a git directory remove everything but the last directory, or else
+	# removes nothing.
+	local DIR=${PWD#${TRIM_DIR}}
+	# Replace the directory path with "~".
+	local DIR=${DIR/$HOME/\~}
+	# Remove the last "/".
+	local DIR=${DIR/\//}
+
+	printf "$DIR"
+}
+
+# Get the current git branch.
+git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
+}
+
+# Set the foreground to a rgb color. Call like `fg_color r255 g255 b255`.
+fg_color() {
+	printf "\x1b[38;2;$1;$2;$3m"
+}
+
+# The actual prompt.
+prompt_command() {
+	# Get exit code from previous command, get this here otherwise the commands
+	# below will overwrite it.
+	local EXIT=$?
+
+	PS1="\n"
+	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
+	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch.
+
+	# Red on failure, green otherwise
+	if [ $EXIT != 0 ]; then
+		PS1+="$(fg_color 252 93 91)"            # Green.
 	else
-		PS1="\[\033[38;5;46m\]➜ "
+		PS1+="$(fg_color 98 245 146)"           # Red.
 	fi
-
-	PS1+="\[\033[38;5;39m\]$DIR"           # Blue directory.
-	PS1+="\[\033[38;0;37m\]@"              # White "@".
-	PS1+="\[\033[38;0;34m\]\h "            # Light blue-ish hostname.
-	PS1+="\[\033[38;5;226m\]$(git_branch)" # Yellow git branch.
-	PS1+="\[\e[0m\]λ "                     # Reset the colors and a lamda.
+	PS1+="λ\[\e[0m\] "                          # A lamda and reset the colors.
 }
