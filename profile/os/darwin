@@ -10,3 +10,5 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 # Use clang as C compiler, rather then a fake gcc (which is clang as well).
 export CC=clang
+
+alias trash="rmtrash"

@@ -52,24 +52,8 @@ alias vim="vim -p" # Open each file in a separate tab.
 
 # Overwrites the `rm` command, but only in the shell.
 rm() {
-	echo "Did you mean trash?"
-	exit 1
-}
-
-trash() {
-	TRASH_DIR="$HOME/.Trash"
-	for file in $@; do
-		file_trash="$TRASH_DIR/$file"
-		# Don't overwrite an already trashed file so and ` ($i)` to it.
-		for ((i=1; i<=100; i++)); do
-			if (test -f "$file_trash" || test -d "$file_trash"); then
-				file_trash="$TRASH_DIR/$file ($i)"
-			else
-				break
-			fi
-		done
-		mv -n "$file" "$file_trash"
-	done
+	echo "Did you mean 'trash'?"
+	return 1
 }
 
 #
