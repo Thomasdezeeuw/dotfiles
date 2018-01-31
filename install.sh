@@ -5,7 +5,7 @@
 #
 
 # Required directories.
-mkdir -v -p ~/bin ~/src ~/go/src/github.com ~/.Trash
+mkdir -v -p ~/bin ~/src ~/go/src/github.com
 
 # Directories for sources of different languages.
 declare -a src_dirs=(
