@@ -105,7 +105,7 @@ git_branch() {
 
 # Set the foreground to a rgb color. Call like `fg_color r255 g255 b255`.
 fg_color() {
-	printf "\x1b[38;2;$1;$2;$3m"
+	printf "\[\x1b[38;2;$1;$2;$3m\]"
 }
 
 # The actual prompt.
