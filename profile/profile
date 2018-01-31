@@ -114,8 +114,10 @@ prompt_command() {
 	# below will overwrite it.
 	local EXIT=$?
 
-	PS1="\n"
-	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
+	# Print a new line.
+	printf "\r\n"
+
+	PS1="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
 	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch.
 
 	# Red on failure, green otherwise
