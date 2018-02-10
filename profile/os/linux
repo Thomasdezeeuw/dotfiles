@@ -3,3 +3,4 @@
 #
 
 export CC=gcc-7
+unalias ls
