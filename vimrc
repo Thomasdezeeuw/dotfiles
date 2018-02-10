@@ -67,8 +67,7 @@ set nowrap          " No wrapping lines.
 set textwidth=80    " Limit the width to 80.
 set colorcolumn=80  " Color column 80.
 highlight ColorColumn ctermbg=8
-set noerrorbells    " Stop beeping.
-set visualbell      " Flash on beeps.
+set belloff=all     " No more bells.
 set mouse=a         " Mouse is usefull.
 set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
