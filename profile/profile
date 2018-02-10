@@ -35,7 +35,7 @@ for file in $PROFILE_ROOT/lang/*; do
 done
 
 # Load OS specific profile extensions.
-OS=$(uname)
+OS=$(uname -s)
 source "$PROFILE_ROOT/os/${OS,,}"
 
 #
@@ -119,6 +119,11 @@ prompt_command() {
 
 	PS1="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
 	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch.
+
+	# Show white username@hostname, if in a ssh session.
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		PS1+="$(fg_color 255 255 255)\u@\h "
+	fi
 
 	# Red on failure, green otherwise
 	if [ $EXIT != 0 ]; then
