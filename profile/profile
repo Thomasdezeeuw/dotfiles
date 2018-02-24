@@ -49,6 +49,8 @@ alias la="ls -a"
 alias l="ls -l"
 alias gcc="gcc-7"
 alias vim="vim -p" # Open each file in a separate tab.
+# Add private key to ssh-agent, if not running.
+alias ssh='ssh-add -l || ssh-add && ssh'
 
 # Overwrites the `rm` command, but only in the shell.
 rm() {
