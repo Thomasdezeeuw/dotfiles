@@ -138,6 +138,9 @@ map <right> <nop>
 " Wrap the selected text.
 vmap Q gq
 
+" Match D but the with copying.
+map Y y$
+
 "
 " Commands involving the leader key.
 "
