@@ -77,7 +77,6 @@ set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
 set formatoptions="tcroqwanj"
-set nopaste
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.
