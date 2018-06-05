@@ -3,7 +3,7 @@
 #
 
 # Add user bin to path.
-PATH=~/bin:$PATH
+PATH="~/bin:$PATH"
 
 # Vim as the editor.
 export EDITOR="vim"
