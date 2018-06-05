@@ -1,5 +1,5 @@
 #
-# # Node.js specifc profile extentions.
+# # Node.js specific profile extensions.
 #
 
 NODE_ENV=development
