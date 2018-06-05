@@ -33,7 +33,7 @@ set nocompatible
 call plug#begin('~/.vim/plugged')
     " General plugins.
     Plug 'Valloric/YouCompleteMe'             " Autocomplete.
-    Plug 'airblade/vim-gitgutter'             " Add git status in the gutter.
+    "Plug 'airblade/vim-gitgutter'            " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
     Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
     Plug 'neomake/neomake'                    " Linting and building.
