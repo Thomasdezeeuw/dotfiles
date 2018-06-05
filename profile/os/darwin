@@ -5,6 +5,9 @@
 # Aliases.
 alias trash="rmtrash"
 
+# Shell to use in other programs, e.g. Vim.
+export SHELL="/usr/local/bin/bash -il"
+
 # Bad Homebrew, no tracking.
 export HOMEBREW_NO_ANALYTICS=1
 

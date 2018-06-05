@@ -5,9 +5,6 @@
 # Add user bin to path.
 PATH=~/bin:$PATH
 
-# Shell to use in other programs, e.g. Vim.
-export SHELL="/usr/local/bin/bash -il"
-
 # Vim as the editor.
 export EDITOR="vim"
 export VISUAL=$EDITOR
