@@ -1,6 +1,14 @@
 #
-# # Linux specifc profile extentions.
+# # Linux specific profile extensions.
 #
 
-export CC=gcc-7
-unalias ls
+# Shell to use in other programs, e.g. Vim.
+export SHELL="/usr/bin/bash -il"
+
+# Use GCC as C compiler.
+export CC=gcc
+
+# Aliases.
+alias suspend="sudo systemctl hibernate"
+alias lock="i3lock && sudo systemctl suspend"
+# TODO: add trash alias.
