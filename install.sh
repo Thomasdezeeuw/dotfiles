@@ -34,7 +34,6 @@ ln -v -s ~/src/go ~/go/src/github.com/Thomasdezeeuw
 declare -a files_to_link=(
 	"bash_profile"
 	"editorconfig"
-	"gitconfig"
 	"npmrc"
 	"vimrc"
 )
@@ -43,9 +42,15 @@ for file in "${files_to_link[@]}"; do
 	ln -v $file ~/.$file
 done
 
-# Link i3 configuration.
-mkdir -p ~/.config/.i3
-ln -v i3 ~/.config/i3/config
+# Link all local files to the config directory.
+declare -a config_files=(
+	"git"
+	"i3"
+)
+for file in "${config_files[@]}"; do
+	mkdir -p ~/.config/$file
+	ln -v $file ~/.config/$file/config
+done
 
 echo "Required by install:
 	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html,
