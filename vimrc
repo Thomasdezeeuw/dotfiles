@@ -135,6 +135,9 @@ nnoremap ; :
 " Credit to Steve Losh (the URL is no more).
 cmap w!! w !sudo tee % > /dev/null
 
+" Disable Ex mode.
+map Q <Nop>
+
 " Disable space and the arrow keys.
 map <Space> <nop>
 map <up> <nop>
