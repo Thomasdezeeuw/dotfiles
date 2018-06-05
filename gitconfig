@@ -1,7 +1,3 @@
-[filter "lfs"]
-	clean = git-lfs clean %f
-	smudge = git-lfs smudge %f
-	required = true
 [user]
 	name = Thomas de Zeeuw
 	email = thomasdezeeuw@gmail.com
@@ -14,7 +10,7 @@
 	autostash = true
 [push]
 	default = simple
-[http]
-	cookiefile = ~/.gitcookies
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 [log]
 	decorate = auto
