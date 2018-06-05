@@ -38,7 +38,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
     Plug 'neomake/neomake'                    " Linting and building.
     Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
-    Plug 'terryma/vim-multiple-cursors'       " Mutliple cursors.
+    Plug 'terryma/vim-multiple-cursors'       " Multiple cursors.
     Plug 'vim-airline/vim-airline'            " Status bar.
 
     " Language specific plugins.
@@ -68,7 +68,7 @@ set textwidth=80    " Limit the width to 80.
 set colorcolumn=81  " Color column 80.
 highlight ColorColumn ctermbg=8
 set belloff=all     " No more bells.
-set mouse=a         " Mouse is usefull.
+set mouse=a         " Mouse is useful.
 set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
 set cb=unnamed      " Enable copy to clipboard.
@@ -78,9 +78,9 @@ set showmatch       " Highlight matching bracket.
 set formatoptions="tcroqwanj"
 set nopaste
 
-" Identation.
+" Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.
-set autoindent     " Use identation from previous line.
+set autoindent     " Use indentation from previous line.
 set smartindent    " Smart indentation.
 set smarttab       " Smart tabs.
 set tabstop=4      " Tab width of 4.
@@ -138,7 +138,7 @@ map <right> <nop>
 " Wrap the selected text.
 vmap Q gq
 
-" Match D but the with copying.
+" Match `D`, but with copying.
 map Y y$
 
 "
@@ -158,7 +158,7 @@ map <Leader>e <c-y>,
 " Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
 
-" Tab openining.
+" Tab opening.
 map <Leader>1 1gt
 map <Leader>2 2gt
 map <Leader>3 3gt
@@ -177,7 +177,7 @@ map <Leader>k3 :setlocal foldlevel=2<CR>
 map <Leader>k4 :setlocal foldlevel=3<CR>
 map <Leader>k5 :setlocal foldlevel=4<CR>
 
-" Goto Noemake errors.
+" Go to Noemake errors.
 map <Leader>fn ;lnext<CR>
 map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
