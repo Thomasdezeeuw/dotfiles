@@ -43,6 +43,10 @@ for file in "${files_to_link[@]}"; do
 	ln -v $file ~/.$file
 done
 
+# Link i3 configuration.
+mkdir -p ~/.config/.i3
+ln -v i3 ~/.config/i3/config
+
 echo "Required by install:
 	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html,
 	- Go: https://golang.org/dl,
