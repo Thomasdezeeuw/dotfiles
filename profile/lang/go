@@ -1,15 +1,9 @@
 #
-# # Go specifc profile extentions.
+# # Go specific profile extensions.
 #
 
-# Include Go build binaries in the path.
-PATH=$PATH:~/src/third_party/go/bin
-
-# Keep this updates to Go latests - 1, used to build Go from source.
-export GOROOT_BOOTSTRAP=$HOME/src/third_party/go1.9
-
 # Needed by the Go command.
-export GOPATH=~/go
+export GOPATH="$HOME/go"
 
 # Enable CGo.
 export CGO_ENABLED=1
