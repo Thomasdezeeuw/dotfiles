@@ -98,6 +98,9 @@ set incsearch " Search whiling typing.
 set nobackup
 set noswapfile
 
+" Enable spell check
+set spell
+
 " Trim whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
@@ -182,6 +185,10 @@ map <Leader>fn ;lnext<CR>
 map <Leader>fp ;lprevious<CR>
 map <Leader>ff ;lfirst<CR>
 map <Leader>fl ;llast<CR>
+
+" Go to spell errors
+map <Leader>sn ]s
+map <Leader>sp [s
 
 "
 " Language specific commands.
