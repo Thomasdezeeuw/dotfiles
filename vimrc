@@ -40,6 +40,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors'       " Multiple cursors.
     Plug 'vim-airline/vim-airline'            " Status bar.
+    Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' } " Color scheme.
 
     " Language specific plugins.
     Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -104,11 +105,15 @@ set spell
 " Trim whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
-" Color scheme.
-syntax on                   " Synthax highlighting.
-set background=dark         " Dark background.
-colorscheme hybrid_material " Color scheme.
-let g:enable_bold_font = 1  " We're using a modern terminal.
+" Colours and such.
+set termguicolors
+syntax on
+set background=dark
+let g:nord_italic=1
+let g:nord_italic_comments=1
+let g:nord_uniform_status_lines=1
+let g:nord_comment_brightness=20
+colorscheme nord
 
 " Show invisible characters
 set listchars=tab:»·,precedes:·,trail:·
