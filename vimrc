@@ -41,6 +41,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'terryma/vim-multiple-cursors'       " Multiple cursors.
     Plug 'vim-airline/vim-airline'            " Status bar.
     Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' } " Color scheme.
+    " Language Server Protocol (LSP).
+    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next' }
 
     " Language specific plugins.
     Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -247,6 +249,10 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Enable Emmet in insert, normal and view modes.
 let g:user_emmet_mode='inv'
+
+let g:LanguageClient_serverCommands = {
+\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ }
 
 let g:lsc_auto_map = v:true
 
