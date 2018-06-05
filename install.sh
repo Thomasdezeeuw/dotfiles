@@ -33,6 +33,7 @@ for file in "${config_files[@]}"; do
 done
 
 echo "Required by install:
+	- source .dotfiles/profile/profile, see bash_profile.
 
 Languages:
 	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html,
