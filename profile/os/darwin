@@ -2,11 +2,14 @@
 # # macOS specific profile extensions.
 #
 
-# Aliases.
-alias trash="rmtrash"
+# Include Go build binaries in the path.
+PATH="$PATH:~/src/third_party/go/bin"
 
 # Shell to use in other programs, e.g. Vim.
 export SHELL="/usr/local/bin/bash -il"
+
+# Use clang as C compiler.
+export CC=clang
 
 # Bad Homebrew, no tracking.
 export HOMEBREW_NO_ANALYTICS=1
@@ -14,11 +17,8 @@ export HOMEBREW_NO_ANALYTICS=1
 # Annoying auto update delays installing stuff.
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Use clang as C compiler.
-export CC=clang
-
-# Include Go build binaries in the path.
-PATH="$PATH:~/src/third_party/go/bin"
-
 # Keep this updates to Go latests - 1, used to build Go from source.
 export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
+
+# Aliases.
+alias trash="rmtrash"
