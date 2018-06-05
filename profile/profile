@@ -20,9 +20,6 @@ export CLICOLOR=1
 # Pretty command prompt, see below.
 export PROMPT_COMMAND=prompt_command
 
-# Source the ssh agents variables.
-eval `ssh-agent -s` > /dev/null
-
 #
 # # Profile extensions
 #
@@ -49,7 +46,7 @@ alias la="ls -a"              # Show me all the things!
 alias l="ls -l"               # Quick list.
 alias vim="vim -p"            # Open each file in a separate tab.
 # Lazily request for private key password.
-alias ssh='ssh-add -l || ssh-add && ssh'
+alias ssh='ssh-add -l || (eval `ssh-agent -s` > /dev/null && ssh-add) && ssh'
 
 # Overwrites the `rm` command, but only in the shell not in scripts.
 rm() {
