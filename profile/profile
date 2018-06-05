@@ -1,5 +1,5 @@
 #
-# # Enviroment variables
+# # Environment variables
 #
 
 # Add user bin to path.
@@ -130,5 +130,5 @@ prompt_command() {
 	else
 		PS1+="$(fg_color 98 245 146)"           # Red.
 	fi
-	PS1+="λ\[\e[0m\] "                          # A lamda and reset the colors.
+	PS1+="λ\[\e[0m\] "                          # A lambda and reset the colors.
 }
