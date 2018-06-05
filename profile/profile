@@ -20,6 +20,9 @@ export CLICOLOR=1
 # Pretty command prompt, see below.
 export PROMPT_COMMAND=prompt_command
 
+# Source the ssh agents variables.
+eval `ssh-agent -s` > /dev/null
+
 #
 # # Profile extensions
 #
