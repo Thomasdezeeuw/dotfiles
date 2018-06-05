@@ -1,6 +1,9 @@
 #
-# # Mac OS specifc profile extentions.
+# # macOS specific profile extensions.
 #
+
+# Aliases.
+alias trash="rmtrash"
 
 # Bad Homebrew, no tracking.
 export HOMEBREW_NO_ANALYTICS=1
@@ -8,10 +11,9 @@ export HOMEBREW_NO_ANALYTICS=1
 # Annoying auto update delays installing stuff.
 export HOMEBREW_NO_AUTO_UPDATE=1
 
-# Use clang as C compiler, rather then a fake gcc (which is clang as well).
+# Use clang as C compiler.
 export CC=clang
 
-alias trash="rmtrash"
 # Include Go build binaries in the path.
 PATH="$PATH:~/src/third_party/go/bin"
 
