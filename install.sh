@@ -29,11 +29,11 @@ declare -a config_files=(
 
 for file in "${config_files[@]}"; do
 	mkdir -p "$HOME/.config/$file"
-	ln -v -L "$file" "$HOME/.config/$file/config"
+	ln -v -T "$file" "$HOME/.config/$file/config"
 done
 
 # Vim has to do its own thing of course...
-ln -v -L "vimrc" "$HOME/.vim/vimrc"
+ln -v -T "vimrc" "$HOME/.vim/vimrc"
 
 echo "Required by install:
 	- source .dotfiles/profile/profile, see bash_profile.
