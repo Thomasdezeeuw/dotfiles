@@ -5,7 +5,7 @@ general {
 }
 
 order += "battery all"
-order += "tztime local"
+order += "time"
 
 battery all {
 	last_full_capacity = true
@@ -15,6 +15,7 @@ battery all {
 	format = "%status %percentage"
 }
 
-tztime local {
+time {
+	# Date and time, e.g. Wed June 6 17:33.
 	format = "%a %B %e %H:%M"
 }
