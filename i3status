@@ -8,11 +8,24 @@ order += "battery all"
 order += "time"
 
 battery all {
+	# Always display 100% when the battery is full, not relative to the total
+	# (but maybe unavailable capacity).
 	last_full_capacity = true
 	integer_battery_capacity = true
+
+	# Make the battery red when capacity is low.
 	low_threshold = 15
 	threshold_type = percentage
+
+	# Display format.
 	format = "%status %percentage"
+	format_down = "A/C"
+
+	# Status icons.
+	status_chr = "⚡"
+	status_bat = ""
+	status_unk = "??"
+	status_full = ""
 }
 
 time {
