@@ -79,7 +79,7 @@ set noswapfile
 " Enable spell check
 set spell
 
-" Trim whitespace on save.
+" Trim white space on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Colours and such.
@@ -227,7 +227,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:user_emmet_mode='inv'
 
 let g:LanguageClient_serverCommands = {
-\ 'rust': ['rustup', 'run', 'nightly', 'rls'],
+    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
 let g:lsc_auto_map = v:true
@@ -246,7 +246,7 @@ let g:go_metalinter_autosave = 1
 let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
-let g:ycm_rust_src_path = '~/.rustup/toolchains/nightly-x86_64-apple-darwin/lib/rustlib/src/rust/src'
+let g:ycm_rust_src_path = $RUST_SRC_PATH
 let g:lsc_server_commands = {'rust': 'rls'}
 autocmd BufRead,BufNewFile *.rs set expandtab
 
@@ -266,7 +266,7 @@ let g:neomake_rust_clippy_maker = {
 let g:neomake_rust_enabled_makers = ['cargo', 'clippy']
 
 " The location of the racer binary.
-let g:racer_cmd = '~/bin/racer'
+let g:racer_cmd = '~/.cargo/bin/racer'
 " Enable experimental showing of  complete function definition.
 let g:racer_experimental_completer = 1
 
