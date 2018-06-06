@@ -46,6 +46,7 @@ Tools:
 	- Ripgrep: 'cargo install ripgrep',
 	- fd: 'cargo install fd-find',
 	- Clippy: 'cargo install clippy',
+	- Racer: 'cargo install racer',
 	- Vim,
 	- Vim plugins: https://github.com/junegunn/vim-plug,
 	- Make,
