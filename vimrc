@@ -8,7 +8,7 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
     " General plugins.
-    Plug 'Valloric/YouCompleteMe'             " Autocomplete.
+    Plug 'Valloric/YouCompleteMe', {'do': 'bash install.py' } " Autocomplete.
     "Plug 'airblade/vim-gitgutter'            " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
     Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
@@ -18,7 +18,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'            " Status bar.
     Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' } " Color scheme.
     " Language Server Protocol (LSP).
-    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next' }
+    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
     " Language specific plugins.
     Plug 'cespare/vim-toml', {'for': 'toml'}
