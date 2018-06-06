@@ -7,8 +7,8 @@ PATH="~/bin:$PATH"
 
 # Vim as the editor.
 export EDITOR="vim"
-export VISUAL=$EDITOR
-export GIT_EDITOR=$EDITOR
+export VISUAL="$EDITOR"
+export GIT_EDITOR="$EDITOR"
 
 # Boring language stuff.
 export LANG="en_US.UTF-8"
@@ -28,7 +28,7 @@ PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
 
 # Load programming language specific profile extensions.
 for file in $PROFILE_ROOT/lang/*; do
-	source $file
+	source "$file"
 done
 
 # Load OS specific profile extensions.
