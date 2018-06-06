@@ -25,15 +25,16 @@ ln -v -s "$HOME/src/go" "$HOME/go/src/github.com/Thomasdezeeuw"
 declare -a config_files=(
 	"git"
 	"i3"
+	"i3status"
 )
 
 for file in "${config_files[@]}"; do
 	mkdir -p "$HOME/.config/$file"
-	ln -v -T "$file" "$HOME/.config/$file/config"
+	ln -v -s "`pwd`/$file" "$HOME/.config/$file/config"
 done
 
 # Vim has to do its own thing of course...
-ln -v -T "vimrc" "$HOME/.vim/vimrc"
+ln -v -s "`pwd`/vimrc" "$HOME/.vim/vimrc"
 
 echo "Required by install:
 	- source .dotfiles/profile/profile, see bash_profile.
