@@ -86,26 +86,40 @@ bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcu
 
 # Resize window.
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode, see below.
+	# These bindings trigger as soon as you enter the resize mode, see below.
 
-        # Increase or decrease the window's.
-        bindsym $left       resize shrink width 10 px or 10 ppt
-        bindsym $down       resize grow height 10 px or 10 ppt
-        bindsym $up         resize shrink height 10 px or 10 ppt
-        bindsym $right      resize grow width 10 px or 10 ppt
+	# Increase or decrease the window's.
+	bindsym $left       resize shrink width 10 px or 10 ppt
+	bindsym $down       resize grow height 10 px or 10 ppt
+	bindsym $up         resize shrink height 10 px or 10 ppt
+	bindsym $right      resize grow width 10 px or 10 ppt
 
-        # Back to normal.
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym Mod1+r mode "default"
+	# Back to normal.
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Mod1+r mode "default"
 }
 
 # Start resize mode, see above.
 bindsym Mod1+r mode "resize"
 
-# TODO: add a mode to open software, e.g. f -> firefox, m -> mail, c -> calendar etc.
-
-# Start i3 status bar.
+# i3 status bar.
 bar {
-        status_command i3status
+	status_command i3status
+
+	# Always dock at the bottom of the screen.
+	mode dock
+	position bottom
+	separator_symbol -
+
+	# Disable mouse scrolling.
+	bindsym button4 nop
+	bindsym button5 nop
+
+	# Show the available workspaces.
+	workspace_buttons yes
+	strip_workspace_numbers no
+
+	# Show if we're not in the default mode.
+	binding_mode_indicator yes
 }
