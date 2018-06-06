@@ -2,30 +2,6 @@ scriptencoding utf-8
 set encoding=utf-8
 set nocompatible
 
-" TODO
-"
-" - wrapping code comments, without touching the code.
-" - A build/test/lint command that show errors inside Vim, see https://github.com/neomake/neomake
-"   - Go.
-"     - Build
-"     - Test
-"     - lint
-"   - Rust.
-"     - Build
-"     - Test
-"   - Javascript.
-"     - Build
-"     - Test
-"     - lint
-"   - HTML.
-"     - Build
-"     - Test
-"     - lint
-"   - Haskell.
-"     - Build
-"     - Test
-"     - lint
-
 "
 " Plugins.
 "
