@@ -99,10 +99,10 @@ mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode, see below.
 
 	# Increase or decrease the window's.
-	bindsym $left       resize shrink width 10 px or 10 ppt
-	bindsym $down       resize grow height 10 px or 10 ppt
-	bindsym $up         resize shrink height 10 px or 10 ppt
-	bindsym $right      resize grow width 10 px or 10 ppt
+	bindsym $left       resize shrink width 5 px or 5 ppt
+	bindsym $down       resize grow height 5 px or 5 ppt
+	bindsym $up         resize shrink height 5 px or 5 ppt
+	bindsym $right      resize grow width 5 px or 5 ppt
 
 	# Back to normal.
 	bindsym Return mode "default"
@@ -118,7 +118,6 @@ bindsym $mod+r mode "resize"
 #
 
 bar {
-	font pango:Noto Sans Display, Font Awesome 900 Expanded 10
 	status_command exec i3status
 
 	# Always dock at the bottom of the screen.
@@ -137,6 +136,9 @@ bar {
 	# Show if we're not in the default mode.
 	binding_mode_indicator yes
 
+	# Font to use in the status bar.
+	font pango:Noto Sans Display, Font Awesome 900 Expanded 10
+
 	colors {
 		background #2f343f
 		statusline #f8f8f7
@@ -146,7 +148,8 @@ bar {
 		focused_workspace #333434 #595B5B #c6c8c8
 		active_workspace  #333434 #626465 #c6c8c8
 
-		binding_mode #333434 #dc3545 #ffffff
+		#                 border  background text
+		binding_mode      #333434 #dc3545 #ffffff
 	}
 }
 
