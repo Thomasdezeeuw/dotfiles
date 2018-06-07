@@ -13,7 +13,7 @@ set $right l
 
 # Start a terminal.
 # TODO: replace with Alacritty once #1341 is fixed.
-bindsym $mod+Return exec xterm -fa "Fira Code Retina" -fs 10 -e /usr/bin/bash -il
+bindsym $mod+Return exec xterm -fa "Fira Code Retina" -fs 10 -bg "#2e3440" -fg "#eff0eb" -e /usr/bin/bash -il
 
 # Kill focused window.
 bindsym $mod+Shift+q kill
