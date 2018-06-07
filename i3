@@ -140,7 +140,7 @@ bar {
 	font pango:Noto Sans Display, Font Awesome 900 Expanded 10
 
 	colors {
-		background #2f343f
+		background #2e3440
 		statusline #f8f8f7
 		separator  #d1d2d4
 
@@ -166,5 +166,41 @@ mouse_warping none
 ## Styling.
 #
 
+# Some spacing between windows.
+gaps inner 10
+gaps outer 10
+
 # Font for window titles.
 font pango:Noto Sans Display 900 Expanded 10
+
+# Window title bar and no border.
+# TODO: change this to `normal 0`, currently this create a black bakground from
+# the to of the screen down the titlebar.
+default_border          none
+default_floating_border normal 0
+
+# Don't create a double border.
+hide_edge_borders both
+
+# Colours for focused window.
+set $focused_bg        #2e3440
+set $focused_fg        #eff0eb
+set $focused_border    #222222
+set $focused_indicator #222222
+
+# Colours for unfocused windows.
+set $unfocused_bg        #222222
+set $unfocused_fg        #eff0eb
+set $unfocused_border    #222222
+set $unfocused_indicator #222222
+
+client.focused          $focused_border $focused_bg $focused_fg $focused_indicator $focused_border
+client.focused_inactive $unfocused_border $unfocused_bg $unfocused_fg $unfocused_indicator $unfocused_border
+client.unfocused        $unfocused_border $unfocused_bg $unfocused_fg $unfocused_indicator $unfocused_border
+client.urgent           $focused_border $focused_bg $focused_fg $focused_indicator $focused_border
+client.placeholder      $focused_border $focused_bg $focused_fg
+
+client.background #ff69b4
+
+# Set the background image.
+exec_always --no-startup-id feh --bg-scale $HOME/Documents/bg/current.png
