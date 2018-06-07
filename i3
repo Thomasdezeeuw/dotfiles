@@ -105,7 +105,7 @@ bindsym Mod1+r mode "resize"
 
 # i3 status bar.
 bar {
-	font pango:Noto Sans Display 900 Expanded 10
+	font pango:Noto Sans Display, Font Awesome 900 Expanded 10
 	status_command exec i3status
 
 	# Always dock at the bottom of the screen.
