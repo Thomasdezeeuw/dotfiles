@@ -1,5 +1,5 @@
 # Font for window titles.
-font pango:Fira Code Retina 9
+font pango:Noto Sans Display 10
 
 # Move around, just like in vim.
 set $left h
@@ -105,11 +105,12 @@ bindsym Mod1+r mode "resize"
 
 # i3 status bar.
 bar {
-	status_command i3status
+	font pango:Noto Sans Display 900 Expanded 10
+	status_command exec i3status
 
 	# Always dock at the bottom of the screen.
 	mode dock
-	position bottom
+	position top
 	separator_symbol ·
 
 	# Disable mouse scrolling.
@@ -122,4 +123,15 @@ bar {
 
 	# Show if we're not in the default mode.
 	binding_mode_indicator yes
+
+	colors {
+		background #2f343f
+		statusline #f8f8f7
+		separator #d1d2d4
+
+		focused_workspace #333434 #595B5B #c6c8c8
+		active_workspace #333434 #626465 #c6c8c8
+
+		binding_mode #333434 #dc3545 #ffffff
+	}
 }
