@@ -1,5 +1,5 @@
 # Font for window titles.
-font pango:Noto Sans Display 10
+font pango:Noto Sans Display 900 Expanded 10
 
 # Use alt as modifier key.
 set $mod Mod1
@@ -130,11 +130,11 @@ bar {
 	colors {
 		background #2f343f
 		statusline #f8f8f7
-		separator #d1d2d4
+		separator  #d1d2d4
 
 		#                 border  background text
 		focused_workspace #333434 #595B5B #c6c8c8
-		active_workspace #333434 #626465 #c6c8c8
+		active_workspace  #333434 #626465 #c6c8c8
 
 		binding_mode #333434 #dc3545 #ffffff
 	}
