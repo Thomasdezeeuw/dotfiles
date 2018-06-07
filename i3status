@@ -22,7 +22,7 @@ battery all {
 	format_down = "A/C"
 
 	# Status icons.
-	status_chr = ""
+	status_chr = ""
 	status_bat = ""
 	status_unk = "??"
 	status_full = ""
@@ -30,5 +30,5 @@ battery all {
 
 time {
 	# Date and time, e.g. Wed June 6 17:33.
-	format = "%a %e %B · %H:%M"
+	format = " %a %e %B ·  %H:%M"
 }
