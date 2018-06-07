@@ -30,5 +30,5 @@ battery all {
 
 time {
 	# Date and time, e.g. Wed June 6 17:33.
-	format = " %A %e %B ·  %H:%M"
+	format = " %A %e %B   %H:%M"
 }

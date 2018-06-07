@@ -111,7 +111,7 @@ bar {
 	# Always dock at the bottom of the screen.
 	mode dock
 	position top
-	separator_symbol ·
+	separator_symbol " "
 
 	# Disable mouse scrolling.
 	bindsym button4 nop
