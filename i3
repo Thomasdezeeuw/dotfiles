@@ -1,6 +1,9 @@
 # Font for window titles.
 font pango:Noto Sans Display 10
 
+# Use alt as modifier key.
+set $mod Mod1
+
 # Move around, just like in vim.
 set $left h
 set $down j
@@ -9,37 +12,37 @@ set $right l
 
 # Start a terminal.
 # TODO: replace with Alacritty once #1341 is fixed.
-bindsym Mod1+Return exec xterm -fa "Fira Code Retina" -fs 10 -e /usr/bin/bash -il
+bindsym $mod+Return exec xterm -fa "Fira Code Retina" -fs 10 -e /usr/bin/bash -il
 
 # Kill focused window.
-bindsym Mod1+Shift+q kill
+bindsym $mod+Shift+q kill
 
 # Start the program launcher.
-bindsym Mod1+space exec dmenu_run
+bindsym $mod+space exec dmenu_run
 
 # Change focus.
-bindsym Mod1+$left focus left
-bindsym Mod1+$down focus down
-bindsym Mod1+$up focus up
-bindsym Mod1+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
 # Move focused window.
-bindsym Mod1+Shift+$left move left
-bindsym Mod1+Shift+$down move down
-bindsym Mod1+Shift+$up move up
-bindsym Mod1+Shift+$right move right
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
 
 # Split windows horizontally and vertically.
-bindsym Mod1+b split h
-bindsym Mod1+v split v
+bindsym $mod+b split h
+bindsym $mod+v split v
 
 # Enter and exit fullscreen mode for the focused window.
-bindsym Mod1+f fullscreen toggle
+bindsym $mod+f fullscreen toggle
 
 # Change container layout (stacked, tabbed, toggle split)
-bindsym Mod1+s layout stacking
-bindsym Mod1+w layout tabbed
-bindsym Mod1+e layout toggle split
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
 
 # Workspaces.
 set $ws1 "1"
@@ -54,35 +57,35 @@ set $ws9 "9"
 set $ws10 "10"
 
 # Switch to workspace.
-bindsym Mod1+1 workspace $ws1
-bindsym Mod1+2 workspace $ws2
-bindsym Mod1+3 workspace $ws3
-bindsym Mod1+4 workspace $ws4
-bindsym Mod1+5 workspace $ws5
-bindsym Mod1+6 workspace $ws6
-bindsym Mod1+7 workspace $ws7
-bindsym Mod1+8 workspace $ws8
-bindsym Mod1+9 workspace $ws9
-bindsym Mod1+0 workspace $ws10
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws10
 
 # Move focused window to workspace.
-bindsym Mod1+Shift+1 move container to workspace $ws1
-bindsym Mod1+Shift+2 move container to workspace $ws2
-bindsym Mod1+Shift+3 move container to workspace $ws3
-bindsym Mod1+Shift+4 move container to workspace $ws4
-bindsym Mod1+Shift+5 move container to workspace $ws5
-bindsym Mod1+Shift+6 move container to workspace $ws6
-bindsym Mod1+Shift+7 move container to workspace $ws7
-bindsym Mod1+Shift+8 move container to workspace $ws8
-bindsym Mod1+Shift+9 move container to workspace $ws9
-bindsym Mod1+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Reload configuration.
-bindsym Mod1+Shift+c reload
+bindsym $mod+Shift+c reload
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym Mod1+Shift+r restart
+bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session).
-bindsym Mod1+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # Resize window.
 mode "resize" {
@@ -97,11 +100,11 @@ mode "resize" {
 	# Back to normal.
 	bindsym Return mode "default"
 	bindsym Escape mode "default"
-	bindsym Mod1+r mode "default"
+	bindsym $mod+r mode "default"
 }
 
 # Start resize mode, see above.
-bindsym Mod1+r mode "resize"
+bindsym $mod+r mode "resize"
 
 # i3 status bar.
 bar {
