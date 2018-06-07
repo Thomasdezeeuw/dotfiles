@@ -1,5 +1,6 @@
-# Font for window titles.
-font pango:Noto Sans Display 900 Expanded 10
+#
+## Key bindings.
+#
 
 # Use alt as modifier key.
 set $mod Mod1
@@ -44,7 +45,10 @@ bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
+#
 # Workspaces.
+#
+
 set $ws1 "1"
 set $ws2 "2"
 set $ws3 "3"
@@ -87,7 +91,10 @@ bindsym $mod+Shift+r restart
 # Exit i3 (logs you out of your X session).
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# Resize window.
+#
+# Resizing windows.
+#
+
 mode "resize" {
 	# These bindings trigger as soon as you enter the resize mode, see below.
 
@@ -106,7 +113,10 @@ mode "resize" {
 # Start resize mode, see above.
 bindsym $mod+r mode "resize"
 
-# i3 status bar.
+#
+# Status bar.
+#
+
 bar {
 	font pango:Noto Sans Display, Font Awesome 900 Expanded 10
 	status_command exec i3status
@@ -140,7 +150,18 @@ bar {
 	}
 }
 
+#
+## Mouse handling.
+#
+
 # Focus to the window under the mouse
 focus_follows_mouse yes
 # Don't wrap the mouse to a window on another monitor.
 mouse_warping none
+
+#
+## Styling.
+#
+
+# Font for window titles.
+font pango:Noto Sans Display 900 Expanded 10
