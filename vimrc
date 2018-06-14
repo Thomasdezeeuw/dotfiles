@@ -81,7 +81,7 @@ set noswapfile
 " Enable spell check
 set spell
 
-" Trim white space on save.
+" Trim whitespace on save.
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Colours and such.
