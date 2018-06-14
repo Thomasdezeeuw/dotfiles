@@ -45,8 +45,6 @@ alias ls="exa"                # I prefer exa.
 alias la="ls -a"              # Show me all the things!
 alias l="ls -l"               # Quick list.
 alias vim="vim -p"            # Open each file in a separate tab.
-# Check if the ssh agent has been setup before running ssh.
-alias ssh='ssh-add -l && ssh'
 # Setup ssh agent.
 alias setup_ssh='eval `ssh-agent -s` > /dev/null && ssh-add'
 
