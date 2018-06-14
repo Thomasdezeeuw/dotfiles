@@ -47,7 +47,9 @@ set textwidth=80    " Limit the width to 80.
 set colorcolumn=81  " Color column 80.
 highlight ColorColumn ctermbg=8
 set belloff=all     " No more bells.
-set mouse=a         " Mouse is useful.
+" FIXME: for whatever reason something a mouse click will close a tab, very
+" annoying when working. Find the cause, fix it and set mouse back to `a`.
+set mouse=         " Disable the mouse.
 set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
 set cb=unnamed      " Enable copy to clipboard.
