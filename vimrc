@@ -131,6 +131,10 @@ vmap Q gq
 " Match `D`, but with copying.
 map Y y$
 
+" Make J and K emulate page down and up, in addition to have ctrl-d and ctrl-u.
+nmap J 15j
+nmap K 15k
+
 "
 " Commands involving the leader key.
 "
