@@ -42,6 +42,7 @@ call plug#end()
 " General.
 set relativenumber  " Relative line numbers.
 set number          " Line numbers.
+set signcolumn=yes  " Always show sign column.
 set nowrap          " No wrapping lines.
 set textwidth=80    " Limit the width to 80.
 set colorcolumn=81  " Color column 80.
