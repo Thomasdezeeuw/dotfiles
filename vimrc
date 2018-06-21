@@ -236,7 +236,6 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
-let g:lsc_auto_map = v:true
 
 "
 " Language specific settings.
@@ -253,7 +252,6 @@ let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = $RUST_SRC_PATH
-let g:lsc_server_commands = {'rust': 'rls'}
 autocmd BufRead,BufNewFile *.rs set expandtab
 
 " Clippy maker for Neomake.
