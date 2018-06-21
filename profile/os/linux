@@ -2,9 +2,6 @@
 # # Linux specific profile extensions.
 #
 
-# Shell to use in other programs, e.g. Vim.
-export SHELL="/usr/bin/bash -il"
-
 # Use GCC as C compiler.
 export CC=gcc
 
