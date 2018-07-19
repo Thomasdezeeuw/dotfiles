@@ -3,7 +3,7 @@
 #
 
 # Include Cargo installed binaries in the path.
-PATH="$PATH:~/.cargo/bin"
+PATH="$PATH:$HOME/.cargo/bin"
 
 # Always print a complete backtrace.
 export RUST_BACKTRACE=full

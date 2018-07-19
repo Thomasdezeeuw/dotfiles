@@ -3,7 +3,7 @@
 #
 
 # Include Go build binaries in the path.
-PATH="$PATH:~/src/third_party/go/bin"
+PATH="$PATH:$HOME/src/third_party/go/bin"
 
 # Use clang as C compiler.
 export CC=clang
