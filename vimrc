@@ -255,6 +255,11 @@ let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = $RUST_SRC_PATH
 autocmd BufRead,BufNewFile *.rs set expandtab
 
+augroup filetype_rust
+    autocmd!
+    autocmd BufReadPost *.rs setlocal filetype=rust
+augroup END
+
 " Clippy maker for Neomake.
 " Eventough Neomake has a maker foor clippy using this custom one allows
 " explicity setting the makers for rust files.
