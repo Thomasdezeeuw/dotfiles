@@ -19,3 +19,6 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 
 # Aliases.
 alias trash="rmtrash"
+
+# For building rustc.
+MACOSX_DEPLOYMENT_TARGET=10.13
