@@ -16,3 +16,5 @@
 	decorate = auto
 [branch]
 	autosetuprebase = always
+[pull]
+	rebase = true
