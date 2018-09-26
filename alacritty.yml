@@ -26,7 +26,7 @@ window:
   # (change requires restart)
   padding:
     x: 5
-    y: 25 # Some extra padding for transparent titlebar.
+    y: 45 # Some extra padding for transparent titlebar.
 
   # Window decorations
   # Setting this to false will result in window without borders and title bar.
