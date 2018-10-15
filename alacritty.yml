@@ -228,7 +228,7 @@ hide_cursor_when_typing: false
 cursor_style: Block
 
 # Live config reload (changes require restart)
-live_config_reload: true
+live_config_reload: false
 
 # Shell
 #
