@@ -11,12 +11,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe', {'do': 'bash install.py' } " Autocomplete.
     "Plug 'airblade/vim-gitgutter'            " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
-    Plug 'kristijanhusak/vim-hybrid-material' " Color scheme.
     Plug 'neomake/neomake'                    " Linting and building.
     Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors'       " Multiple cursors.
     Plug 'vim-airline/vim-airline'            " Status bar.
-    Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' } " Color scheme.
+    Plug 'morhetz/gruvbox'                    " Sepia color scheme.
     " Language Server Protocol (LSP).
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
@@ -88,12 +87,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Colours and such.
 set termguicolors
 syntax on
-set background=dark
-let g:nord_italic=1
-let g:nord_italic_comments=1
-let g:nord_uniform_status_lines=1
-let g:nord_comment_brightness=20
-colorscheme nord
+set background=light
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_light='soft'
+colorscheme gruvbox
 
 " Show invisible characters
 set listchars=tab:»·,precedes:·,trail:·
