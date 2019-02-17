@@ -39,7 +39,7 @@ source "$PROFILE_ROOT/os/${OS,,}"
 # # Commands and aliases
 #
 
-alias tmpdir="cd `mktemp -d`" # Create a temporary directory and cd into it.
+alias tmpdir='cd $(mktemp -d)' # Create a temporary directory and cd into it.
 alias q="exit"                # Quick exit.
 alias ls="exa"                # I prefer exa.
 alias la="ls -a"              # Show me all the things!
