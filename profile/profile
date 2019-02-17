@@ -135,8 +135,8 @@ prompt_command() {
 	# Print a new line.
 	printf "\r\n"
 
-	PS1="$(fg_color 93 200 253) $(prompt_dir) " # Blue directory.
-	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch.
+	PS1="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
+	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch, if in repo.
 
 	# Show white username@hostname, if in a ssh session.
 	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
