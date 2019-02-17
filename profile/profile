@@ -92,31 +92,30 @@ shopt -s globstar
 #
 
 # Get a clean directory for the prompt.
-# When in a git directory remove everything before the start of the git project.
-# Replaces the home directory with "~".
+# When in a git repo this removes everything before the start of the root of the
+# repo, also replaces the home directory with "~".
 prompt_dir() {
-	# Get the git root, defaulting to nothing.
-	local GIT_DIR=$(git rev-parse --show-toplevel 2>&1)
-	if [ $? != 0 ]; then
-		GIT_DIR=""
-	fi
+	# Determine if we're in a git repo. If so we get the full path to the repo,
+	# or we'll have an empty string.
+	local GIT_DIR=$(git rev-parse --show-toplevel 2> /dev/null)
+	# Next we determine what part of the path we can remove, e.g. given a
+	# `GIT_DIR` of "~/src/repo_root" this will be "~/src".
+	local GIT_TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
 
-	# The entire git path, but the last directory.
-	local TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
-
+	# If we're in a git repo we'll remove the entire path up to the repo root
+	# directory, e.g. "~/src/repo_root/src" becomes "repo_root/src".
 	local PWD=$(pwd -P)
-	# When in a git directory remove everything but the last directory, or else
-	# removes nothing.
-	local DIR=${PWD#${TRIM_DIR}}
-	# Replace the directory path with "~".
-	local DIR=${DIR/$HOME/\~}
+	local DIR=${PWD#${GIT_TRIM_DIR}}
+
+	# Replace the home directory path with "~/".
+	local DIR=${DIR/$HOME/\~\/}
 	# Remove the last "/".
 	local DIR=${DIR/\//}
 
 	printf "$DIR"
 }
 
-# Get the current git branch.
+# The current git branch.
 git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
 }
