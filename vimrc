@@ -62,7 +62,7 @@ set cb=unnamed      " Enable copy to clipboard.
 set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
-set formatoptions=tcroqwanj
+set formatoptions=crqanj
 let $IN_VIM=1       " Let the shell know we're in Vim.
 set shell=/usr/local/bin/bash\ -l " Use our preferred shell.
 
