@@ -73,7 +73,6 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
   url:
-    launcher: open
     modifiers: Shift
 
 selection:
