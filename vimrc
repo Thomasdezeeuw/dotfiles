@@ -14,8 +14,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
     Plug 'vim-airline/vim-airline'      " Status bar.
-    " Language Server Protocol (LSP).
-    Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
     " Language specific plugins.
     Plug 'cespare/vim-toml', {'for': 'toml'}
@@ -192,10 +190,6 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 
 " Enable Emmet in insert, normal and view modes.
 let g:user_emmet_mode='inv'
-
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
-    \ }
 
 "
 " Language specific settings.
