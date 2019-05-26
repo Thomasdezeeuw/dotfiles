@@ -179,38 +179,12 @@ map <Leader>fl ;llast<CR>
 map <Leader>sn ]s
 map <Leader>sp [s
 
-"
-" Language specific commands.
-"
-
-" Run.
-nnoremap <Leader>r :echoerr "No run command found"<CR>
-:autocmd FileType go map <Leader>r :GoRun<CR>
-
-" Test.
-nnoremap <Leader>t :echoerr "No test command found"<CR>
-:autocmd FileType go map <Leader>t :GoTest<CR>
-
-" Make/check/lint.
-nnoremap <Leader>m :Neomake \| :Neomake!<CR>
-
-" Document.
-nnoremap <Leader>d :echoerr "No document command found"<CR>
-:autocmd FileType asciidoc map <Leader>d :call RunBuildScript()<CR>
-
-" Build.
-nnoremap <Leader>b :echoerr "No build command found"<CR>
-:autocmd FileType go map <Leader>b :GoBuild<CR>
-:autocmd FileType asciidoc map <Leader>b :call RunBuildScript()<CR>
-
-" This function runs "build.sh" if it exists.
-function! RunBuildScript()
-  if filereadable('build.sh')
-    terminal ++close ./build.sh
-  else
-    echoerr 'No build command found'
-  endif
-endfunction
+" Alias various make commands.
+map <Leader>m :make<CR>
+map <Leader>b :make build<CR>
+map <Leader>d :make doc<CR>
+map <Leader>r :make run<CR>
+map <Leader>t :make test<CR>
 
 "
 " Plugin specific settings.
@@ -234,7 +208,6 @@ let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'nightly', 'rls'],
     \ }
 
-
 "
 " Language specific settings.
 "
@@ -243,6 +216,7 @@ let g:LanguageClient_serverCommands = {
 " Run goimports on save.
 let g:go_fmt_command = 'goimports'
 let g:go_metalinter_autosave = 1
+:autocmd FileType go set makeprg=go\ $*
 
 " Rust
 " Disable rustfmt, the formatted code is ugly.
@@ -251,6 +225,7 @@ let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
 let g:ycm_rust_src_path = $RUST_SRC_PATH
 autocmd BufRead,BufNewFile *.rs set expandtab
+:autocmd FileType rust set makeprg=cargo\ $*
 
 augroup filetype_rust
     autocmd!
@@ -282,3 +257,6 @@ autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 
 " Markdown.
 autocmd BufRead,BufNewFile *.md set filetype=markdown
+
+" LaTeX.
+:autocmd FileType tex set makeprg=pdflatex\ %
