@@ -137,7 +137,8 @@ vmap Q gq
 " Match `D`, but with copying.
 map Y y$
 
-" Make J and K emulate page down and up, in addition to have ctrl-d and ctrl-u.
+" Make J and K emulate page down and up, in addition to having ctrl-d and
+" ctrl-u.
 nmap J 15j
 nmap K 15k
 
@@ -152,7 +153,7 @@ let mapleader = "\<Space>"
 nmap <Leader>o :CtrlP<CR>
 
 " Comment, or uncomment, a line.
-nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
+nmap <Leader>c <plug>NERDCommenterToggle
 
 " Tab opening.
 map <Leader>1 1gt
