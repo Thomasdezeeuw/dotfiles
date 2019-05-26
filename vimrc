@@ -11,7 +11,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
     Plug 'morhetz/gruvbox'              " Sepia color scheme.
-    Plug 'neomake/neomake'              " Linting and building.
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
     Plug 'vim-airline/vim-airline'      " Status bar.
@@ -170,12 +169,6 @@ map <Leader>k3 :setlocal foldlevel=2<CR>
 map <Leader>k4 :setlocal foldlevel=3<CR>
 map <Leader>k5 :setlocal foldlevel=4<CR>
 
-" Go to Noemake errors.
-map <Leader>fn ;lnext<CR>
-map <Leader>fp ;lprevious<CR>
-map <Leader>ff ;lfirst<CR>
-map <Leader>fl ;llast<CR>
-
 " Go to spell errors
 map <Leader>sn ]s
 map <Leader>sp [s
@@ -190,11 +183,6 @@ map <Leader>t :make test<CR>
 "
 " Plugin specific settings.
 "
-
-" Noemake makers for each language.
-"let g:neomake_css_enabled_makers = ['csslint']
-"let g:neomake_javascript_enabled_makers = ['eslint']
-"let g:neomake_go_enabled_makers = ['go', 'golint', 'govet', 'gometalinter']
 
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
@@ -233,20 +221,6 @@ augroup filetype_rust
     autocmd BufReadPost *.rs setlocal filetype=rust
 augroup END
 
-" Clippy maker for Neomake.
-" Eventough Neomake has a maker foor clippy using this custom one allows
-" explicity setting the makers for rust files.
-let g:neomake_rust_clippy_maker = {
-    \ 'cwd': '%:p:h',
-    \ 'exe': 'cargo',
-    \ 'args': ['clippy', '--message-format=json', '--quiet'],
-    \ 'append_file': 0,
-    \ 'errorformat':
-        \ '[%t%n] "%f" %l:%v %m,'.
-        \ '[%t] "%f" %l:%v %m',
-    \ 'process_output': function('neomake#makers#ft#rust#CargoProcessOutput'),
-    \ }
-let g:neomake_rust_enabled_makers = ['cargo', 'clippy']
 
 " The location of the racer binary.
 let g:racer_cmd = '~/.cargo/bin/racer'
