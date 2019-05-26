@@ -8,13 +8,13 @@ set nocompatible
 
 call plug#begin('~/.vim/plugged')
     " General plugins.
-    Plug 'airblade/vim-gitgutter'             " Add git status in the gutter.
-    Plug 'ctrlpvim/ctrlp.vim'                 " Easier file opening.
-    Plug 'neomake/neomake'                    " Linting and building.
-    Plug 'scrooloose/nerdcommenter'           " Easy comment out code.
-    Plug 'terryma/vim-multiple-cursors'       " Multiple cursors.
-    Plug 'vim-airline/vim-airline'            " Status bar.
-    Plug 'morhetz/gruvbox'                    " Sepia color scheme.
+    Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
+    Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
+    Plug 'morhetz/gruvbox'              " Sepia color scheme.
+    Plug 'neomake/neomake'              " Linting and building.
+    Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
+    Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
+    Plug 'vim-airline/vim-airline'      " Status bar.
     " Language Server Protocol (LSP).
     Plug 'autozimu/LanguageClient-neovim', { 'branch': 'next', 'do': 'bash install.sh' }
 
@@ -24,13 +24,13 @@ call plug#begin('~/.vim/plugged')
     Plug 'elzr/vim-json', {'for': 'json'}
     Plug 'fatih/vim-go', {'for': 'go'}
     Plug 'leafgarland/typescript-vim', {'for': ['typescript', 'vue']}
+    Plug 'lervag/vimtex', {'for': 'tex'}
     Plug 'mattn/emmet-vim', {'for': ['html', 'vue']}
     Plug 'othree/html5.vim', {'for': ['html', 'vue']}
     Plug 'pangloss/vim-javascript', {'for': ['javascript', 'vue']}
     Plug 'posva/vim-vue', {'for': 'vue'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
-    Plug 'lervag/vimtex', {'for': 'tex'}
 call plug#end()
 
 "
