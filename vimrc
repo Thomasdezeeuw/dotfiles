@@ -32,6 +32,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'racer-rust/vim-racer', {'for': 'rust'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
+    Plug 'lervag/vimtex', {'for': 'tex'}
 call plug#end()
 
 "
