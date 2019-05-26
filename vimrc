@@ -3,6 +3,16 @@ set encoding=utf-8
 set nocompatible
 
 "
+" Plugin specific settings.
+"
+
+" Don't use the default mappings.
+let g:NERDCreateDefaultMappings=0
+
+" Ctrl p ignore files according to .gitignore.
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+
+"
 " Plugins.
 "
 
@@ -173,13 +183,6 @@ map <Leader>b :make build<CR>
 map <Leader>d :make doc<CR>
 map <Leader>r :make run<CR>
 map <Leader>t :make test<CR>
-
-"
-" Plugin specific settings.
-"
-
-" Ctrl p ignore files according to .gitignore.
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "
 " Language specific settings.
