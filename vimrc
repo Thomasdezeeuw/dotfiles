@@ -193,7 +193,7 @@ map <Leader>t :make test<CR>
 " Run goimports on save.
 let g:go_fmt_command = 'goimports'
 let g:go_metalinter_autosave = 1
-:autocmd FileType go set makeprg=go\ $*
+autocmd FileType go set makeprg=go\ $*
 
 " Rust
 " Disable rustfmt, the formatted code is ugly.
@@ -201,12 +201,8 @@ let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
 autocmd BufRead,BufNewFile *.rs set expandtab
-:autocmd FileType rust set makeprg=cargo\ $*
-
-augroup filetype_rust
-    autocmd!
-    autocmd BufReadPost *.rs setlocal filetype=rust
-augroup END
+autocmd BufRead,BufNewFile *.rs set filetype=rust
+autocmd FileType rust set makeprg=cargo\ $*
 
 " Javascript related file detection.
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
@@ -215,4 +211,4 @@ autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " LaTeX.
-:autocmd FileType tex set makeprg=pdflatex\ %
+autocmd FileType tex set makeprg=pdflatex\ %
