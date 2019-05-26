@@ -134,13 +134,18 @@ prompt_command() {
 	# Print a new line.
 	printf "\r\n"
 
-	PS1="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
-	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch, if in repo.
-
-	# Show white username@hostname, if in a ssh session.
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		PS1+="$(fg_color 255 255 255)\u@\h "
+	# Show that we're inside Vim.
+	if [ -n "$IN_VIM" ]; then
+		PS1="$(fg_color 255 165 0)vim "
+	elif [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+		# Show orange username@hostname, if in a ssh session.
+		PS1="$(fg_color 255 165 0)\u@\h "
+    else
+        PS1=""
 	fi
+
+	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
+	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch, if in a repo.
 
 	# Red on failure, green otherwise
 	if [ $EXIT != 0 ]; then
