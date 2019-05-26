@@ -201,14 +201,7 @@ let g:rustfmt_fail_silently=1
 let g:rust_recommended_style=0
 let g:rustfmt_autosave=0
 autocmd BufRead,BufNewFile *.rs set expandtab
-autocmd BufRead,BufNewFile *.rs set filetype=rust
 autocmd FileType rust set makeprg=cargo\ $*
-
-" Javascript related file detection.
-autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
-
-" Markdown.
-autocmd BufRead,BufNewFile *.md set filetype=markdown
 
 " LaTeX.
 autocmd FileType tex set makeprg=pdflatex\ %
