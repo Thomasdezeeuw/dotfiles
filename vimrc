@@ -10,7 +10,7 @@ set nocompatible
 let g:NERDCreateDefaultMappings=0
 
 " Ctrl p ignore files according to .gitignore.
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
+let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 "
 " Plugins.
@@ -147,7 +147,7 @@ nmap K 15k
 "
 
 " Set the leader to space, next use it to do everything.
-let mapleader = "\<Space>"
+let mapleader="\<Space>"
 
 " Open a file in the current project, or directory.
 nmap <Leader>o :CtrlP<CR>
@@ -191,15 +191,15 @@ map <Leader>t :make test<CR>
 
 " Go
 " Run goimports on save.
-let g:go_fmt_command = 'goimports'
-let g:go_metalinter_autosave = 1
+let g:go_fmt_command='goimports'
+let g:go_metalinter_autosave=1
 autocmd FileType go set makeprg=go\ $*
 
 " Rust
 " Disable rustfmt, the formatted code is ugly.
-let g:rustfmt_fail_silently = 1
-let g:rust_recommended_style = 0
-let g:rustfmt_autosave = 0
+let g:rustfmt_fail_silently=1
+let g:rust_recommended_style=0
+let g:rustfmt_autosave=0
 autocmd BufRead,BufNewFile *.rs set expandtab
 autocmd BufRead,BufNewFile *.rs set filetype=rust
 autocmd FileType rust set makeprg=cargo\ $*
