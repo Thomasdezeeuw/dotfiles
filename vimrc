@@ -57,6 +57,7 @@ set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
 set formatoptions=tcroqwanj
+set shell=/usr/local/bin/bash\ -il " Use our preferred shell.
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.
