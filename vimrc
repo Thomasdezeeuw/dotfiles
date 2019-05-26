@@ -140,10 +140,6 @@ let mapleader = "\<Space>"
 
 " Open a file in the current project, or directory.
 nmap <Leader>o :CtrlP<CR>
-nmap <Leader>p :CtrlPCurWD<CR>
-
-" Run emmit.
-map <Leader>e <c-y>,
 
 " Comment, or uncomment, a line.
 nmap <Leader>c :call NERDComment("n", "Toggle")<CR>
@@ -185,12 +181,6 @@ map <Leader>t :make test<CR>
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
-" YouCompleteMe close the preview window after completion has completed.
-let g:ycm_autoclose_preview_window_after_completion = 1
-
-" Enable Emmet in insert, normal and view modes.
-let g:user_emmet_mode='inv'
-
 "
 " Language specific settings.
 "
@@ -206,7 +196,6 @@ let g:go_metalinter_autosave = 1
 let g:rustfmt_fail_silently = 1
 let g:rust_recommended_style = 0
 let g:rustfmt_autosave = 0
-let g:ycm_rust_src_path = $RUST_SRC_PATH
 autocmd BufRead,BufNewFile *.rs set expandtab
 :autocmd FileType rust set makeprg=cargo\ $*
 
@@ -214,12 +203,6 @@ augroup filetype_rust
     autocmd!
     autocmd BufReadPost *.rs setlocal filetype=rust
 augroup END
-
-
-" The location of the racer binary.
-let g:racer_cmd = '~/.cargo/bin/racer'
-" Enable experimental showing of  complete function definition.
-let g:racer_experimental_completer = 1
 
 " Javascript related file detection.
 autocmd BufRead,BufNewFile .{jscs,jshint,eslint}rc set filetype=json
