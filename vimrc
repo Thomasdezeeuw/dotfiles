@@ -28,7 +28,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'othree/html5.vim', {'for': ['html', 'vue']}
     Plug 'pangloss/vim-javascript', {'for': ['javascript', 'vue']}
     Plug 'posva/vim-vue', {'for': 'vue'}
-    Plug 'racer-rust/vim-racer', {'for': 'rust'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
     Plug 'lervag/vimtex', {'for': 'tex'}
