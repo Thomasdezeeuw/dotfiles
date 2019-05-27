@@ -64,7 +64,7 @@ set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
 set formatoptions=crqanj
 let $IN_VIM=1       " Let the shell know we're in Vim.
-set shell=/usr/local/bin/bash\ -l " Use our preferred shell.
+set shell=$SHELL\ $SHELL_OPTS " Use our preferred shell and options.
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.

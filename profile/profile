@@ -20,6 +20,10 @@ export CLICOLOR=1
 # Pretty command prompt, see below.
 export PROMPT_COMMAND=prompt_command
 
+# Export the shell and options, used in Vim.
+export SHELL=${SHELL:-"/bin/bash"}
+export SHELL_OPTS="-l"
+
 #
 # # Profile extensions
 #
