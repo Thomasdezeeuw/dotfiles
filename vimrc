@@ -63,6 +63,14 @@ set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
 set formatoptions=crqanj
+" Recognise the following lists:
+" 1 Numbered.
+" 1. Numbered with period.
+" 11 With two digits.
+" 11. With two digits and period.
+" - Lines
+" * Asterisk.
+set formatlistpat="^\s*[\(\d\+\.\=)-\*]\s*"
 let $IN_VIM=1       " Let the shell know we're in Vim.
 set shell=$SHELL\ $SHELL_OPTS " Use our preferred shell and options.
 
