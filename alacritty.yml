@@ -7,7 +7,7 @@ window:
     y: 22 # Some extra padding for transparent title bar.
   dynamic_padding: false
   decorations: transparent
-  start_maximized: false
+  startup_mode: Windowed
 
 scrolling:
   history: 10000
@@ -33,9 +33,9 @@ font:
     y: 0
   use_thin_strokes: true
 
-render_timer: false
-
-persistent_logging: false
+debug:
+  render_timer: false
+  persistent_logging: false
 
 draw_bold_text_with_bright_colors: true
 
