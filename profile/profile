@@ -180,13 +180,13 @@ prompt_command() {
 	fi
 
 	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
-	PS1+="$(fg_color 108 108 108)$(git_branch)" # Gray git branch, if in a repo.
+	PS1+="$(fg_color 108 108 108)$(git_branch)" # Grey git branch, if in a repo.
 
 	# Red on failure, green otherwise
 	if [ $EXIT != 0 ]; then
-		PS1+="$(fg_color 252 93 91)"            # Green.
+		PS1+="$(fg_color 252 93 91)"            # Red.
 	else
-		PS1+="$(fg_color 98 245 146)"           # Red.
+		PS1+="$(fg_color 98 245 146)"           # Green.
 	fi
 	PS1+="λ\[\e[0m\] "                          # A lambda and reset the colors.
 }
