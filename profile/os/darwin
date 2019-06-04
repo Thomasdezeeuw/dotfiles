@@ -21,7 +21,7 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 alias trash="rmtrash"
 
 # For building stuff.
-MACOSX_DEPLOYMENT_TARGET=10.14
+export MACOSX_DEPLOYMENT_TARGET=10.14
 
 # Use an updated version of Bash, not the outdated build-in one.
 export SHELL="/usr/local/bin/bash"
