@@ -17,9 +17,6 @@ export LC_ALL="en_US.UTF-8"
 # Pretty colors, yey!
 export CLICOLOR=1
 
-# Pretty command prompt, see below.
-export PROMPT_COMMAND=prompt_command
-
 # Export the shell and options, used in Vim.
 export SHELL=${SHELL:-"/bin/bash"}
 export SHELL_OPTS="-l"
@@ -96,6 +93,9 @@ shopt -s globstar
 #
 # # Bash prompt
 #
+
+# Pretty command prompt, see below.
+export PROMPT_COMMAND=prompt_command
 
 # Get a clean directory for the prompt.
 # When in a git repo this removes everything before the start of the root of the
