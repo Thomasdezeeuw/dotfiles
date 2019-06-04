@@ -17,6 +17,16 @@ export LC_ALL="en_US.UTF-8"
 # Pretty colors, yey!
 export CLICOLOR=1
 
+# Determine what shell we're using.
+if [ -n "$BASH_VERSION" ] ; then
+	shell="bash"
+elif [ -n "$ZSH_VERSION" ] ; then
+	shell="zsh"
+else
+	echo "Unknown shell, only supports bash or zsh" >&2
+	exit 1
+fi
+
 # Export the shell and options, used in Vim.
 export SHELL=${SHELL:-"/bin/bash"}
 export SHELL_OPTS="-l"
