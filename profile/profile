@@ -36,8 +36,8 @@ for file in $PROFILE_ROOT/lang/*; do
 done
 
 # Load OS specific profile extensions.
-OS=$(uname -s)
-source "$PROFILE_ROOT/os/${OS,,}"
+OS=$(uname -s | tr "[:upper:]" "[:lower:]")
+source "$PROFILE_ROOT/os/$OS"
 
 #
 # # Commands and aliases
