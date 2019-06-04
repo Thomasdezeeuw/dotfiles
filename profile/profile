@@ -27,15 +27,25 @@ else
 	exit 1
 fi
 
-# Export the shell and options, used in Vim.
-export SHELL=${SHELL:-"/bin/bash"}
-export SHELL_OPTS="-l"
+# Export our preferred shell and shell options (used in Vim).
+if [ $shell = "bash" ]; then
+	export SHELL="$0"
+	export SHELL_OPTS="-l"
+elif [ $shell = "zsh" ]; then
+	# TODO: get the full path, this isn't good enough.
+	export SHELL="zsh"
+	export SHELL_OPTS="-l"
+fi
 
 #
 # # Profile extensions
 #
 
-PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
+if [ $shell = "bash" ]; then
+	PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
+elif [ $shell = "zsh" ]; then
+	PROFILE_ROOT=$(dirname ${(%):-%N})
+fi
 
 # Load programming language specific profile extensions.
 for file in $PROFILE_ROOT/lang/*; do
@@ -74,6 +84,9 @@ rm() {
 # # Bash settings
 #
 
+# TODO: port this to zsh.
+if [ $shell = "bash" ]; then
+
 # Case-insensitive globbing (used in pathname expansion).
 shopt -s nocaseglob;
 
@@ -100,9 +113,14 @@ shopt -s globstar
 # Autocompletion.
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
+fi
+
 #
 # # Bash prompt
 #
+
+# TODO: port this to zsh.
+if [ $shell = "bash" ]; then
 
 # Pretty command prompt, see below.
 export PROMPT_COMMAND=prompt_command
@@ -171,3 +189,5 @@ prompt_command() {
 	fi
 	PS1+="λ\[\e[0m\] "                          # A lambda and reset the colors.
 }
+
+fi

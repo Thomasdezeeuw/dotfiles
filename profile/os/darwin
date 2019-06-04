@@ -22,6 +22,3 @@ alias trash="rmtrash"
 
 # For building stuff.
 export MACOSX_DEPLOYMENT_TARGET=10.14
-
-# Use an updated version of Bash, not the outdated build-in one.
-export SHELL="/usr/local/bin/bash"
