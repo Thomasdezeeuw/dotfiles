@@ -205,12 +205,9 @@ let g:go_metalinter_autosave=1
 autocmd FileType go set makeprg=go\ $*
 
 " Rust
-" Disable rustfmt, the formatted code is ugly.
-let g:rustfmt_fail_silently=1
-let g:rust_recommended_style=0
-let g:rustfmt_autosave=0
-autocmd BufRead,BufNewFile *.rs set expandtab
+let g:rustfmt_autosave=1
 autocmd FileType rust set makeprg=cargo\ $*
+autocmd FileType rust set textwidth=80
 
 " LaTeX.
 autocmd FileType tex set makeprg=pdflatex\ %
