@@ -70,7 +70,8 @@ set formatoptions=crqanj
 " 11. With two digits and period.
 " - Lines
 " * Asterisk.
-set formatlistpat="^\s*[\(\d\+\.\=)-\*]\s*"
+" FIXME: this breaks indentation.
+"set formatlistpat="^\s*[\(\d\+\.\=)-\*]\s*"
 let $IN_VIM=1       " Let the shell know we're in Vim.
 set shell=$SHELL\ $SHELL_OPTS " Use our preferred shell and options.
 
