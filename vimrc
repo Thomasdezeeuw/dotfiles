@@ -62,7 +62,7 @@ set cb=unnamed      " Enable copy to clipboard.
 set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
-set formatoptions=crqanj
+set formatoptions=crqjn
 " Recognise the following lists:
 " 1 Numbered.
 " 1. Numbered with period.
