@@ -2,7 +2,7 @@
 
 set -eu
 
-SOURCE=$(readlink $BASH_SOURCE)
+SOURCE=$(readlink -n "$BASH_SOURCE" || echo "$BASH_SOURCE")
 
 "${SOURCE%/*}/../../no_wip_commits.bash"
 

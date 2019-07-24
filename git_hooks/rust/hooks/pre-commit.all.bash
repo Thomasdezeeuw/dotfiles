@@ -2,7 +2,7 @@
 
 set -eu
 
-SOURCE=$(readlink $BASH_SOURCE)
+SOURCE=$(readlink -n "$BASH_SOURCE" || echo "$BASH_SOURCE")
 
 # Import `stash` and `return_stash`.
 source "${SOURCE%/*}/../../util.bash"
