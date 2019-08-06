@@ -25,6 +25,10 @@ shopt -s expand_aliases
 shopt -s extquote
 shopt -s globstar
 
+# Export our preferred shell and shell options (used in Vim).
+export SHELL="$0"
+export SHELL_OPTS="-l"
+
 # Autocompletion.
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
 
