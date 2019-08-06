@@ -12,5 +12,6 @@ trap return_stash EXIT
 
 "${SOURCE%/*}/../check_all_targets.bash"
 "${SOURCE%/*}/../test.bash"
+"${SOURCE%/*}/../clippy.bash"
 
 exit 0
