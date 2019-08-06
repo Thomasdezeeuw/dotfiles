@@ -22,6 +22,8 @@ source ~/.dotfiles/profile/profile
 
 precmd() {
 	# Below is the same as in `prompt_command`.
+	# FIXME: this first time this is called it always returns 1, which means we
+	# start with a "failing" prompt.
 	local EXIT=$?
 
 	printf "\r\n"
