@@ -81,14 +81,13 @@ rm() {
 }
 
 #
-# # Bash prompt
+# # Prompt utils.
 #
 
-# TODO: port this to zsh.
-if [ $shell = "bash" ]; then
-
-# Pretty command prompt, see below.
-export PROMPT_COMMAND=prompt_command
+# The current git branch.
+git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
+}
 
 # Get a clean directory for the prompt.
 # When in a git repo this removes everything before the start of the root of the
@@ -113,47 +112,3 @@ prompt_dir() {
 
 	printf "$DIR"
 }
-
-# The current git branch.
-git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
-}
-
-# Set the foreground to a rgb color. Call like `fg_color r255 g255 b255`.
-fg_color() {
-	printf "\[\x1b[38;2;$1;$2;$3m\]"
-}
-
-# The actual prompt.
-prompt_command() {
-	# Get exit code from previous command, get this here otherwise the commands
-	# below will overwrite it.
-	local EXIT=$?
-
-	# Print a new line.
-	printf "\r\n"
-
-	# Start by resetting the colours.
-	PS1="\[\e[0m\]"
-
-	if [ -n "$IN_VIM" ]; then
-		# Show that we're inside Vim.
-		PS1+="$(fg_color 255 165 0)vim "
-	elif [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		# Show orange username@hostname, if in a ssh session.
-		PS1+="$(fg_color 255 165 0)\u@\h "
-	fi
-
-	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
-	PS1+="$(fg_color 108 108 108)$(git_branch)" # Grey git branch, if in a repo.
-
-	# Red on failure, green otherwise
-	if [ $EXIT != 0 ]; then
-		PS1+="$(fg_color 252 93 91)"            # Red.
-	else
-		PS1+="$(fg_color 98 245 146)"           # Green.
-	fi
-	PS1+="λ\[\e[0m\] "                          # A lambda and reset the colors.
-}
-
-fi
