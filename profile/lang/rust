@@ -9,7 +9,9 @@ PATH="$PATH:$HOME/.cargo/bin"
 export RUST_BACKTRACE=full
 
 # Used for autocompletion.
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+if type rustc > /dev/null; then
+	export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+fi
 
 # Compile and run a single rust file, basically making it a script.
 rustr() {
