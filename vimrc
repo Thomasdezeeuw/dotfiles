@@ -183,6 +183,12 @@ map <Leader>k3 :setlocal foldlevel=2<CR>
 map <Leader>k4 :setlocal foldlevel=3<CR>
 map <Leader>k5 :setlocal foldlevel=4<CR>
 
+" Movement around errors.
+map <Leader>mn ;cnext<CR>
+map <Leader>mp ;cprevious<CR>
+map <Leader>mf ;cfirst<CR>
+map <Leader>ml ;clast<CR>
+
 " Go to spell errors
 map <Leader>sn ]s
 map <Leader>sp [s
