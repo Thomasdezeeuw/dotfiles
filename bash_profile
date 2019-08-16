@@ -87,3 +87,8 @@ prompt_command() {
 }
 
 export PROMPT_COMMAND=prompt_command
+
+# No PS2 makes for easier copying.
+export PS2=""
+# Show file and line number when debugging scripts with `set -x`.
+export PS4='+ $0:$LINENO '
