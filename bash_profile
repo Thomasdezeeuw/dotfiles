@@ -71,6 +71,10 @@ prompt_command() {
 	fi
 
 	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
+	# Orange pencil if the git tree is dirty.
+	if [[ $(dirty_branch) == 0 ]]; then
+		PS1+="$(fg_color 237 168 4) "
+	fi
 	PS1+="$(fg_color 108 108 108)$(git_branch)" # Grey git branch, if in a repo.
 
 	# Red on failure of the previous command, green otherwise.

@@ -37,6 +37,9 @@ precmd() {
 	fi
 
 	PS1+="%F{#5DC8FD}$(prompt_dir) "
+	if [[ $(dirty_branch) == 0 ]]; then
+		PS1+="%F{#EDA804} "
+	fi
 	PS1+="%F{#6C6C6C}$(git_branch)"
 
 	PS1+="%(?.%F{#62F592}.%F{#FC5D5B})λ%f%k "

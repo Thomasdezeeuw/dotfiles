@@ -79,6 +79,15 @@ git_branch() {
 	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
 }
 
+# Returns 1 if the branch is dirty, 0 otherwise.
+dirty_branch() {
+	if [[ -n $(git status -s 2> /dev/null) ]]; then
+		printf "0"
+	else
+		printf "1"
+	fi
+}
+
 # Get a clean directory for the prompt.
 # When in a git repo this removes everything before the start of the root of the
 # repo, also replaces the home directory with "~".
