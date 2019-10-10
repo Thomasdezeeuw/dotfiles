@@ -1,0 +1,17 @@
+# Allow alt left and right arrow keys to work.
+# For iTerm.
+"\e[1;9D": backward-word
+"\e[1;9C": forward-word
+# For alacritty.
+"\x1b[1;3D": backward-word
+"\x1b[1;3C": forward-word
+
+# Search history based on current input.
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+
+# If auto complete has multiple possibilities show them automatically.
+set show-all-if-ambiguous on
+
+# Case-insensitive matching.
+set completion-ignore-case on
