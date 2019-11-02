@@ -42,5 +42,5 @@ precmd() {
 	fi
 	PS1+="%F{#6C6C6C}$(git_branch)"
 
-	PS1+="%(?.%F{#62F592}.%F{#FC5D5B})λ%f%k "
+	PS1+="%(EXIT.%F{#62F592}.%F{#FC5D5B})λ%f%k "
 }
