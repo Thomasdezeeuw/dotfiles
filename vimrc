@@ -12,6 +12,11 @@ let g:NERDCreateDefaultMappings=0
 " Ctrl p ignore files according to .gitignore.
 let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard']
 
+" Note: this needs to be done after the plugin is loaded.
+"autocmd! gitgutter CursorHold,CursorHoldI " Place in `.vim/after/plugin/gitgutter.vim`.
+" Only show Git changes after saving the file.
+autocmd BufWritePost * GitGutter
+
 "
 " Plugins.
 "
