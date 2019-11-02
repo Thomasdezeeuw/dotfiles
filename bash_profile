@@ -31,6 +31,11 @@ export SHELL_OPTS="-l"
 
 # Autocompletion.
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+if [ -f "/usr/local/etc/bash_completion.d" ]; then
+	for file in /usr/local/etc/bash_completion.d/*; do
+	  [ -f "$file" ] && source "$bcfile"
+	done
+fi
 
 #
 # # Profile
