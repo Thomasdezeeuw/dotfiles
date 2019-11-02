@@ -56,6 +56,7 @@ source "$PROFILE_ROOT/os/$OS"
 alias tmpdir='cd $(mktemp -d)' # Create a temporary directory and cd into it.
 alias q="exit"                # Quick exit.
 alias ls="exa"                # I prefer exa.
+alias grep="rg"               # THA SPEED!
 alias la="ls -a"              # Show me all the things!
 alias l="ls -l"               # Quick list.
 alias vim="vim -p"            # Open each file in a separate tab.
