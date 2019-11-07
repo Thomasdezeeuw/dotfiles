@@ -4,9 +4,9 @@ window:
     lines: 24
   padding:
     x: 0
-    y: 22 # Some extra padding for transparent title bar.
+    y: 0
   dynamic_padding: false
-  decorations: transparent
+  decorations: full
   startup_mode: Windowed
 
 scrolling:
