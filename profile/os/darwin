@@ -22,3 +22,6 @@ alias trash="rmtrash"
 
 # For building stuff.
 export MACOSX_DEPLOYMENT_TARGET=10.14
+
+# Force the bash version provided by Homebrew.
+export SHELL="/usr/local/bin/bash"
