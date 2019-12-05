@@ -18,13 +18,21 @@ check() {
 }
 
 # Check various targets.
+# macOS.
 check "x86_64-apple-darwin"
+# FreBSD
 check "x86_64-unknown-freebsd"
+# NetBSD.
 check "x86_64-unknown-netbsd"
+# Linux.
 check "x86_64-unknown-linux-gnu"
 check "x86_64-unknown-linux-musl"
+# Android.
 check "aarch64-linux-android"
+# Windows.
 check "x86_64-pc-windows-gnu"
 check "x86_64-pc-windows-msvc"
-
-exit 0
+# iOS.
+check "x86_64-apple-ios"
+check "i386-apple-ios"
+check "armv7s-apple-ios"
