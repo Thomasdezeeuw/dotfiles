@@ -1,8 +1,8 @@
 #!/bin/bash
+#
+# Check the code on all known targets.
 
 set -eu
-
-echo "Checking targets"
 
 # Import `silent`.
 source "${BASH_SOURCE%/*}/../util.bash" || exit 1
@@ -10,7 +10,7 @@ source "${BASH_SOURCE%/*}/../util.bash" || exit 1
 check() {
 	target="$1"
 
-	# Adding new target.
+	# Ensure the target is available.
 	silent "Adding $target" "rustup target add $target"
 
 	silent "Checking target $target" \

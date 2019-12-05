@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Create a latex pdf, without all the intermediate files.
 
 set -u
 

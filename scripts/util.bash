@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Collection of utility functions.
 
 set -u
 
