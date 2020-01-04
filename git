@@ -6,15 +6,33 @@
 	eol = lf
 	editor = vim
 	quotepath = false
+[color]
+	ui = true
 [rebase]
 	autostash = true
 [push]
 	default = simple
+[http]
+	cookiefile = /Users/thomas/.gitcookies
 [alias]
+	change = codereview change
+	gofmt = codereview gofmt
+	mail = codereview mail
+	pending = codereview pending
+	submit = codereview submit
+	sync = codereview sync
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	last = log -1 HEAD
+	hash = rev-parse HEAD
+	unmerged = ! git ls-files --unmerged | awk '{print $4}' | sort | uniq
 [log]
 	decorate = auto
 [branch]
 	autosetuprebase = always
 [pull]
 	rebase = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
