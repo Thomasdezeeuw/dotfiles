@@ -8,4 +8,4 @@ set -eu
 source "${BASH_SOURCE%/*}/../util.bash" || exit 1
 
 silent "Running tests" \
-	"cargo test --all --bins --tests --examples --benches --all-targets"
+	"cargo test --all-features --all --bins --tests --examples --benches --all-targets"
