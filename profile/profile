@@ -50,6 +50,21 @@ OS=$(uname -s | tr "[:upper:]" "[:lower:]")
 source "$PROFILE_ROOT/os/$OS"
 
 #
+# Setup SSH
+#
+
+# Ensure that ssh-agent is running.
+if [ -z ${SSH_AUTH_SOCK+x} ]; then
+	eval `ssh-agent -s` > /dev/null
+fi
+
+# Ensure identities are added to the agent.
+if ! ssh-add -L > /dev/null; then
+	echo "Adding identities to ssh-agent"
+	ssh-add
+fi
+
+#
 # # Commands and aliases
 #
 
@@ -61,8 +76,6 @@ alias la="ls -a"              # Show me all the things!
 alias l="ls -l"               # Quick list.
 alias vim="vim -p"            # Open each file in a separate tab.
 alias e="vim"                 # I got super lazy.
-# Setup ssh agent.
-alias setup_ssh='eval `ssh-agent -s` > /dev/null && ssh-add'
 # Use sftp instead.
 alias scp=sftp
 # Use different notes directory.
