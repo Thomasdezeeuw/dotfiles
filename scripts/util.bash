@@ -35,7 +35,7 @@ silent() {
 # ```
 STASH_NAME="pre-commit-$(date +%s)"
 stash() {
-	git stash save --quiet --keep-index $STASH_NAME || exit 1
+	git stash save --quiet --keep-index "$STASH_NAME" || exit 1
 }
 
 # And put it back once we're done.
