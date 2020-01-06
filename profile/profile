@@ -114,10 +114,10 @@ git_branch() {
 
 # Returns 1 if the branch is dirty, 0 otherwise.
 dirty_branch() {
-	if [[ -n $(git status -s 2> /dev/null) ]]; then
-		printf "0"
-	else
+	if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then
 		printf "1"
+	else
+		printf "0"
 	fi
 }
 
