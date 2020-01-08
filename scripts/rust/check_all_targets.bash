@@ -34,5 +34,5 @@ check "x86_64-unknown-linux-musl"
 # Android.
 check "aarch64-linux-android"
 # Windows.
-check "x86_64-pc-windows-gnu"
 check "x86_64-pc-windows-msvc"
+check "x86_64-pc-windows-gnu"

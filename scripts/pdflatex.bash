@@ -14,12 +14,13 @@ base_name=$(basename -s .tex "$input")
 # Be quite when successful, loud otherwise (like Unix tools should).
 output=$(\latex -interaction=nonstopmode -halt-on-error -output-format=pdf \
 	-output-directory="$tmp_dir" "$input" 2>&1)
+ok=$?
 
-if [ $? -ne 0 ]; then
+if [ $ok -ne 0 ]; then
 	echo "$output"
 	exit 1
 else
 	latex -interaction=nonstopmode -halt-on-error -output-format=pdf \
-		-output-directory="$tmp_dir" "$input" 2>&1 > /dev/null
+		-output-directory="$tmp_dir" "$input" > /dev/null 2>&1
 	mv "$tmp_dir/$base_name.pdf" .
 fi
