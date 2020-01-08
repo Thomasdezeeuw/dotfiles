@@ -107,18 +107,21 @@ s() {
 # # Prompt utils.
 #
 
-# The current git branch.
-git_branch() {
-	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
+# Exit status is 0 if inside a git repo, 1 otherwise.
+in_git_repo() {
+	git rev-parse --is-inside-work-tree > /dev/null 2> /dev/null
 }
 
 # Returns 1 if the branch is dirty, 0 otherwise.
-dirty_branch() {
-	if git diff --quiet --ignore-submodules HEAD 2> /dev/null; then
-		printf "1"
-	else
-		printf "0"
-	fi
+#
+# Note: only works if in a repo.
+is_tree_clean() {
+	git diff --quiet --ignore-submodules HEAD 2> /dev/null
+}
+
+# The current git branch.
+git_branch() {
+	git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1 /'
 }
 
 # Get a clean directory for the prompt.

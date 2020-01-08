@@ -67,20 +67,23 @@ prompt_command() {
 	# Start by resetting the colours.
 	PS1="\[\e[0m\]"
 
+	# Show when we're inside Vim.
 	if [ -n "$IN_VIM" ]; then
-		# Show that we're inside Vim.
 		PS1+="$(fg_color 255 165 0)vim "
-	elif [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
-		# Show orange username@hostname, if in a ssh session.
+	fi
+	# Show orange username@hostname, if in a ssh session.
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 		PS1+="$(fg_color 255 165 0)\u@\h "
 	fi
 
 	PS1+="$(fg_color 93 200 253)$(prompt_dir) " # Blue directory.
-	# Orange pencil if the git tree is dirty.
-	if [[ $(dirty_branch) == 0 ]]; then
-		PS1+="$(fg_color 237 168 4) "
+	if in_git_repo; then
+		# Orange pencil if the git tree is dirty.
+		if ! is_tree_clean; then
+			PS1+="$(fg_color 237 168 4) "
+		fi
+		PS1+="$(fg_color 108 108 108)$(git_branch)" # Grey git branch, if in a repo.
 	fi
-	PS1+="$(fg_color 108 108 108)$(git_branch)" # Grey git branch, if in a repo.
 
 	# Red on failure of the previous command, green otherwise.
 	if [ $EXIT != 0 ]; then

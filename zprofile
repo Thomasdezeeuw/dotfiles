@@ -32,15 +32,19 @@ precmd() {
 
 	if [ -n "$IN_VIM" ]; then
 		PS1+="%F{#FFA500}vim "
-	elif [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	fi
+	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
 		PS1+="%F{#FFA500}%n@%M "
 	fi
 
 	PS1+="%F{#5DC8FD}$(prompt_dir) "
-	if [[ $(dirty_branch) == 0 ]]; then
-		PS1+="%F{#EDA804} "
+	if in_git_repo; then
+		# Orange pencil if the git tree is dirty.
+		if ! is_tree_clean; then
+			PS1+="%F{#EDA804} "
+		fi
+		PS1+="%F{#6C6C6C}$(git_branch)"
 	fi
-	PS1+="%F{#6C6C6C}$(git_branch)"
 
 	PS1+="%(EXIT.%F{#62F592}.%F{#FC5D5B})λ%f%k "
 }
