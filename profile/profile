@@ -87,22 +87,6 @@ rm() {
 	return 1
 }
 
-# Start, continues or switch to a tmux session, usage: `s some-session`.
-s() {
-	# Not inside tmux.
-	if [ -z ${TMUX+x} ]; then
-		tmux new-session -A -s "$1"
-	else
-		# Inside tmux, so we want to switch to the session.
-		if ! tmux has-session -t "$1" 2>/dev/null; then
-			# Session doesn't exist so we create it first.
-			tmux new-session -d -s "$1"
-		fi
-		# Switch to the session.
-		tmux switch-client -t "$1"
-	fi
-}
-
 #
 # # Prompt utils.
 #
