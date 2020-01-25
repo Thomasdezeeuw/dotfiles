@@ -88,7 +88,7 @@ set smarttab       " Smart tabs.
 set tabstop=4      " Tab width of 4.
 set softtabstop=4  " Insert 4 spaces on tab.
 set shiftwidth=4   " Insert 4 spaces.
-set noexpandtab    " Insert actual tabs.
+"set expandtab     " Insert actual tabs.
 set timeoutlen=250 " Change timeout for commands.
 
 " Search options.
