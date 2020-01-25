@@ -1,3 +1,5 @@
+# Location: ~/.config/i3/config
+
 #
 ## Key bindings.
 #

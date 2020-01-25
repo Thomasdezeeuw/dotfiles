@@ -1,3 +1,5 @@
+# Location: ~/.bash_profile
+
 #
 # # Bash settings
 #

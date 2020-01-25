@@ -1,6 +1,7 @@
+# Location: ~/.npmrc
+
 progress=true
 init.author.name=Thomas de Zeeuw
 init.author.email=thomasdezeeuw@gmail.com
 init.author.url=https://thomasdezeeuw.nl
 init.license=MIT
-init.version=0.0.1

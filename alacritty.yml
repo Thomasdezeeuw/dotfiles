@@ -1,3 +1,5 @@
+# Location: ~/.config/alacritty/alacritty.yml
+
 window:
   dimensions:
     columns: 100

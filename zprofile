@@ -1,3 +1,5 @@
+# Location: ~/.zprofile
+
 #
 # # Zsh settings
 #

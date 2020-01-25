@@ -1,3 +1,5 @@
+# Location: ~/.inputrc
+
 # Allow alt left and right arrow keys to work.
 # For iTerm.
 "\e[1;9D": backward-word
