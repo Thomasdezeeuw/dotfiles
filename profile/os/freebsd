@@ -1,0 +1,6 @@
+#
+# # FreeBSD specific profile extensions.
+#
+
+# Use Clang as C compiler.
+export CC=clang
