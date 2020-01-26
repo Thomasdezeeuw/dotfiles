@@ -2,6 +2,9 @@
 # # Go specific profile extensions.
 #
 
+# Only run if the `go` is available.
+has_bin go || return 0
+
 # Needed by the Go command.
 export GOPATH="$HOME/go"
 

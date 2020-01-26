@@ -1,3 +1,6 @@
 #
 # # Haskell specific profile extensions.
 #
+
+# Only run if the `ghc` is available.
+has_bin ghc  || return 0

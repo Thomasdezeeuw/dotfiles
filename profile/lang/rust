@@ -3,20 +3,21 @@
 #
 
 # Include Cargo installed binaries in the path.
-PATH="$PATH:$HOME/.cargo/bin"
+[ -d "$HOME/.cargo/bin" ] && PATH="$PATH:$HOME/.cargo/bin"
+
+# Only run if the `rustc` is available.
+has_bin rustc || return 0
 
 # Always print a complete backtrace.
 export RUST_BACKTRACE=full
 
 # Used for autocompletion.
-if has_bin rustc; then
-	export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
-	# Compile and run a single rust file, basically making it a script.
-	rustr() {
-		local SRC_FILE="$1"
-		local BIN="${1%???}"
-		rustc "$SRC_FILE" && "./$BIN"
-		/bin/rm "$BIN"
-	}
-fi
+# Compile and run a single rust file, basically making it a script.
+rustr() {
+	local SRC_FILE="$1"
+	local BIN="${1%???}"
+	rustc "$SRC_FILE" && "./$BIN"
+	/bin/rm "$BIN"
+}
