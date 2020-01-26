@@ -30,6 +30,11 @@ else
 	exit 1
 fi
 
+# Utility function to determine if a binary is available.
+has_bin() {
+	type "$1" > /dev/null 2> /dev/null
+}
+
 #
 # # Profile extensions
 #
@@ -69,15 +74,14 @@ fi
 #
 
 alias tmpdir='cd $(mktemp -d)' # Create a temporary directory and cd into it.
-alias q="exit"                # Quick exit.
-alias ls="exa"                # I prefer exa.
-alias grep="rg"               # THA SPEED!
-alias la="ls -a"              # Show me all the things!
-alias l="ls -l"               # Quick list.
-alias vim="vim -p"            # Open each file in a separate tab.
-alias e="vim"                 # I got super lazy.
-# Use sftp instead.
-alias scp=sftp
+alias q="exit"                 # Quick exit.
+has_bin exa && alias ls="exa"  # I prefer exa.
+has_bin rg && alias grep="rg"  # THA SPEED!
+alias la="ls -a"               # Show me all the things!
+alias l="ls -l"                # Quick list.
+alias vim="vim -p"             # Open each file in a separate tab.
+alias e="vim"                  # I got super lazy.
+alias scp=sftp                 # Use sftp instead.
 # Use different notes directory.
 alias notes="NOTES_ROOT=~/src/notes/weekly notes"
 
