@@ -1,4 +1,5 @@
 " Location: ~/.vim/vimrc
+" Plugin manager: https://github.com/junegunn/vim-plug
 
 scriptencoding utf-8
 set encoding=utf-8
