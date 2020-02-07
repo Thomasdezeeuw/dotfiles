@@ -135,3 +135,12 @@ prompt_dir() {
 
 	printf "$DIR"
 }
+
+#
+# # Start tmux.
+#
+
+# Start tmux if its not already running.
+if [ -z ${TMUX+x} ]; then
+	tmux new-session -t main
+fi
