@@ -22,8 +22,7 @@ check() {
 check "x86_64-apple-darwin"
 # iOS.
 check "x86_64-apple-ios"
-check "i386-apple-ios"
-check "armv7s-apple-ios"
+check "aarch64-apple-ios"
 # FreBSD
 check "x86_64-unknown-freebsd"
 # NetBSD.
