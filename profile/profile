@@ -125,7 +125,7 @@ prompt_dir() {
 		# root directory, e.g. given a `GIT_DIR` of "~/src/repo_root" this will
 		# be "~/src/".
 		local GIT_TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
-		local DIR=$(pwd -P | sed "s#^$GIT_TRIM_DIR##")
+		local DIR=$(pwd -P | sed "s#^$GIT_TRIM_DIR/##")
 	else
 		# Replace the home directory path with "~/".
 		local DIR=$(pwd | sed "s#^$HOME#~#")
