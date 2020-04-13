@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 #
 # # Make all required directories.
@@ -21,6 +21,6 @@ declare -a config_files=(
 for file in "${config_files[@]}"; do
 	ln -v -s "`pwd`/$file" "$HOME/.$file"
 done
-ln -v -s "`pwd`/git" "$HOME/..gitconfig"
+ln -v -s "`pwd`/git" "$HOME/.gitconfig"
 mkdir -p "$HOME/.vim"
 ln -v -s "`pwd`/vimrc" "$HOME/.vim/vimrc"
