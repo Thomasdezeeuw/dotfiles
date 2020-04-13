@@ -116,24 +116,24 @@ git_branch() {
 # When in a git repo this removes everything before the start of the root of the
 # repo, also replaces the home directory with "~".
 prompt_dir() {
+	local PWD=$(pwd)
 	# Determine if we're in a git repo. If so we get the full path to the repo,
 	# or we'll have an empty string.
 	local GIT_DIR=$(git rev-parse --show-toplevel 2> /dev/null)
-	# Next we determine what part of the path we can remove, e.g. given a
-	# `GIT_DIR` of "~/src/repo_root" this will be "~/src".
-	local GIT_TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
 
-	# If we're in a git repo we'll remove the entire path up to the repo root
-	# directory, e.g. "~/src/repo_root/src" becomes "repo_root/src".
-	local PWD=$(pwd -P)
-	local DIR=${PWD#${GIT_TRIM_DIR}}
+	if [ ! -z ${GIT_DIR} ]; then
+		# If we're in a git repo we'll remove the entire path up to the repo
+		# root directory, e.g. given a `GIT_DIR` of "~/src/repo_root" this will
+		# be "~/src/".
+		local GIT_TRIM_DIR=$(printf "$GIT_DIR" | rev | cut -d'/' -f2- | rev)
+		local DIR=${PWD#${GIT_TRIM_DIR}/}
+	else
+		# Replace the home directory path with "~/".
+		local DIR=$(printf "$PWD" | sed "s#^$HOME#~#")
+	fi
 
-	# Replace the home directory path with "~/".
-	local DIR=${DIR/$HOME/\~\/}
 	# Remove the last "/".
-	local DIR=${DIR/\//}
-
-	printf "$DIR"
+	printf "$DIR" | sed "s/\/$//"
 }
 
 #
