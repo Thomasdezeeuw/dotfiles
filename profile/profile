@@ -86,7 +86,7 @@ alias scp=sftp                 # Use sftp instead.
 alias notes="NOTES_ROOT=~/src/notes/weekly notes"
 
 # Overwrites the `rm` command, but only in the shell not in scripts.
-rm() {
+has_bin trash && rm() {
 	echo "Did you mean 'trash'?"
 	return 1
 }
