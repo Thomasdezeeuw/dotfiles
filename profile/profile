@@ -91,6 +91,13 @@ has_bin trash && rm() {
 	return 1
 }
 
+# Search files using `rg` and then open them all in vim.
+has_bin rg && erg() {
+	#local search="$1"
+	e +/"$1\c" `rg -l "$1" "${2:-.}"`
+		#vim  -p `search_files "$key_word"`
+}
+
 #
 # # Prompt utils.
 #
