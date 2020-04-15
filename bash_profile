@@ -28,8 +28,8 @@ shopt -s extquote
 shopt -s globstar
 
 # Export our preferred shell and shell options (used in Vim).
-if [ -z ${SHELL+x} ]; then export SHELL="$0"; fi
-if [ -z ${SHELL_OPTS+x} ]; then export SHELL_OPTS="-l"; fi
+if [ -z "${SHELL+x}" ]; then export SHELL="$0"; fi
+if [ -z "${SHELL_OPTS+x}" ]; then export SHELL_OPTS="-l"; fi
 
 # Autocompletion.
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion

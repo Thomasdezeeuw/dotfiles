@@ -39,14 +39,14 @@ has_bin() {
 # # Profile extensions
 #
 
-if [ $shell = "bash" ]; then
+if [ "$shell" = "bash" ]; then
 	PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
-elif [ $shell = "zsh" ]; then
+elif [ "$shell" = "zsh" ]; then
 	PROFILE_ROOT=$(dirname ${(%):-%N})
 fi
 
 # Load programming language specific profile extensions.
-for file in $PROFILE_ROOT/lang/*; do
+for file in "$PROFILE_ROOT/lang/"*; do
 	source "$file"
 done
 
@@ -59,7 +59,7 @@ source "$PROFILE_ROOT/os/$OS"
 #
 
 # Ensure that ssh-agent is running.
-if [ -z ${SSH_AUTH_SOCK+x} ]; then
+if [ -z "${SSH_AUTH_SOCK+x}" ]; then
 	eval `ssh-agent -s` > /dev/null
 fi
 
@@ -120,7 +120,7 @@ prompt_dir() {
 	# or we'll have an empty string.
 	local GIT_DIR=$(git rev-parse --show-toplevel 2> /dev/null)
 
-	if [ ! -z ${GIT_DIR} ]; then
+	if [ ! -z "$GIT_DIR" ]; then
 		# If we're in a git repo we'll remove the entire path up to the repo
 		# root directory, e.g. given a `GIT_DIR` of "~/src/repo_root" this will
 		# be "~/src/".
@@ -140,6 +140,6 @@ prompt_dir() {
 #
 
 # Start tmux if its not already running.
-if [ -z ${TMUX+x} ]; then
+if [ -z "${TMUX+x}" ]; then
 	tmux new-session -A -t main
 fi
