@@ -7,6 +7,12 @@ set -eu
 # Import `silent`.
 source "${BASH_SOURCE%/*}/../util.bash" || exit 1
 
+# Show progress if requested.
+progress=false
+if [[ "${1:-}" == "progress" ]]; then
+	progress=true
+fi
+
 check() {
 	target="$1"
 
@@ -15,6 +21,9 @@ check() {
 
 	silent "Checking target $target" \
 		"cargo check --all-features --all --bins --tests --examples --benches --all-targets --target $target"
+
+	# Show some progress.
+	($progress && printf ".") || true
 }
 
 # Check various targets.
@@ -35,3 +44,6 @@ check "aarch64-linux-android"
 # Windows.
 check "x86_64-pc-windows-msvc"
 check "x86_64-pc-windows-gnu"
+
+# Done.
+($progress && printf "OK\n") || true
