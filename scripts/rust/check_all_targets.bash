@@ -20,7 +20,7 @@ check() {
 	silent "Adding $target" "rustup target add $target"
 
 	silent "Checking target $target" \
-		"cargo check --all-features --all --bins --tests --examples --benches --all-targets --target $target"
+		"cargo check --color always --all-features --all --bins --tests --examples --benches --all-targets --target $target"
 
 	# Show some progress.
 	($progress && printf ".") || true
