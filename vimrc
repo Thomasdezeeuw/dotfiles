@@ -82,7 +82,7 @@ set formatoptions=crqjn
 " FIXME: this breaks indentation.
 "set formatlistpat="^\s*[\(\d\+\.\=)-\*]\s*"
 let $IN_VIM=1       " Let the shell know we're in Vim.
-set shell=$SHELL\ $SHELL_OPTS " Use our preferred shell and options.
+set shell=$SHELL    " Use our preferred shell and options.
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.

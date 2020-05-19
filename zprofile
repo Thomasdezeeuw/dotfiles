@@ -7,7 +7,6 @@
 # Export our preferred shell and shell options (used in Vim).
 # TODO: get the full path, this isn't good enough.
 export SHELL="zsh"
-export SHELL_OPTS="-l"
 
 #
 # # Profile

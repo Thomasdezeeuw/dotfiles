@@ -5,10 +5,10 @@
 #
 
 # Case-insensitive globbing (used in pathname expansion).
-shopt -s nocaseglob;
+shopt -s nocaseglob
 
 # Append to the Bash history file, rather than overwriting it.
-shopt -s histappend;
+shopt -s histappend
 
 # Cd without "cd".
 shopt -s autocd
@@ -29,7 +29,6 @@ shopt -s globstar
 
 # Export our preferred shell and shell options (used in Vim).
 if [ -z "${SHELL+x}" ]; then export SHELL="$0"; fi
-if [ -z "${SHELL_OPTS+x}" ]; then export SHELL_OPTS="-l"; fi
 
 # Autocompletion.
 [ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
