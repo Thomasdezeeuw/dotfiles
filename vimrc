@@ -33,6 +33,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
     Plug 'vim-airline/vim-airline'      " Status bar.
     Plug 'tpope/vim-obsession'          " Automatic storing of session data.
+    Plug 'mtdl9/vim-log-highlighting'   " Highlighting for logs.
 
     " Language specific plugins.
     Plug 'cespare/vim-toml', {'for': 'toml'}
