@@ -192,6 +192,10 @@ map <Leader>k2 :setlocal foldlevel=1<CR>
 map <Leader>k3 :setlocal foldlevel=2<CR>
 map <Leader>k4 :setlocal foldlevel=3<CR>
 map <Leader>k5 :setlocal foldlevel=4<CR>
+map <Leader>k6 :setlocal foldlevel=5<CR>
+map <Leader>k7 :setlocal foldlevel=6<CR>
+map <Leader>k8 :setlocal foldlevel=7<CR>
+map <Leader>k9 :setlocal foldlevel=8<CR>
 
 " Movement around errors.
 map <Leader>mn ;cnext<CR>
