@@ -10,6 +10,7 @@ window:
   dynamic_padding: false
   decorations: full
   startup_mode: Windowed
+  dynamic_title: true
 
 scrolling:
   history: 10000
@@ -63,7 +64,7 @@ colors:
     cyan:    '0x427b58'
     white:   '0x3c3836'
 
-visual_bell:
+bell:
   animation: EaseOutExpo
   duration: 0
 
@@ -79,8 +80,6 @@ mouse:
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
-
-dynamic_title: true
 
 cursor:
   style: Block
