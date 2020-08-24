@@ -130,6 +130,11 @@ set foldmethod=indent
 set foldlevel=100
 set foldminlines=1
 
+" Highlight REQUEST as keyword.
+syn keyword logLevelNotice REQUEST
+" Log line tend to be long.
+autocmd FileType log setlocal wrap
+
 "
 " Shortcuts.
 "
