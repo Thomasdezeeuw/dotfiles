@@ -229,6 +229,8 @@ map <Leader>t :make test<CR>
 let g:go_fmt_command='goimports'
 let g:go_metalinter_autosave=1
 autocmd FileType go set makeprg=go\ $*
+" Don't automatically update binaries. That is not the job of Vim-go.
+let g:go_get_update = 0
 
 " Rust
 let g:rustfmt_autosave=1
