@@ -10,9 +10,6 @@ shopt -s nocaseglob
 # Append to the Bash history file, rather than overwriting it.
 shopt -s histappend
 
-# Cd without "cd".
-shopt -s autocd
-
 # Make sure we clean up after ourselves.
 shopt -s checkjobs
 
