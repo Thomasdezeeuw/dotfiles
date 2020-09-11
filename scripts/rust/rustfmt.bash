@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Check if the code is formatted correctly, using rustfmt.
 

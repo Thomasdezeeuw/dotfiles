@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Checks the last $N commits to make sure they don't contain work in progress
 # commits.
