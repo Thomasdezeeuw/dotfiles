@@ -164,5 +164,5 @@ prompt_dir() {
 
 # Start tmux if its not already running and we're in interactive mode.
 if [[ $- == *i* && -z "${TMUX+x}" ]]; then
-	tmux new-session -A -t main
+	tmux new-session -A -t main -s main
 fi
