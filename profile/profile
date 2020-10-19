@@ -118,7 +118,7 @@ has_bin trash && rm() {
 
 # Search files using `rg` and then open them all in vim.
 has_bin rg && erg() {
-	e +/"$1\c" `rg -l "$1" "${2:-.}"`
+	e +/"$1\c" `rg -l "$1" ${@:2}`
 }
 
 econflicts() {
