@@ -130,6 +130,11 @@ set foldmethod=indent
 set foldlevel=100
 set foldminlines=1
 
+" Explorer settings.
+let g:netrw_banner=0
+" Open with `;Vec`.
+let g:netrw_winsize=25
+
 " Highlight REQUEST as keyword.
 syn keyword logLevelNotice REQUEST
 " Log line tend to be long.
