@@ -9,7 +9,7 @@
 has_bin rustc || return 0
 
 # Always print a complete backtrace.
-export RUST_BACKTRACE=full
+export RUST_BACKTRACE=1
 
 # Used for autocompletion.
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
