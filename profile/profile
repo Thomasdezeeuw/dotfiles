@@ -21,14 +21,22 @@ export CLICOLOR=1
 export IGNOREEOF=2
 
 # Determine what shell we're using.
-if [ -n "$BASH_VERSION" ] ; then
+case $(basename -- "$0" || "$0") in
+"bash" | "-bash")
 	shell="bash"
-elif [ -n "$ZSH_VERSION" ] ; then
+	;;
+"zsh")
 	shell="zsh"
-else
-	echo "Unknown shell, only supports bash or zsh" >&2
+	;;
+"sh")
+	shell="sh"
+	;;
+*)
+	echo "Unknown shell '$0', only supports bash or zsh" >&2
+	sleep 100
 	exit 1
-fi
+	;;
+esac
 
 # Utility function to determine if a binary is available.
 has_bin() {
@@ -43,6 +51,9 @@ if [ "$shell" = "bash" ]; then
 	PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
 elif [ "$shell" = "zsh" ]; then
 	PROFILE_ROOT=$(dirname ${(%):-%N})
+else
+	unset PROMPT_COMMAND
+	unset SHELL
 fi
 
 # Load programming language specific profile extensions.
