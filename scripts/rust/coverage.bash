@@ -4,28 +4,37 @@
 
 set -eu
 
-LLVM_ROOT=${LLVM_ROOT:-"$HOME/src/third_party/rust/build/x86_64-apple-darwin/llvm/bin"}
-OUTPUT_DIR="./target/coverage"
+# Set by `rustup run`, or we get it ourselves.
+# Example value: `nightly-x86_64-apple-darwin`.
+RUSTUP_TOOLCHAIN="${RUSTUP_TOOLCHAIN:-"$(rustup show active-toolchain | cut -d' ' -f1)"}"
+# Architecture target. Example value: `x86_64-apple-darwin`.
+RUSTUP_TARGET="${RUSTUP_TARGET:-"$(echo $RUSTUP_TOOLCHAIN | cut -d'-' -f2,3,4)"}"
+# Location of LLVM tools, as install by `install_llvm_tools`.
+LLVM_BIN="${LLVM_ROOT:-"$(rustc --print sysroot)/lib/rustlib/$RUSTUP_TARGET/bin"}"
+# Where we put the coverage output.
+COVERAGE_OUTPUT="./target/coverage"
 
+# Remove old coverage data.
+rm -rf "$COVERAGE_OUTPUT"
 
-# Run all tests generate coverage data for each.
+# Run the tests with the LLVM instrumentation.
 RUSTFLAGS="${RUSTFLAGS:-""} -Zinstrument-coverage" \
-	LLVM_PROFILE_FILE="$OUTPUT_DIR/tests.%p.profraw" \
+	LLVM_PROFILE_FILE="$COVERAGE_OUTPUT/tests.%p.profraw" \
 	cargo test --all-features
 
 # Merge all coverage data into a single profile.
-"$LLVM_ROOT/llvm-profdata" merge \
-	--output "$OUTPUT_DIR/tests.profdata" \
-	"$OUTPUT_DIR"/tests.*.profraw
+"$LLVM_BIN/llvm-profdata" merge \
+	--output "$COVERAGE_OUTPUT/tests.profdata" \
+	"$COVERAGE_OUTPUT"/tests.*.profraw
 
 # Generate a HTML report for the coverage, excluding all files not in `src/`.
 find target/debug/deps -perm -111 -type f -maxdepth 1 | xargs printf -- "--object '%s' " | xargs  \
-	"$LLVM_ROOT/llvm-cov" show \
+	"$LLVM_BIN/llvm-cov" show \
 	--show-instantiations=false \
 	--show-expansions \
 	--ignore-filename-regex "^[^src]" \
 	--format html \
-	--output-dir "$OUTPUT_DIR/report" \
-	--instr-profile "$OUTPUT_DIR/tests.profdata"
+	--output-dir "$COVERAGE_OUTPUT/report" \
+	--instr-profile "$COVERAGE_OUTPUT/tests.profdata"
 
-open "$OUTPUT_DIR/report/index.html"
+open "$COVERAGE_OUTPUT/report/index.html"
