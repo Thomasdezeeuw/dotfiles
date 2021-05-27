@@ -26,6 +26,7 @@ autocmd BufWritePost * GitGutter
 
 call plug#begin('~/.vim/plugged')
     " General plugins.
+    Plug 'Valloric/YouCompleteMe'       " Completion.
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
     Plug 'morhetz/gruvbox'              " Sepia color scheme.
@@ -140,6 +141,13 @@ syn keyword logLevelNotice REQUEST
 " Log line tend to be long.
 autocmd FileType log setlocal wrap
 
+" YouCompleteMe settings.
+let g:ycm_complete_in_comments=1
+let g:ycm_autoclose_preview_window_after_completion=1
+let g:ycm_auto_hover=''
+set completeopt=menu,popup
+" TODO: add shortcut to manually trigger the YCM hover command.
+
 "
 " Shortcuts.
 "
@@ -241,6 +249,10 @@ let g:go_get_update = 0
 let g:rustfmt_autosave=1
 autocmd FileType rust set makeprg=cargo\ $*
 autocmd FileType rust set textwidth=80
+if executable('rust-analyzer')
+    let g:ycm_language_server = [ { 'name': 'rust', 'cmdline': ['rust-analyzer'], 'filetypes': ['rust'], 'project_root_files': ['Cargo.toml'] } ]
+endif
+autocmd FileType rust let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax }
 
 " LaTeX.
 autocmd FileType tex set makeprg=pdflatex\ %
