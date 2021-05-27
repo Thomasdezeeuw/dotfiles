@@ -29,15 +29,16 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe'       " Completion.
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
+    Plug 'editorconfig/editorconfig-vim'" Support EditorConfig.
     Plug 'morhetz/gruvbox'              " Sepia color scheme.
+    Plug 'mtdl9/vim-log-highlighting'   " Highlighting for logs.
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
-    Plug 'vim-airline/vim-airline'      " Status bar.
     Plug 'tpope/vim-obsession'          " Automatic storing of session data.
-    Plug 'mtdl9/vim-log-highlighting'   " Highlighting for logs.
-    Plug 'editorconfig/editorconfig-vim'" Support EditorConfig.
+    Plug 'vim-airline/vim-airline'      " Status bar.
 
     " Language specific plugins.
+    Plug 'LnL7/vim-nix', {'for': 'nix'}
     Plug 'cespare/vim-toml', {'for': 'toml'}
     Plug 'ekalinin/Dockerfile.vim', {'for': 'Dockerfile'}
     Plug 'elzr/vim-json', {'for': 'json'}
