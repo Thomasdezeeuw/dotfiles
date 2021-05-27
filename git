@@ -26,7 +26,8 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	last = log -1 HEAD
 	hash = rev-parse HEAD
-	unmerged = ! git ls-files --unmerged | awk '{print $4}' | sort | uniq
+	# Difference between two branches, argument: `$branch0..$branch1`, e.g. `master..WIP`
+	bdiff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 [log]
 	decorate = auto
 [branch]
