@@ -117,8 +117,10 @@ has_bin trash && rm() {
 }
 
 # Search files using `rg` and then open them all in vim.
+# FIXME: this doesn't work with spaces. The output of `rg` doesn't add quotes
+# around the path names.
 has_bin rg && erg() {
-	e +/"$1\c" `rg -l "$1" ${@:2}`
+	e "+/$1\c" `rg --files-with-matches "$1" ${@:2}`
 }
 
 econflicts() {
