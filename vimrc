@@ -130,12 +130,14 @@ set list
 set foldenable
 set foldmethod=indent
 set foldlevel=100
-set foldminlines=1
+set foldminlines=0
 
 " Explorer settings.
 let g:netrw_banner=0
+"let g:netrw_liststyle=3 " Tree like explorer.
 " Open with `;Vec`.
 let g:netrw_winsize=25
+"let g:netrw_browse_split=4 " FIXME: only do this for :Vexplorer.
 
 " Highlight REQUEST as keyword.
 syn keyword logLevelNotice REQUEST
@@ -248,6 +250,7 @@ let g:go_get_update = 0
 
 " Rust
 let g:rustfmt_autosave=1
+let g:rustfmt_command='rustup run stable rustfmt'
 autocmd FileType rust set makeprg=cargo\ $*
 autocmd FileType rust set textwidth=80
 if executable('rust-analyzer')
@@ -257,3 +260,5 @@ autocmd FileType rust let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax
 
 " LaTeX.
 autocmd FileType tex set makeprg=pdflatex\ %
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_enabled = 0 " Gives a warning.
