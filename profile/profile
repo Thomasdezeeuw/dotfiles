@@ -21,7 +21,7 @@ export CLICOLOR=1
 export IGNOREEOF=2
 
 # Determine what shell we're using.
-case $(basename -- "$0" || "$0") in
+case $(basename -- "$SHELL" || basename -- "$0" || "$0") in
 "bash" | "-bash")
 	shell="bash"
 	;;

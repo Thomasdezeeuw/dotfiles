@@ -5,8 +5,7 @@
 #
 
 # Export our preferred shell and shell options (used in Vim).
-# TODO: get the full path, this isn't good enough.
-export SHELL="zsh"
+if [ -z "${SHELL+x}" ]; then export SHELL="zsh"; fi
 
 #
 # # Profile
