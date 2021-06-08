@@ -70,13 +70,6 @@ bell:
 
 background_opacity: 1.0
 
-mouse:
-  hide_when_typing: false
-  double_click: { threshold: 300 }
-  triple_click: { threshold: 300 }
-  url:
-    modifiers: Shift
-
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
   save_to_clipboard: false
@@ -87,7 +80,13 @@ cursor:
 
 live_config_reload: false
 
+# NOTE: below is specific for this installation.
 shell:
   program: /usr/local/bin/bash
   args:
     - -il
+
+mouse:
+  hide_when_typing: false
+  double_click: { threshold: 300 }
+  triple_click: { threshold: 300 }
