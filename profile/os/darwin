@@ -20,8 +20,7 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 # Aliases.
 alias trash="rmtrash"
 
+# NOTES: below is specific for this installation.
+
 # For building stuff.
 export MACOSX_DEPLOYMENT_TARGET=10.15
-
-# Force the bash version provided by Homebrew.
-export SHELL="/usr/local/bin/bash"
