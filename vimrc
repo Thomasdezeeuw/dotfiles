@@ -151,6 +151,11 @@ let g:ycm_auto_hover=''
 set completeopt=menu,popup
 " TODO: add shortcut to manually trigger the YCM hover command.
 
+" Use ripgrep for `:grep`.
+if executable('rg')
+    set grepprg=rg\ --vimgrep
+endif
+
 "
 " Shortcuts.
 "
