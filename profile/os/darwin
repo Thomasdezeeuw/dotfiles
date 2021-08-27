@@ -21,3 +21,12 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 
 # For building stuff.
 export MACOSX_DEPLOYMENT_TARGET=10.15
+
+# For Homebrew.
+export HOMEBREW_PREFIX="$(brew --prefix)";
+export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar";
+export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew";
+# NOTE: $PATH, $MANPATH and $INFOPATH already include the paths.
+#export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH";
+#export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH";
+#export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH";
