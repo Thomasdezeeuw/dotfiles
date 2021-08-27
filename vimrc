@@ -225,6 +225,7 @@ map <Leader>k8 :setlocal foldlevel=7<CR>
 map <Leader>k9 :setlocal foldlevel=8<CR>
 
 " Movement around errors.
+" TODO: overwritten by make below.
 map <Leader>mn ;cnext<CR>
 map <Leader>mp ;cprevious<CR>
 map <Leader>mf ;cfirst<CR>
@@ -240,6 +241,11 @@ map <Leader>b :make build<CR>
 map <Leader>d :make doc<CR>
 map <Leader>r :make run<CR>
 map <Leader>t :make test<CR>
+
+" Marking:
+" m$ sets mark to $.
+" `$ go to mark $.
+
 
 "
 " Language specific settings.
