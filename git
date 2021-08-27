@@ -14,8 +14,6 @@
 	autostash = true
 [push]
 	default = current
-[http]
-	cookiefile = /Users/thomas/.gitcookies
 [alias]
 	change = codereview change
 	gofmt = codereview gofmt
