@@ -3,7 +3,7 @@
 #
 
 # Include Cargo installed binaries in the path.
-[ -d "$HOME/.cargo/bin" ] && PATH="$PATH:$HOME/.cargo/bin"
+[ -d "$HOME/.cargo/bin" ] && __add_to_path "$HOME/.cargo/bin"
 
 # Only run if the `rustc` is available.
 has_bin rustc || return 0

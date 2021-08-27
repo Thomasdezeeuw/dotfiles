@@ -2,8 +2,20 @@
 # # Environment variables
 #
 
+# Add a path to $PATH, first checking if it's not already in the list.
+__add_to_path() {
+	new="$1"
+	if [[ "$PATH" != *"$new"* ]]; then
+		if [[ "$2" == "first" ]]; then
+			export PATH="$new:$PATH"
+		else
+			export PATH="$PATH:$new"
+		fi
+	fi
+}
+
 # Add user bin to path.
-PATH="$HOME/bin:$PATH"
+__add_to_path "$HOME/bin" "first"
 
 # Vim as the editor.
 export EDITOR="vim"
