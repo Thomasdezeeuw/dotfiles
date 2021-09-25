@@ -35,6 +35,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
     Plug 'tpope/vim-obsession'          " Automatic storing of session data.
+    Plug 'tpope/vim-sleuth'             " Automatically adjust tab size and space/tab.
     Plug 'vim-airline/vim-airline'      " Status bar.
 
     " Language specific plugins.
@@ -93,10 +94,6 @@ set nojoinspaces   " Single space between text lines. Like this one.
 set autoindent     " Use indentation from previous line.
 set smartindent    " Smart indentation.
 set smarttab       " Smart tabs.
-set tabstop=4      " Tab width of 4.
-set softtabstop=4  " Insert 4 spaces on tab.
-set shiftwidth=4   " Insert 4 spaces.
-"set expandtab     " Insert actual tabs.
 set timeoutlen=250 " Change timeout for commands.
 
 " Search options.
