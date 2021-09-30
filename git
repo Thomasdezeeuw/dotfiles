@@ -14,13 +14,9 @@
 	autostash = true
 [push]
 	default = current
+[pull]
+	rebase = true
 [alias]
-	change = codereview change
-	gofmt = codereview gofmt
-	mail = codereview mail
-	pending = codereview pending
-	submit = codereview submit
-	sync = codereview sync
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	last = log -1 HEAD
 	hash = rev-parse HEAD
@@ -32,10 +28,10 @@
 	decorate = auto
 [branch]
 	autosetuprebase = always
-[pull]
-	rebase = true
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
+[diff]
+	algorithm = patience
