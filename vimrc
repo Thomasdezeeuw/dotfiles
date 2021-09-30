@@ -255,6 +255,13 @@ let g:go_metalinter_autosave=1
 autocmd FileType go set makeprg=go\ $*
 " Don't automatically update binaries. That is not the job of Vim-go.
 let g:go_get_update = 0
+" Don't overwrite K.
+let g:go_doc_keywordprg_enabled = 0
+" Don't close my folds on save, see https://github.com/fatih/vim-go/issues/502.
+let g:go_fmt_experimental = 1
+" Leave alone, I know what to do.
+" Don't move my fcking cursor!
+let g:go_jump_to_error = 1
 
 " Rust
 let g:rustfmt_autosave=1
