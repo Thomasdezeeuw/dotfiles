@@ -136,7 +136,7 @@ has_bin rg && erg() {
 }
 
 econflicts() {
-	e +/"=======" `git diff --name-only --diff-filter=U`
+	e +/"=======\c" `git diff --name-only --diff-filter=U --relative`
 }
 
 #
