@@ -28,12 +28,17 @@ shopt -s globstar
 if [ -z "${SHELL+x}" ]; then export SHELL="$0"; fi
 
 # Autocompletion.
-[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
-if [ -f "/usr/local/etc/bash_completion.d" ]; then
-	for file in /usr/local/etc/bash_completion.d/*; do
-	  [ -f "$file" ] && source "$bcfile"
-	done
+if type brew &>/dev/null; then
+  HOMEBREW_PREFIX="$(brew --prefix)"
+  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
+    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
+  else
+    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
+      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
+    done
+  fi
 fi
+
 
 #
 # # Profile
