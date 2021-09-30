@@ -8,6 +8,8 @@ has_bin go || return 0
 # Needed by the Go command.
 export GOPATH="$HOME/go"
 
+PATH="$PATH:$HOME/go/bin"
+
 # Enable CGo.
 export CGO_ENABLED=1
 
