@@ -2,10 +2,11 @@
 # # Environment variables
 #
 
-# Add a path to $PATH, first checking if it's not already in the list.
+# Add a path to $PATH, first checking if the directory exists and if it's not
+# already in the list.
 __add_to_path() {
 	new="$1"
-	if [[ "$PATH" != *"$new"* ]]; then
+	if [[ -d "$new" && "$PATH" != *"$new"* ]]; then
 		if [[ "$2" == "first" ]]; then
 			export PATH="$new:$PATH"
 		else
