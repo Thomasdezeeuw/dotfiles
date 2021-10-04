@@ -23,6 +23,8 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 export MACOSX_DEPLOYMENT_TARGET=10.15
 
 # For Homebrew.
+__add_to_path "/usr/local/bin" "first"    # Intel.
+__add_to_path "/opt/homebrew/bin" "first" # arm64 (M1).
 export HOMEBREW_PREFIX="$(brew --prefix)";
 export HOMEBREW_CELLAR="$HOMEBREW_PREFIX/Cellar";
 export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew";
