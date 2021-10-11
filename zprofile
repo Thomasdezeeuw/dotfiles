@@ -7,7 +7,12 @@
 # Export our preferred shell and shell options (used in Vim).
 if [ -z "${SHELL+x}" ]; then export SHELL="zsh"; fi
 
+# Load the actual profile.
+source ~/.dotfiles/profile/profile
+
 # Autocompletion.
+# NOTE: must be run after loading profile, because otherwise `brew` might not be
+# found.
 if type brew &>/dev/null; then
 	FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
@@ -18,9 +23,6 @@ fi
 #
 # # Profile
 #
-
-# Load the actual profile.
-source ~/.dotfiles/profile/profile
 
 #
 # # Prompt

@@ -27,7 +27,19 @@ shopt -s globstar
 # Export our preferred shell and shell options (used in Vim).
 if [ -z "${SHELL+x}" ]; then export SHELL="$0"; fi
 
+#
+# # Profile
+#
+
+# Load the actual profile.
+source ~/.dotfiles/profile/profile
+
+#
 # Autocompletion.
+#
+
+# NOTE: must be loaded after the profile because otherwise `brew` might not be
+# found.
 if type brew &>/dev/null; then
   HOMEBREW_PREFIX="$(brew --prefix)"
   if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
@@ -39,13 +51,6 @@ if type brew &>/dev/null; then
   fi
 fi
 
-
-#
-# # Profile
-#
-
-# Load the actual profile.
-source ~/.dotfiles/profile/profile
 
 #
 # # Prompt
