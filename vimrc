@@ -239,6 +239,9 @@ map <Leader>d :make doc<CR>
 map <Leader>r :make run<CR>
 map <Leader>t :make test<CR>
 
+" Formatting.
+autocmd FileType json map <Leader>f :%!python -m json.tool<CR>
+
 " Marking:
 " m$ sets mark to $.
 " `$ go to mark $.
