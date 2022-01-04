@@ -20,7 +20,7 @@ export GOROOT_BOOTSTRAP="$HOME/src/third_party/go1.9"
 # NOTE: below is specific for this installation.
 
 # For building stuff.
-export MACOSX_DEPLOYMENT_TARGET=10.15
+export MACOSX_DEPLOYMENT_TARGET=$(sw_vers -productVersion)
 
 # For Homebrew.
 __add_to_path "/usr/local/bin" "first"    # Intel.
