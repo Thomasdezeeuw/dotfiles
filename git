@@ -35,3 +35,5 @@
 	smudge = git-lfs smudge -- %f
 [diff]
 	algorithm = patience
+[init]
+	defaultBranch = main
