@@ -20,10 +20,8 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
 	last = log -1 HEAD
 	hash = rev-parse HEAD
-	# Difference between two branches, argument: `$branch0..$branch1`, e.g. `master..WIP`
-	bdiff = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
-	# Log commits not in HEAD that are in the other branch (argument).
-	hdiff = log HEAD..
+	# Difference between two branches, arguments: $main $new-branch, e.g. `master WIP`
+	bdiff = cherry -v
 [log]
 	decorate = auto
 [branch]
