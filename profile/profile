@@ -106,6 +106,8 @@ alias l="ls -l"                # Quick list.
 alias vim="vim -p"             # Open each file in a separate tab.
 alias e="vim"                  # I got super lazy.
 alias scp=sftp                 # Use sftp instead.
+# UTC date in RFC3339 format.
+alias date_utc="date -u +'%Y-%m-%dT%H:%M:%SZ'"
 # Quick webserver to serve the current directory.
 alias serve="python3 -m http.server --bind 127.0.0.1"
 # Use different notes directory.
