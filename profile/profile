@@ -135,7 +135,7 @@ has_bin trash && rm() {
 # FIXME: this doesn't work with spaces. The output of `rg` doesn't add quotes
 # around the path names.
 has_bin rg && erg() {
-	e "+/$1\c" `rg --files-with-matches "$1" ${@:2}`
+	e "+/${1/\//\\/}\c" `rg --files-with-matches "$1" ${@:2}`
 }
 
 econflicts() {
