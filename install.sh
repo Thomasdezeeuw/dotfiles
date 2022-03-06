@@ -35,6 +35,7 @@ done
 
 # Vim has to do its own thing of course...
 ln -v -s "`pwd`/vimrc" "$HOME/.vim/vimrc"
+ln -v -s "`pwd`/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
 
 echo "Required by install:
 	- source .dotfiles/profile/profile, see bash_profile.

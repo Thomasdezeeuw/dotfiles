@@ -272,7 +272,17 @@ let g:rustfmt_command='rustup run stable rustfmt'
 autocmd FileType rust set makeprg=cargo\ $*
 autocmd FileType rust set textwidth=80
 if executable('rust-analyzer')
-    let g:ycm_language_server = [ { 'name': 'rust', 'cmdline': ['rust-analyzer'], 'filetypes': ['rust'], 'project_root_files': ['Cargo.toml'] } ]
+    let g:ycm_language_server =
+    \ [
+    \   {
+    \       'name': 'rust',
+    \       'cmdline': ['rust-analyzer'],
+    \       'filetypes': ['rust'],
+    \       'project_root_files': ['Cargo.toml']
+    \   }
+    \ ]
+    " Additional configuration (for some reason in Python).
+    let g:ycm_global_ycm_extra_conf = '~/.vim/vim_ycm_conf.py'
 endif
 autocmd FileType rust let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax }
 

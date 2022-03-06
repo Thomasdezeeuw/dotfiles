@@ -27,6 +27,7 @@ done
 ln -v -s "$this_dir/git" "$HOME/.gitconfig"
 mkdir -p "$HOME/.vim"
 ln -v -s "$this_dir/vimrc" "$HOME/.vim/vimrc"
+ln -v -s "$this_dir/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
 
 # Setup Vim-Plug.
 curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs \
