@@ -37,3 +37,5 @@
 	algorithm = patience
 [init]
 	defaultBranch = main
+[merge]
+	conflictstyle = zdiff3
