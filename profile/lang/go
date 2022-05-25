@@ -9,3 +9,5 @@ export CGO_ENABLED=1
 
 # Always print complete backtrace.
 export GOTRACEBACK=all
+# Don't send all traffic from "go get" to Google.
+export GOPROXY=direct
