@@ -271,7 +271,7 @@ let g:go_doc_keywordprg_enabled = 0
 let g:go_fmt_experimental = 1
 " Leave alone, I know what to do.
 " Don't move my fcking cursor!
-let g:go_jump_to_error = 1
+let g:go_jump_to_error = 0
 
 " Rust
 let g:rustfmt_autosave=1
