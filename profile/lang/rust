@@ -16,5 +16,7 @@ rustr() {
 	local SRC_FILE="$1"
 	local BIN="${1%???}"
 	rustc "$SRC_FILE" && "./$BIN"
+	local exit=$?
 	/bin/rm "$BIN"
+	return $exit
 }
