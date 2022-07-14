@@ -88,6 +88,13 @@ set formatoptions=crqjn
 "set formatlistpat="^\s*[\(\d\+\.\=)-\*]\s*"
 let $IN_VIM=1       " Let the shell know we're in Vim.
 set shell=$SHELL    " Use our preferred shell and options.
+" Reduce the length of some messages
+set shortmess=Ia
+" Vim-go often generates messages/errors that are too long for a single line,
+" which causes VIM to require us to hit ENTER before continuing. This is very
+" annoying. So, we increase the height to two, which fits most error messages.
+" Not ideal, but I can live with it.
+set cmdheight=2
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.
