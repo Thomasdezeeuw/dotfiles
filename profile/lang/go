@@ -2,6 +2,9 @@
 # # Go specific profile extensions.
 #
 
+# Only run if the `go` binary is available.
+has_bin go || return 0
+
 __add_to_path "$HOME/go/bin"
 
 # Enable CGo.

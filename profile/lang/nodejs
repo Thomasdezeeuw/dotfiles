@@ -2,7 +2,7 @@
 # # Node.js specific profile extensions.
 #
 
-# Only run if the `node` is available.
+# Only run if the `node` binary is available.
 has_bin node || return 0
 
 NODE_ENV=development
