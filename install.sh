@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+set -eu
+
 #
 # # Make all required directories.
 #
