@@ -126,6 +126,9 @@ autocmd BufWritePre * :%s/\s\+$//e
 " Colours and such.
 set termguicolors
 syntax on
+" Always start syntax highlighter at the start of the file, it will fail in
+" complex-ish Rust code otherwise.
+let c_minlines=50000
 set background=light
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_light='soft'
