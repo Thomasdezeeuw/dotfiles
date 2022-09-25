@@ -20,6 +20,9 @@ let g:ctrlp_user_command=['.git', 'cd %s && git ls-files -co --exclude-standard'
 " Only show Git changes after saving the file.
 autocmd BufWritePost * GitGutter
 
+" NOTE: this needs to be done before the 'vlime/vlime' plugin is loaded.
+let g:vlime_leader = ","
+
 "
 " Plugins.
 "
@@ -52,6 +55,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'posva/vim-vue', {'for': 'vue'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
+    Plug 'vlime/vlime', {'for': 'lisp', 'rtp': 'vim/'}
+    Plug 'kovisoft/paredit', {'for': 'lisp'}
 call plug#end()
 
 "
