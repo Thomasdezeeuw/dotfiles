@@ -168,6 +168,11 @@ if executable('rg')
     set grepprg=rg\ --vimgrep
 endif
 
+" Status bar at the bottom.
+let g:airline_detect_spell=1 " Don't show spelling info, not very useful.
+" Only show "unusual" file formats.
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
+
 "
 " Shortcuts.
 "
