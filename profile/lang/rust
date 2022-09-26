@@ -3,7 +3,7 @@
 #
 
 # Only run if the `rustc` binary is available.
-has_bin rustc || return 0
+PATH="$HOME/.cargo/bin" has_bin rustc || return 0
 
 # Include Cargo installed binaries in the path.
 __add_to_path "$HOME/.cargo/bin"
