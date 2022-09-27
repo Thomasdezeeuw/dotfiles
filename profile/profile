@@ -69,14 +69,14 @@ else
 	unset SHELL
 fi
 
+# Load OS specific profile extensions.
+OS=$(uname -s | tr "[:upper:]" "[:lower:]")
+source "$PROFILE_ROOT/os/$OS"
+
 # Load programming language specific profile extensions.
 for file in "$PROFILE_ROOT/lang/"*; do
 	source "$file"
 done
-
-# Load OS specific profile extensions.
-OS=$(uname -s | tr "[:upper:]" "[:lower:]")
-source "$PROFILE_ROOT/os/$OS"
 
 #
 # Setup SSH
