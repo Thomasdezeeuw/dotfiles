@@ -32,3 +32,6 @@ export HOMEBREW_REPOSITORY="$HOMEBREW_PREFIX/Homebrew";
 #export PATH="$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin:$PATH";
 #export MANPATH="$HOMEBREW_PREFIX/share/man:$MANPATH";
 #export INFOPATH="$HOMEBREW_PREFIX/share/info:$INFOPATH";
+
+# Needed by the make alias.
+alias nproc="sysctl -n hw.logicalcpu"
