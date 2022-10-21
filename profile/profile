@@ -108,7 +108,7 @@ alias l="ls -l"                # Quick list.
 alias vim="vim -p"             # Open each file in a separate tab.
 alias e="vim"                  # I got super lazy.
 alias scp=sftp                 # Use sftp instead.
-alias make="gmake --jobs=$(nproc) --no-print-directory"
+has_bin gmake && alias make="gmake --jobs=$(nproc) --no-print-directory"
 # UTC date in RFC3339 format.
 alias date_utc="date -u +'%Y-%m-%dT%H:%M:%SZ'"
 # Quick webserver to serve the current directory.
