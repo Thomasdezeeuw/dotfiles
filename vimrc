@@ -23,6 +23,10 @@ autocmd BufWritePost * GitGutter
 " NOTE: this needs to be done before the 'vlime/vlime' plugin is loaded.
 let g:vlime_leader = ","
 
+" Leave alone, I know what to do.
+" Don't move my fcking cursor!
+let g:go_jump_to_error = 0
+
 "
 " Plugins.
 "
@@ -282,9 +286,6 @@ let g:go_get_update = 0
 let g:go_doc_keywordprg_enabled = 0
 " Don't close my folds on save, see https://github.com/fatih/vim-go/issues/502.
 let g:go_fmt_experimental = 1
-" Leave alone, I know what to do.
-" Don't move my fcking cursor!
-let g:go_jump_to_error = 0
 
 " Rust
 let g:rustfmt_autosave=1
