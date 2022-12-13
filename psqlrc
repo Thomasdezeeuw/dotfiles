@@ -1,0 +1,17 @@
+-- Don't output
+\set QUIET on
+
+-- Better styling.
+\x auto
+\pset null 'NULL'
+\pset border 2
+\set PROMPT1 '%n@%M/%/%x %# '
+\set PROMPT2 '%w'
+
+-- Using tmux, so no benefit in pager.
+\pset pager off
+
+-- There when you need it.
+\timing
+
+\set QUIET off
