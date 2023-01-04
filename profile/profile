@@ -153,7 +153,7 @@ econflicts() {
 
 # Exit status is 0 if inside a git repo, 1 otherwise.
 in_git_repo() {
-	git rev-parse --is-inside-work-tree > /dev/null 2> /dev/null
+	[ -d .git ] || git rev-parse --is-inside-work-tree > /dev/null 2> /dev/null
 }
 
 # Returns 1 if the branch is dirty, 0 otherwise.
