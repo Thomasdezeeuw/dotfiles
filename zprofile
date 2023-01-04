@@ -43,11 +43,11 @@ precmd() {
 	PS1="%f%k"
 
 	# Show when we're inside Vim.
-	if [ -n "$IN_VIM" ]; then
+	if [ -n "${IN_VIM+x}" ]; then
 		PS1+="%F{#FFA500}vim "
 	fi
 	# Show orange username@hostname, if in a ssh session.
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	if [ -n "${SSH_CLIENT+x}" ] || [ -n "${SSH_TTY+x}" ]; then
 		PS1+="%F{#FFA500}%n@%M "
 	fi
 

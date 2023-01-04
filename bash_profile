@@ -76,11 +76,11 @@ prompt_command() {
 	PS1="\[\e[0m\]"
 
 	# Show when we're inside Vim.
-	if [ -n "$IN_VIM" ]; then
+	if [ -n "${IN_VIM+x}" ]; then
 		PS1+="$(fg_color 255 165 0)vim "
 	fi
 	# Show orange username@hostname, if in a ssh session.
-	if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+	if [ -n "${SSH_CLIENT+x}" ] || [ -n "${SSH_TTY+x}" ]; then
 		PS1+="$(fg_color 255 165 0)\u@\h "
 	fi
 
