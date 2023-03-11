@@ -60,12 +60,12 @@ bindsym --to-code {
 }
 
 #
-# Workspaces.
+## Workspaces.
 #
 
-set $ws1 "Main"
-set $ws2 "Code"
-set $ws3 "Mail"
+set $ws1 " Main"
+set $ws2 " Code"
+set $ws3 " Mail"
 set $ws4 "4"
 set $ws5 "5"
 set $ws6 "6"
