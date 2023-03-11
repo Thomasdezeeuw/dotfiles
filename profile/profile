@@ -34,7 +34,7 @@ export CLICOLOR=1
 export IGNOREEOF=2
 
 # Determine what shell we're using.
-case $(basename -- "$SHELL" || basename -- "$0" || "$0") in
+case $(basename -- "$0" || "$0") in
 "bash" | "-bash")
 	shell="bash"
 	;;
@@ -78,7 +78,7 @@ for file in "$PROFILE_ROOT/lang/"*; do
 	source "$file"
 done
 
-export SHELL="$(which "$shell")"
+export SHELL="$(command -v "$shell")"
 
 #
 # Setup SSH
