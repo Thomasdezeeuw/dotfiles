@@ -38,10 +38,10 @@ case $(basename -- "$0" || "$0") in
 "bash" | "-bash")
 	shell="bash"
 	;;
-"zsh")
+"zsh" | "-zsh")
 	shell="zsh"
 	;;
-"sh")
+"sh" | "-sh")
 	shell="sh"
 	;;
 *)
