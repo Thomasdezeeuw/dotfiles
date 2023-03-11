@@ -1,5 +1,8 @@
 # Location: ~/.config/sway/config
 
+# Automatically start gammastep to help your eyes.
+exec gammastep -c /home/thomas/.dotfiles/gammastep
+
 #
 ## Key bindings.
 #
