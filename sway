@@ -184,7 +184,7 @@ font pango:Noto Sans Display 900 Expanded 10
 
 # Some spacing between windows.
 gaps inner 10
-gaps outer 10
+gaps outer 5
 
 # Colours for focused window.
 set $focused_bg        #2e3440
