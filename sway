@@ -1,4 +1,4 @@
-# Location: ~/.config/sway/config 
+# Location: ~/.config/sway/config
 
 #
 ## Key bindings.
@@ -18,7 +18,13 @@ bindsym --to-code {
 	$mod+Shift+c restart
 	$mod+Shift+q exec swaynag -t warning -m 'Do you really want to exit sway?' -B 'Yes, exit sway' 'swaymsg exit'
 
-	# Start commands
+	# Managing power etc.
+	# Sleep, also locks Sway.
+	$mod+ctrl+q exec systemctl suspend
+	# Lock Sway.
+	#$mod+ctrl+q exec swaylock
+
+	# Managing programs.
 	# Start a terminal.
 	$mod+Return exec foot
 	# Start the program launcher.
@@ -169,7 +175,6 @@ bar {
 
 # Lock after 5 minutes, turn of screen after 10 minutes.
 # Also locks the screen before sleeping.
-# FIXME: doesn't seem to work.
 exec swayidle -w \
 	timeout 300 'swaylock -f -c 000000' \
 	timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
