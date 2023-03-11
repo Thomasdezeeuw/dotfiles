@@ -101,7 +101,7 @@ bindsym --to-code {
 }
 
 #
-# Resizing windows.
+## Resizing windows.
 #
 
 mode "resize" {
@@ -130,9 +130,18 @@ focus_follows_mouse yes
 mouse_warping none
 
 #
-# Status Bar:
+## Keyboard handling.
 #
-# Read `man 5 sway-bar` for more information about this section.
+
+input "type:keyboard" {
+	# Map caps lock to escape.
+	xkb_options caps:escape
+}
+
+#
+## Status Bar.
+#
+
 bar {
 	colors {
 		statusline #ffffff
