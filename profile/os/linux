@@ -9,3 +9,6 @@ export CC=gcc
 alias suspend="sudo systemctl hibernate"
 alias lock="i3lock && sudo systemctl suspend"
 # TODO: add trash alias.
+
+# Transition from macOS.
+has_bin wl-copy && alias pbcopy=wl-copy
