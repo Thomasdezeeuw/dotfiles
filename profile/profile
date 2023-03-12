@@ -85,8 +85,14 @@ export SHELL="$(command -v "$shell")"
 #
 
 # Ensure that ssh-agent is running.
-if [ -z "${SSH_AUTH_SOCK+x}" ]; then
-	eval `ssh-agent -s` > /dev/null
+ssh-add -l &>/dev/null
+if [ "$?" == 2 ]; then
+	if [ -f "$HOME/.ssh/.agent" ]; then
+		eval "$(cat "$HOME/.ssh/.agent")" > /dev/null
+	else
+		(umask 0006; ssh-agent -s > "$HOME/.ssh/.agent")
+		eval "$(cat "$HOME/.ssh/.agent")" > /dev/null
+	fi
 fi
 
 # Ensure identities are added to the agent.
