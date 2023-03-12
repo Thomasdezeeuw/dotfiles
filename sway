@@ -129,6 +129,10 @@ focus_follows_mouse yes
 # Don't wrap the mouse to a window on another monitor.
 mouse_warping none
 
+input "type:mouse" {
+	natural_scroll disabled
+}
+
 #
 ## Keyboard handling.
 #
