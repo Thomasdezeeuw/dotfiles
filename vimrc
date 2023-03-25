@@ -36,7 +36,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'Valloric/YouCompleteMe'       " Completion.
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
-    Plug 'editorconfig/editorconfig-vim'" Support EditorConfig.
+    Plug 'editorconfig/editorconfig-vim' " Support EditorConfig.
+    Plug 'jasonccox/vim-wayland-clipboard' " Clipboard for Wayland.
     Plug 'morhetz/gruvbox'              " Sepia color scheme.
     Plug 'mtdl9/vim-log-highlighting'   " Highlighting for logs.
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
