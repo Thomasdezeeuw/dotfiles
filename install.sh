@@ -40,7 +40,7 @@ ln -v -s "`pwd`/vimrc" "$HOME/.vim/vimrc"
 ln -v -s "`pwd`/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
 
 echo "Required by install:
-	- source .dotfiles/profile/profile, see bash_profile.
+	- source .dotfiles/profile/profile, see bashrc.
 
 Languages:
 	- Rust (and Cargo): https://www.rust-lang.org/en-US/install.html,

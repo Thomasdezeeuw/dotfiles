@@ -16,7 +16,7 @@ mkdir -v -p "$HOME/bin"
 # Files that link to "~/.$file".
 declare -a config_files=(
 	"inputrc"
-	"bash_profile"
+	"bashrc"
 	"tmux.conf"
 	"zprofile"
 )
