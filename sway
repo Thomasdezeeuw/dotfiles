@@ -23,9 +23,9 @@ bindsym --to-code {
 
 	# Managing power etc.
 	# Sleep, also locks Sway.
-	$mod+ctrl+q exec systemctl suspend
+	$mod+ctrl+s exec doas systemctl suspend
 	# Lock Sway.
-	#$mod+ctrl+q exec swaylock
+	$mod+ctrl+q exec swaylock
 
 	# Managing programs.
 	# Start a terminal.
