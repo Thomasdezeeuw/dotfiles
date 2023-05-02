@@ -14,6 +14,7 @@ set $left h
 set $down j
 set $up k
 set $right l
+set $swaylock 'swaylock --daemonize --ignore-empty-password --color=1d1f21 --indicator-radius=150 --indicator-thickness=30 --inside-color=00000000 --inside-clear-color=1d1f21 --inside-ver-color=1d1f21 --inside-wrong-color=1d1f21 --key-hl-color=7aa6daaa --bs-hl-color=d54e53aa --separator-color=55555555 --line-color=1d1f21 --line-uses-ring --text-color=81a2be --text-clear-color=b5bd68 --text-caps-lock-color=f0c674 --text-ver-color=81a2be --text-wrong-color=cc6666 --ring-color=81a2be55 --ring-ver-color=81a2be --ring-clear-color=b5bd6811 --ring-wrong-color=cc6666 --image=/home/thomas/Desktop/bg.png'
 
 bindsym --to-code {
 	# Managing sway.
@@ -25,7 +26,7 @@ bindsym --to-code {
 	# Sleep, also locks Sway.
 	$mod+ctrl+s exec doas systemctl suspend
 	# Lock Sway.
-	$mod+ctrl+q exec swaylock
+	$mod+ctrl+q exec $swaylock
 
 	# Managing programs.
 	# Start a terminal.
@@ -192,9 +193,11 @@ bar {
 # Lock after 5 minutes, turn off screen 5 minutes after that.
 # Also locks the screen before sleeping.
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 000000' \
-	timeout 300 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-	before-sleep 'swaylock -f -c 000000'
+	timeout 300 $swaylock \
+	timeout 330 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	timeout 600 'doas systemctl suspend' \
+	before-sleep $swaylock \
+	after-resume 'swaymsg "output * power on"'
 
 #
 ## Styling.
