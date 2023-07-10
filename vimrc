@@ -82,7 +82,6 @@ set belloff=all     " No more bells.
 set mouse=         " Disable the mouse.
 set fileformat=unix " Unix file format.
 set hidden          " Hide buffers rather then closing them.
-set clipboard=unnamedplus " Enable copy to clipboard.
 set backspace=2     " Backspace like most apps.
 set lazyredraw      " Only redraw when needed.
 set showmatch       " Highlight matching bracket.
@@ -148,6 +147,14 @@ set foldenable
 set foldmethod=indent
 set foldlevel=100
 set foldminlines=0
+
+" Enable copy to clipboard.
+set clipboard=unnamedplus
+if executable('wl-copy') && executable('wl-paste')
+    " Clipboard support on Wayland.
+    autocmd TextYankPost * call system('wl-copy', get(v:event, 'regcontents'))
+    nnoremap p :silent put =system('wl-paste')<CR>
+endif
 
 " Explorer settings.
 let g:netrw_banner=0
