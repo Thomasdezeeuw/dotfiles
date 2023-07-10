@@ -12,3 +12,4 @@ alias lock="i3lock && sudo systemctl suspend"
 
 # Transition from macOS.
 has_bin wl-copy && alias pbcopy=wl-copy
+has_bin wl-paste && alias pbpaste=wl-paste
