@@ -62,6 +62,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
     Plug 'vlime/vlime', {'for': 'lisp', 'rtp': 'vim/'}
     Plug 'kovisoft/paredit', {'for': 'lisp'}
+    Plug 'Orange-OpenSource/hurl', {'for': 'hurl', 'rtp': '/contrib/vim/'}
 call plug#end()
 
 "
