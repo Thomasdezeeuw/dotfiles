@@ -39,3 +39,5 @@
 	defaultBranch = main
 [merge]
 	conflictstyle = zdiff3
+[sendemail]
+	annotate = yes
