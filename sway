@@ -193,9 +193,9 @@ bar {
 # Lock after 5 minutes, turn off screen 5 minutes after that.
 # Also locks the screen before sleeping.
 exec swayidle -w \
-	timeout 900 $swaylock \
-	timeout 930 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-	timeout 960 'doas systemctl suspend' \
+	timeout 6000 $swaylock \
+	timeout 6030 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+	timeout 6060 'doas systemctl suspend' \
 	before-sleep $swaylock \
 	after-resume 'swaymsg "output * power on"'
 
