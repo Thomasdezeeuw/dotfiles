@@ -150,7 +150,7 @@ set foldlevel=100
 set foldminlines=0
 
 " Enable copy to clipboard.
-set clipboard=unnamedplus
+set clipboard=unnamed
 if executable('wl-copy') && executable('wl-paste')
     " Clipboard support on Wayland.
     autocmd TextYankPost * call system('wl-copy', get(v:event, 'regcontents'))
