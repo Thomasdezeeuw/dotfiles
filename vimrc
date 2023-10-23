@@ -105,6 +105,8 @@ set shortmess=Ia
 " annoying. So, we increase the height to two, which fits most error messages.
 " Not ideal, but I can live with it.
 set cmdheight=2
+" Increase the number of open tabs.
+set tabpagemax=100
 
 " Indentation.
 set nojoinspaces   " Single space between text lines. Like this one.
