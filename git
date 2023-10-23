@@ -38,7 +38,7 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 [diff]
-	algorithm = patience
+	algorithm = histogram
 [init]
 	defaultBranch = main
 [merge]
