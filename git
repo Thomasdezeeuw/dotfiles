@@ -8,6 +8,9 @@
 	eol = lf
 	editor = vim
 	quotepath = false
+	pager = diffr | less -R
+[interactive]
+	diffFilter = diffr
 [color]
 	ui = true
 [rebase]
