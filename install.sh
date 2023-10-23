@@ -53,7 +53,7 @@ Tools:
 	- Ripgrep: 'cargo install ripgrep',
 	- fd: 'cargo install fd-find',
 	- Clippy: 'cargo install clippy',
-	- Racer: 'cargo install racer',
+	- diffr: 'cargo install diffr',
 	- Vim,
 	- Vim plugins: https://github.com/junegunn/vim-plug,
 	- Make,
