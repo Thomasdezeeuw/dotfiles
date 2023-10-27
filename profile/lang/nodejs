@@ -5,4 +5,7 @@
 # Only run if the `node` binary is available.
 has_bin node || return 0
 
+# Add Yarn global bin directory.
+has_bin yarn && __add_to_path "$(yarn global bin)"
+
 NODE_ENV=development
