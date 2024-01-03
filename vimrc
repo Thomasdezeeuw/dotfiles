@@ -37,7 +37,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
     Plug 'editorconfig/editorconfig-vim' " Support EditorConfig.
-    Plug 'jasonccox/vim-wayland-clipboard' " Clipboard for Wayland.
     Plug 'morhetz/gruvbox'              " Sepia color scheme.
     Plug 'mtdl9/vim-log-highlighting'   " Highlighting for logs.
     Plug 'scrooloose/nerdcommenter'     " Easy comment out code.
@@ -153,11 +152,6 @@ set foldminlines=0
 
 " Enable copy to clipboard.
 set clipboard=unnamed
-if executable('wl-copy') && executable('wl-paste')
-    " Clipboard support on Wayland.
-    autocmd TextYankPost * call system('wl-copy', get(v:event, 'regcontents'))
-    nnoremap p :silent put =system('wl-paste')<CR>
-endif
 
 " Explorer settings.
 let g:netrw_banner=0
