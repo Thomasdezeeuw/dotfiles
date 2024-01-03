@@ -26,7 +26,7 @@
 	hash = rev-parse HEAD
 	# Difference between two branches, arguments: $main $new-branch, e.g. `master WIP`
 	bdiff = cherry -v
-	# Get all commit messages in this branch
+	# Get all commit messages in this branch, compared to the main branch.
 	msg = log --reverse --decorate=no HEAD --not --remotes=*/main
 [log]
 	decorate = auto
