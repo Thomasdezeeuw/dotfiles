@@ -33,7 +33,7 @@ let g:go_jump_to_error = 0
 
 call plug#begin('~/.vim/plugged')
     " General plugins.
-    Plug 'Valloric/YouCompleteMe'       " Completion.
+    Plug 'ycm-core/YouCompleteMe'       " Completion.
     Plug 'airblade/vim-gitgutter'       " Add git status in the gutter.
     Plug 'ctrlpvim/ctrlp.vim'           " Easier file opening.
     Plug 'editorconfig/editorconfig-vim' " Support EditorConfig.
