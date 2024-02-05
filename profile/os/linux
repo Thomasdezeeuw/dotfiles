@@ -2,6 +2,9 @@
 # # Linux specific profile extensions.
 #
 
+# Add local user bin to path.
+__add_to_path "$HOME/.local/bin"
+
 # Use GCC as C compiler.
 export CC=gcc
 
