@@ -17,6 +17,7 @@
 	verbose = true
 [rebase]
 	autostash = true
+	autosquash = true
 [push]
 	default = current
 	autoSetupRemote = true
