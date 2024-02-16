@@ -8,7 +8,7 @@
 	eol = lf
 	editor = vim
 	quotepath = false
-	pager = diffr | less -R
+	pager = diffr | less --raw-control-chars --no-init --quit-if-one-screen
 [interactive]
 	diffFilter = diffr
 [color]
