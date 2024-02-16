@@ -50,3 +50,5 @@
 	conflictstyle = zdiff3
 [sendemail]
 	annotate = yes
+[help]
+	autocorrect = prompt
