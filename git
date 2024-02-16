@@ -33,6 +33,8 @@
 	bdiff = cherry -v
 	# Get all commit in this branch, compared to the remote's main branch.
 	msg = log --reverse --decorate=no HEAD --not --remotes=*/HEAD
+	# List recently worked on branches.
+	recent = branch --sort=-committerdate --format=\"%(committerdate:relative)%09%(refname:short)\"
 [log]
 	decorate = auto
 [branch]
