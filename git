@@ -13,6 +13,8 @@
 	diffFilter = diffr
 [color]
 	ui = true
+[commit]
+	verbose = true
 [rebase]
 	autostash = true
 [push]
