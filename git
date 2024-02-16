@@ -18,6 +18,8 @@
 [rebase]
 	autostash = true
 	autosquash = true
+[rerere]
+	enabled = true
 [push]
 	default = current
 	autoSetupRemote = true
