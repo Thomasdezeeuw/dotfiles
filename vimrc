@@ -43,7 +43,6 @@ call plug#begin('~/.vim/plugged')
     Plug 'terryma/vim-multiple-cursors' " Multiple cursors.
     Plug 'tpope/vim-obsession'          " Automatic storing of session data.
     Plug 'tpope/vim-sleuth'             " Automatically adjust tab size and space/tab.
-    Plug 'tpope/vim-fugitive'           " Git plugin.
     Plug 'vim-airline/vim-airline'      " Status bar.
 
     " Language specific plugins.
