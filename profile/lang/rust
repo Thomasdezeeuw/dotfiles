@@ -20,3 +20,5 @@ rustr() {
 	/bin/rm "$BIN"
 	return $exit
 }
+
+alias rustc_targets='rustc --print target-list' # Print all support rustc targets
