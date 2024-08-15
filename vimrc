@@ -307,3 +307,6 @@ let g:ycm_rust_toolchain_root=fnamemodify(trim(system('rustup which rust-analyze
 autocmd FileType tex set makeprg=pdflatex\ %
 let g:tex_flavor = 'latex'
 let g:vimtex_compiler_enabled = 0 " Gives a warning.
+
+" Manual pages
+autocmd FileType nroff runtime ftplugin/man.vim
