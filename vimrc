@@ -59,8 +59,10 @@ call plug#begin('~/.vim/plugged')
     Plug 'posva/vim-vue', {'for': 'vue'}
     Plug 'rust-lang/rust.vim', {'for': 'rust'}
     Plug 'uarun/vim-protobuf', {'for': 'proto'}
-    Plug 'vlime/vlime', {'for': 'lisp', 'rtp': 'vim/'}
-    Plug 'kovisoft/paredit', {'for': 'lisp'}
+    Plug 'vlime/vlime', {'for': ['lisp', 'scheme', 'racket'], 'rtp': 'vim/'}
+    Plug 'kovisoft/paredit', {'for': ['lisp', 'scheme', 'racket']}
+    Plug 'benknoble/vim-sexp', {'for': ['lisp', 'scheme', 'racket']}
+    Plug 'benknoble/vim-racket', {'for': 'racket'}
     Plug 'Orange-OpenSource/hurl', {'for': 'hurl', 'rtp': '/contrib/vim/'}
 call plug#end()
 
