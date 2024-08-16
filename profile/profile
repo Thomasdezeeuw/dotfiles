@@ -87,11 +87,19 @@ export SHELL="$(command -v "$shell")"
 # Ensure that ssh-agent is running.
 ssh-add -l &>/dev/null
 if [ "$?" == 2 ]; then
-	eval $(ssh-agent -s)
+	# Check if ssh-agent is already running, but we're missing a env var.
+	if [ -e "$XDG_RUNTIME_DIR/ssh-agent.socket" ]; then
+		export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+	fi
+
+	ssh-add -l &>/dev/null
+	if [ "$?" == 2 ]; then
+		eval $(ssh-agent -s)
+	fi
 fi
 
 # Ensure identities are added to the agent.
-if ! ssh-add -L > /dev/null; then
+if ! ssh-add -l > /dev/null; then
 	echo "Adding identities to ssh-agent"
 	ssh-add
 fi
