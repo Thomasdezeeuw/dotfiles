@@ -35,24 +35,6 @@ if [ -z "${SHELL+x}" ]; then export SHELL="bash"; fi
 source ~/.dotfiles/profile/profile
 
 #
-# Autocompletion.
-#
-
-# NOTE: must be loaded after the profile because otherwise `brew` might not be
-# found.
-if type brew &>/dev/null; then
-  HOMEBREW_PREFIX="$(brew --prefix)"
-  if [[ -r "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh" ]]; then
-    source "${HOMEBREW_PREFIX}/etc/profile.d/bash_completion.sh"
-  else
-    for COMPLETION in "${HOMEBREW_PREFIX}/etc/bash_completion.d/"*; do
-      [[ -r "$COMPLETION" ]] && source "$COMPLETION"
-    done
-  fi
-fi
-
-
-#
 # # Prompt
 #
 
