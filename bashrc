@@ -1,4 +1,4 @@
-# Location: ~/.bash_profile
+# Location: ~/.bashrc
 
 #
 # # Bash settings
