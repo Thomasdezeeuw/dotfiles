@@ -34,7 +34,7 @@ export CLICOLOR=1
 export IGNOREEOF=2
 
 # Determine what shell we're using.
-case $(basename -- "$0" || "$0") in
+case $(basename -- "$SHELL" || basename -- "$0" || "$0") in
 "bash" | "-bash")
 	shell="bash"
 	;;
@@ -86,14 +86,14 @@ export SHELL="$(command -v "$shell")"
 
 # Ensure that ssh-agent is running.
 ssh-add -l &>/dev/null
-if [ "$?" == 2 ]; then
+if [[ "$?" == 2 ]]; then
 	# Check if ssh-agent is already running, but we're missing a env var.
 	if [ -e "$XDG_RUNTIME_DIR/ssh-agent.socket" ]; then
 		export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 	fi
 
 	ssh-add -l &>/dev/null
-	if [ "$?" == 2 ]; then
+	if [[ "$?" == 2 ]]; then
 		eval $(ssh-agent -s)
 	fi
 fi
