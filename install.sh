@@ -8,20 +8,10 @@ set -eu
 
 # User specific binary directory.
 mkdir -v -p "$HOME/bin"
-# Some source related directories.
-mkdir -v -p "$HOME/src/notes"
-mkdir -v -p "$HOME/src/third_party"
-mkdir -v -p "$HOME/src/scripts"
-# Required for go.
-mkdir -v -p "$HOME/go/src/github.com"
 
 #
 # # Linking
 #
-
-# Link the directories required by go.
-ln -v -s "$HOME/bin" "$HOME/go/bin"
-ln -v -s "$HOME/src/go" "$HOME/go/src/github.com/Thomasdezeeuw"
 
 # Link all local files to the config directory.
 declare -a config_files=(
@@ -35,9 +25,34 @@ for file in "${config_files[@]}"; do
 	ln -v -s "`pwd`/$file" "$HOME/.config/$file/config"
 done
 
-# Vim has to do its own thing of course...
-ln -v -s "`pwd`/vimrc" "$HOME/.vim/vimrc"
-ln -v -s "`pwd`/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
+# Files that link to "~/.$file".
+declare -a home_files=(
+	"inputrc"
+	"bashrc"
+	"tmux.conf"
+	"zprofile"
+)
+this_dir="$HOME/.dotfiles"
+for file in "${home_files[@]}"; do
+	ln -v -s "$this_dir/$file" "$HOME/.$file"
+done
+
+mkdir -p "$HOME/.vim"
+ln -v -s "$this_dir/vimrc" "$HOME/.vim/vimrc"
+ln -v -s "$this_dir/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
+
+# Setup Vim-Plug.
+curl -fLo "$HOME/.vim/autoload/plug.vim" --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# Install all plugins.
+vim +PlugInstall +qall
+
+# Setup Tmux Plugin Manager.
+mkdir -p "$HOME/.tmux/plugins/tpm"
+git clone https://github.com/tmux-plugins/tpm "$HOME/.tmux/plugins/tpm"
+# Install all plugins.
+TMUX_PLUGIN_MANAGER_PATH="$HOME/.tmux/plugins/" "$HOME/.tmux/plugins/tpm/scripts/install_plugins.sh"
+
 
 echo "Required by install:
 	- source .dotfiles/profile/profile, see bashrc.
@@ -67,3 +82,4 @@ SSH:
 
 Misc:
 	- Fira Code font (https://github.com/tonsky/FiraCode)."
+
