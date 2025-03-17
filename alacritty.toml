@@ -1,57 +1,27 @@
 # Location: ~/.config/alacritty/alacritty.toml
 
-draw_bold_text_with_bright_colors = true
+[general]
 live_config_reload = false
+ipc_socket = false # Unused.
 
 [window]
-dynamic_padding = false
-decorations = "full"
-startup_mode = "Windowed"
+dimensions = { columns = 100, lines = 36 }
 dynamic_title = true
 
-  [window.dimensions]
-  columns = 100
-  lines = 24
-
-  [window.padding]
-  x = 0
-  y = 0
-
 [scrolling]
-history = 10_000
-multiplier = 3
+history = 0 # Using Tmux for this.
 
 [font]
-size = 13
+normal = { family = "Fira Code", style = "Retina" }
+# TODO: determine if this is still what I want.
+#bold = { style = "Medium" }
+#italic = { style = "Light" }
+#bold_italic = { style = "Medium" }
+size = 12
 
-  [font.normal]
-  family = "Fira Code"
-  style = "Retina"
-
-  [font.bold]
-  style = "Medium"
-
-  [font.italic]
-  style = "Light"
-
-  [font.bold_italic]
-  style = "Medium"
-
-  [font.offset]
-  x = 0
-  y = 0
-
-  [font.glyph_offset]
-  x = 0
-  y = 0
-
-[debug]
-render_timer = false
-persistent_logging = false
-
-[colors.primary]
-background = "0xf2e5bc"
-foreground = "0x3c3836"
+[colors]
+draw_bold_text_with_bright_colors = true
+primary = { background = "0xffd7af", foreground = "0x3c3836" }
 
 [colors.normal]
 black = "0xfbf1c7"
@@ -74,25 +44,7 @@ cyan = "0x427b58"
 white = "0x3c3836"
 
 [bell]
-animation = "EaseOutExpo"
-duration = 0
+duration = 0 # Disable.
 
-[selection]
-semantic_escape_chars = ",│`|:\"' ()[]{}<>"
-save_to_clipboard = false
-
-[cursor]
-style = "Block"
-unfocused_hollow = true
-
-[shell]
-program = "/usr/local/bin/bash"
-
-[mouse]
-hide_when_typing = false
-
-  [mouse.double_click]
-  threshold = 300
-
-  [mouse.triple_click]
-  threshold = 300
+[terminal]
+osc52 = "Disabled"
