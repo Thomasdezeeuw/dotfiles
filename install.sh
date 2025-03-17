@@ -37,6 +37,11 @@ for file in "${home_files[@]}"; do
 	ln -v -s "$this_dir/$file" "$HOME/.$file"
 done
 
+# Alacritty.
+mkdir -p "$HOME/.config/alacritty"
+ln -v -s "$this_dir/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+
+# Vim.
 mkdir -p "$HOME/.vim"
 ln -v -s "$this_dir/vimrc" "$HOME/.vim/vimrc"
 ln -v -s "$this_dir/vim_ycm_conf.py" "$HOME/.vim/vim_ycm_conf.py"
