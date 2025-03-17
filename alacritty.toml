@@ -1,0 +1,98 @@
+# Location: ~/.config/alacritty/alacritty.toml
+
+draw_bold_text_with_bright_colors = true
+live_config_reload = false
+
+[window]
+dynamic_padding = false
+decorations = "full"
+startup_mode = "Windowed"
+dynamic_title = true
+
+  [window.dimensions]
+  columns = 100
+  lines = 24
+
+  [window.padding]
+  x = 0
+  y = 0
+
+[scrolling]
+history = 10_000
+multiplier = 3
+
+[font]
+size = 13
+
+  [font.normal]
+  family = "Fira Code"
+  style = "Retina"
+
+  [font.bold]
+  style = "Medium"
+
+  [font.italic]
+  style = "Light"
+
+  [font.bold_italic]
+  style = "Medium"
+
+  [font.offset]
+  x = 0
+  y = 0
+
+  [font.glyph_offset]
+  x = 0
+  y = 0
+
+[debug]
+render_timer = false
+persistent_logging = false
+
+[colors.primary]
+background = "0xf2e5bc"
+foreground = "0x3c3836"
+
+[colors.normal]
+black = "0xfbf1c7"
+red = "0xcc241d"
+green = "0x98971a"
+yellow = "0xd79921"
+blue = "0x458588"
+magenta = "0xb16286"
+cyan = "0x689d6a"
+white = "0x7c6f64"
+
+[colors.bright]
+black = "0x928374"
+red = "0x9d0006"
+green = "0x79740e"
+yellow = "0xb57614"
+blue = "0x076678"
+magenta = "0x8f3f71"
+cyan = "0x427b58"
+white = "0x3c3836"
+
+[bell]
+animation = "EaseOutExpo"
+duration = 0
+
+[selection]
+semantic_escape_chars = ",│`|:\"' ()[]{}<>"
+save_to_clipboard = false
+
+[cursor]
+style = "Block"
+unfocused_hollow = true
+
+[shell]
+program = "/usr/local/bin/bash"
+
+[mouse]
+hide_when_typing = false
+
+  [mouse.double_click]
+  threshold = 300
+
+  [mouse.triple_click]
+  threshold = 300
