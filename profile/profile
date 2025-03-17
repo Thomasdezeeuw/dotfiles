@@ -126,8 +126,8 @@ alias notes="NOTES_ROOT=~/src/notes/weekly notes"
 ts() {
 	name="$1"
 	dir="$HOME/src/$name"
-	[ -d "$dir" ] && args="-c $dir" || args=""
-	if [ ! -z "$TMUX" ]; then
+	[[ -d "$dir" ]] && args="-c '$dir'" || args=""
+	if [[ ! -z "$TMUX" ]]; then
 		if ! tmux has-session -t "$name" 2> /dev/null; then
 			# Create a new session but don't attach to it.
 			tmux new-session -A $args -t "$name" -s "$name" -d
