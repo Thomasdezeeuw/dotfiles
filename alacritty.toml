@@ -47,4 +47,5 @@ white = "0x3c3836"
 duration = 0 # Disable.
 
 [terminal]
+shell = { program = "/opt/homebrew/bin/bash", args = ["-il"] }
 osc52 = "Disabled"
