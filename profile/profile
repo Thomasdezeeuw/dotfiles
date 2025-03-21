@@ -34,22 +34,16 @@ export CLICOLOR=1
 export IGNOREEOF=2
 
 # Determine what shell we're using.
-case $(basename -- "$SHELL" || basename -- "$0" || "$0") in
-"bash" | "-bash")
+# NOTE that `SHELL` isn't reliable, so we can't use it.
+if [ ! -z ${BASH_SOURCE+x} ]; then
 	shell="bash"
-	;;
-"zsh" | "-zsh")
+elif [ ! -z ${ZSH_VERSION+x} ]; then
 	shell="zsh"
-	;;
-"sh" | "-sh")
-	shell="sh"
-	;;
-*)
+else
 	echo "Unknown shell '$0', only supports bash or zsh" >&2
 	sleep 100
 	exit 1
-	;;
-esac
+fi
 
 # Utility function to determine if a binary is available.
 has_bin() {
@@ -61,9 +55,9 @@ has_bin() {
 #
 
 if [ "$shell" = "bash" ]; then
-	PROFILE_ROOT=$(dirname ${BASH_SOURCE[0]})
+	PROFILE_ROOT=$(dirname "${BASH_SOURCE[0]}")
 elif [ "$shell" = "zsh" ]; then
-	PROFILE_ROOT=$(dirname ${(%):-%N})
+	PROFILE_ROOT=$(dirname "${(%):-%N}")
 else
 	unset PROMPT_COMMAND
 	unset SHELL
