@@ -93,7 +93,7 @@ if [[ "$?" == 2 ]]; then
 fi
 
 # Ensure identities are added to the agent.
-if ! ssh-add -l > /dev/null; then
+if [[ $- == *i* ]] && ! ssh-add -l > /dev/null; then
 	echo "Adding identities to ssh-agent"
 	ssh-add
 fi
