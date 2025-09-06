@@ -205,4 +205,4 @@ client.placeholder      $focused_border $focused_bg $focused_fg
 client.background #ff69b4
 
 # Set the background image.
-exec_always --no-startup-id feh --bg-scale $HOME/Documents/bg/current.png
+exec_always --no-startup-id feh --bg-scale $HOME/Desktop/desktop_bg.jpg

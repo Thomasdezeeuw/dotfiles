@@ -14,7 +14,7 @@ set $left h
 set $down j
 set $up k
 set $right l
-set $swaylock 'swaylock --daemonize --ignore-empty-password --color=1d1f21 --indicator-radius=150 --indicator-thickness=30 --inside-color=00000000 --inside-clear-color=1d1f21 --inside-ver-color=1d1f21 --inside-wrong-color=1d1f21 --key-hl-color=7aa6daaa --bs-hl-color=d54e53aa --separator-color=55555555 --line-color=1d1f21 --line-uses-ring --text-color=81a2be --text-clear-color=b5bd68 --text-caps-lock-color=f0c674 --text-ver-color=81a2be --text-wrong-color=cc6666 --ring-color=81a2be55 --ring-ver-color=81a2be --ring-clear-color=b5bd6811 --ring-wrong-color=cc6666 --image=/home/thomas/Desktop/bg.png'
+set $swaylock 'swaylock --daemonize --ignore-empty-password --color=1d1f21 --indicator-radius=150 --indicator-thickness=30 --inside-color=00000000 --inside-clear-color=1d1f21 --inside-ver-color=1d1f21 --inside-wrong-color=1d1f21 --key-hl-color=7aa6daaa --bs-hl-color=d54e53aa --separator-color=55555555 --line-color=1d1f21 --line-uses-ring --text-color=81a2be --text-clear-color=b5bd68 --text-caps-lock-color=f0c674 --text-ver-color=81a2be --text-wrong-color=cc6666 --ring-color=81a2be55 --ring-ver-color=81a2be --ring-clear-color=b5bd6811 --ring-wrong-color=cc6666 --image=/home/thomas/Desktop/lockscreen_bg.jpg'
 
 bindsym --to-code {
 	# Managing sway.
@@ -238,7 +238,7 @@ default_floating_border pixel 0
 hide_edge_borders both
 
 # Background image.
-output * bg $HOME/Desktop/bg.png fill
+output * bg $HOME/Desktop/desktop_bg.jpg fill
 
 # Include some OS specific stuff.
 include /etc/sway/config.d/*
