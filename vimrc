@@ -301,7 +301,6 @@ let g:rustfmt_command='rustup run stable rustfmt'
 autocmd FileType rust set makeprg=cargo\ $*
 autocmd FileType rust set textwidth=80
 autocmd FileType rust let b:ycm_hover = { 'command': 'GetDoc', 'syntax': &syntax }
-let g:ycm_rust_toolchain_root=fnamemodify(trim(system('rustup which rust-analyzer 2> /dev/null')), ':h:h')
 
 " LaTeX.
 autocmd FileType tex set makeprg=pdflatex\ %
