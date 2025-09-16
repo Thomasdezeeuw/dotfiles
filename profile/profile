@@ -17,6 +17,7 @@ __add_to_path() {
 
 # Add user bin to path.
 __add_to_path "$HOME/bin" "first"
+__add_to_path "$HOME/.local/bin"
 
 # Vim as the editor.
 export EDITOR="vim"
