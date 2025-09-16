@@ -278,6 +278,9 @@ autocmd FileType json map <Leader>f :%!python3 -m json.tool<CR>
 " m$ sets mark to $.
 " `$ go to mark $.
 
+" Ctrl-P
+" Only search in current working directory.
+let g:ctrlp_working_path_mode = 'a'
 
 "
 " Language specific settings.
