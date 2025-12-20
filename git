@@ -30,7 +30,7 @@
 	last = log -1 HEAD
 	hash = rev-parse HEAD
 	# Difference between two branches, arguments: $main $new-branch, e.g. `master WIP`
-	bdiff = cherry -v
+	bdiff = log --reverse --decorate=no main..
 	# Get all commit in this branch, compared to the remote's main branch.
 	msg = log --reverse --decorate=no HEAD --not --remotes=*/HEAD
 	# List recently worked on branches.
