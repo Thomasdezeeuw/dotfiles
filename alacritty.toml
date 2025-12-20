@@ -47,5 +47,5 @@ white = "0x3c3836"
 duration = 0 # Disable.
 
 [terminal]
-shell = { program = "/opt/homebrew/bin/bash", args = ["-il"] }
+shell = { program = "/opt/homebrew/bin/tmux", args = ["new-session" "-A" "-t" "main" "-s" "main"] }
 osc52 = "Disabled"
