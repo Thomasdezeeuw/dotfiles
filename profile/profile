@@ -120,16 +120,15 @@ alias serve="python3 -m http.server --bind 127.0.0.1"
 alias notes="NOTES_ROOT=~/src/notes/weekly notes"
 ts() {
 	name="$1"
-	dir="$HOME/src/$name"
-	[[ -d "$dir" ]] && args="-c '$dir'" || args=""
+	dir="$HOME/src/$name"            # Default to repo.
+	[[ ! -d "$dir" ]] && dir="$HOME" # Fallback to home directory.
 	if [[ ! -z "$TMUX" ]]; then
 		if ! tmux has-session -t "$name" 2> /dev/null; then
-			# Create a new session but don't attach to it.
-			tmux new-session -A $args -t "$name" -s "$name" -d
+			tmux new-session -t "$name" -s "$name" -c "$dir" -d
 		fi
 		tmux switch-client -t "$name"
 	else
-		tmux new-session -A $args -t "$name" -s "$name"
+		tmux new-session -t "$name" -s "$name"  -c "$dir" -A
 	fi
 }
 
