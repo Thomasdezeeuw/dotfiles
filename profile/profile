@@ -131,6 +131,10 @@ ts() {
 		tmux new-session -t "$name" -s "$name"  -c "$dir" -A
 	fi
 }
+save-scrollback() {
+	file="${1:-tmux.log}"
+	tmux capture-pane -J -S - -p > "$file"
+}
 
 # Overwrites the `rm` command, but only in the shell not in scripts.
 has_bin trash && rm() {
