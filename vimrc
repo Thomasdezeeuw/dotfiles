@@ -273,6 +273,7 @@ map <Leader>t :make test<CR>
 
 " Formatting.
 autocmd FileType json map <Leader>f :%!python3 -m json.tool<CR>
+autocmd FileType sql map <Leader>f :%!sqlfmt<CR>
 
 " Marking:
 " m$ sets mark to $.
